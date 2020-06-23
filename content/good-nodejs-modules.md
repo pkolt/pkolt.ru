@@ -1,20 +1,20 @@
 ---
 title: Полезные Node.js модули
+emoji: ✍
 tags:
   - JavaScript
   - Node.js
-emoji: ✍
 ---
 
-## npkill
+## [npkill](https://www.npmjs.com/package/npkill)
 
-Модуль, который помогает очистить диск от ненужных папок `node_modules`.
+Помогает очистить диск от ненужных папок `node_modules`.
 
 ```bash
 npm install -g npkill
 ```
 
-## npm-check-updates
+## [npm-check-updates](https://www.npmjs.com/package/npm-check-updates)
 
 Помогает интерактивно обновлять модули в `package.json`.
 
