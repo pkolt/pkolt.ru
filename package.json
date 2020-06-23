@@ -1,0 +1,27 @@
+{
+  "name": "pkolt-site",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pavel Koltyshev <pkoltyshev@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop",
+    "start": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "2.23.4",
+    "gatsby-theme-code-notes": "1.9.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pkolt/pkolt_site"
+  },
+  "bugs": {
+    "url": "https://github.com/pkolt/pkolt_site/issues"
+  }
+}
