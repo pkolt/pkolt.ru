@@ -49,3 +49,17 @@ npm install -g depcheck
 ```bash
 depcheck
 ```
+
+## [rimraf](https://www.npmjs.com/package/rimraf)
+
+Рекурсивно удаляет папки/файлы.
+
+```bash
+npm install -g rimraf
+```
+
+Удалить каталог вместе с содержимым:
+
+```bash
+rimraf build
+```
