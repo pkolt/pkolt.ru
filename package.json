@@ -9,16 +9,13 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "dev": "gatsby develop",
-    "start": "gatsby serve",
-    "deploy": "rimraf public && gatsby build && gh-pages -d public"
+    "start": "gatsby serve"
   },
   "dependencies": {
     "gatsby": "2.23.4",
     "gatsby-theme-code-notes": "1.9.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "rimraf": "3.0.2",
-    "gh-pages": "3.1.0"
+    "react-dom": "16.13.1"
   },
   "repository": {
     "type": "git",
