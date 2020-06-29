@@ -10,13 +10,15 @@
     "clean": "gatsby clean",
     "dev": "gatsby develop",
     "start": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "rimraf public && gatsby build && gh-pages -d public"
   },
   "dependencies": {
     "gatsby": "2.23.4",
     "gatsby-theme-code-notes": "1.9.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "rimraf": "3.0.2",
+    "gh-pages": "3.1.0"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,5 @@
   },
   "bugs": {
     "url": "https://github.com/pkolt/pkolt_site/issues"
-  },
-  "devDependencies": {
-    "gh-pages": "3.1.0"
   }
 }
