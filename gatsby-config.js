@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/pkolt-site',
   siteMetadata: {
     title: 'Заметки разработчика',
     description: '',
