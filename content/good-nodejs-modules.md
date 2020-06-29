@@ -36,3 +36,16 @@ ncu -i
 ```bash
 ncu -u
 ```
+
+## [depcheck](https://www.npmjs.com/package/depcheck)
+
+Показывает какие npm-модули из `package.json` не используются.
+
+```bash
+npm install -g depcheck
+```
+
+Показать какие npm-модули не используются:
+```bash
+depcheck
+```
