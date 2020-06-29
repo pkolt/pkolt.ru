@@ -11,19 +11,19 @@ jobs:
 
     steps:
     - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
     - name: Install and Build 🔧
-        run: |
-          npm install
-          npm run clean
-          npm run build
+      run: |
+        npm install
+        npm run clean
+        npm run build
 
     - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: public
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: public
