@@ -18,10 +18,11 @@ jobs:
     - name: Setup Node 🤖
       uses: actions/setup-node@v1
       with:
-        node-version: '13'
+        node-version: '12'
 
     - name: Install and Build 🔧
       run: |
+        rm -rf ./node_modules
         npm install
         npm run clean
         npm run build
