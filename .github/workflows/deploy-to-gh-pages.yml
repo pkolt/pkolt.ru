@@ -22,7 +22,6 @@ jobs:
 
     - name: Install and Build 🔧
       run: |
-        rm -rf ./node_modules
         npm install
         npm run clean
         npm run build
