@@ -22,9 +22,9 @@ jobs:
 
     - name: Install and Build 🔧
       run: |
-        npm ci
-        npm run clean
-        npm run build
+        yarn install
+        yarn clean
+        yarn build
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
