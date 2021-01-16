@@ -1,5 +1,5 @@
 ---
-title: Простой фонарик на Android
+title: Простой фонарик для Android
 emoji: 🔦
 tags:
   - Android
