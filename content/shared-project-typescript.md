@@ -1,6 +1,6 @@
 ---
 title: Составные проекты на TypeScript
-emoji: 🔦
+emoji: 👾
 tags:
   - TypeScript
 ---
