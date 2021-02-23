@@ -5,7 +5,10 @@ tags:
   - TypeScript
 ---
 
-В больших проектах на TypeScript код часто разделяется на независимые подпроекты. Рассмотрим возможность такого разделения в TypeScript с использованием [Project References](https://www.typescriptlang.org/docs/handbook/project-references.html).
+В больших проектах на TypeScript часто возникает необходимость отделять общий код от основного проекта.  
+Сделать это можно например с помощью [Project References](https://www.typescriptlang.org/docs/handbook/project-references.html).
+
+Рабочий пример можно посмотреть на [github](https://github.com/pkolt/example_typescript_project_references).
 
 Например в нашем проекте мы будем использовать такую структуру папок:
 
@@ -16,16 +19,6 @@ tags:
 ```
 
 ## Shared-проект
-
-### Создание shared-проекта
-
-Выполняем команды:
-
-- Создание папки проекта `mkdir shared && cd shared`
-- Инициализация npm `npm init -y`
-- Установка зависимостей `npm i -D typescript`
-- Инициализация TypeScript `npx tsc --init`
-
 ### Настройка TypeScript в shared-проекте
 
 tsconfig.json
@@ -45,29 +38,13 @@ tsconfig.json
 
 ### Общий код в shared-проекте
 
-Создадим в папке `shared` подпапку `src`, в которой будет находиться модуль `index.ts` с константными значениями.
-
-```bash
-mkdir src && cd src && touch index.ts
-```
-
-Напишем в модуле `index.ts` следующий код:
-
 ```typescript
+// shared/src/index.ts
 export const HOST = "localhost";
 export const PORT = 3000;
 ```
 
 ## Server-проект
-
-### Создание server-проекта
-
-Выполняем команды:
-
-- Создание папки проекта `mkdir server && cd server`
-- Инициализация npm `npm init -y`
-- Установка зависимостей `npm i -D typescript`
-- Инициализация TypeScript `npx tsc --init`
 
 ### Настройка TypeScript в server-проекте
 
@@ -78,8 +55,7 @@ tsconfig.json
   "compilerOptions": {
     // ...
     "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./src"
+    "rootDir": "./src"
   },
   "references": [
     {
@@ -91,16 +67,9 @@ tsconfig.json
 
 ### Подключение общего кода код в server-проекте
 
-Создадим в папке `shared` подпапку `src`, в которой будет находиться модуль `index.ts`.
-
-```bash
-mkdir src && cd src && touch index.ts
-```
-
-Напишем в модуле `index.ts` следующий код:
-
 ```typescript
-import { HOST, PORT } from '../../shared/src';
+// server/src/app.ts
+import { HOST, PORT } from '../../shared/dist';
 
 console.log(`${HOST}:${PORT}`);
 ```
@@ -116,5 +85,25 @@ npx tsc -b
 Запуск server-проекта:
 
 ```bash
-node dist/index.js
+node dist/app.js
+```
+
+## Решение проблемы с путями (ссылка на shared-проект)
+
+Импорт в server-проекте выглядит не очень красиво (`import { HOST, PORT } from '../../shared/dist'`).
+
+Для решения этой проблемы создадим промежуточный модуль `shared.ts`:
+
+```typescript
+// server/src/shared.ts
+export * from '../../shared/dist';
+```
+
+Теперь в основном модуле можно использовать более короткий путь для импорта:
+
+```typescript
+// server/src/app.ts
+import { HOST, PORT } from './shared';
+
+console.log(`${HOST}:${PORT}`);
 ```
