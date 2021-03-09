@@ -3,6 +3,7 @@ module.exports = {
     title: 'Заметки разработчика',
     description: '',
     author: 'Pavel Koltyshev',
+    siteUrl: `https://pkolt.ru`,
   },
   plugins: [
     {
@@ -17,5 +18,6 @@ module.exports = {
         showDate: true,
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 }
