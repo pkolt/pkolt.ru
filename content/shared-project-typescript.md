@@ -1,6 +1,8 @@
 ---
 title: Составные проекты на TypeScript
 emoji: 👾
+created: 2021-01-17
+modified: 2021-01-17
 tags:
   - TypeScript
 ---

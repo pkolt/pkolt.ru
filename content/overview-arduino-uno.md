@@ -1,6 +1,8 @@
 ---
 title: Обзор Arduino Uno
 emoji: 🕺🏼
+created: 2020-07-18
+modified: 2020-07-18
 tags:
   - Arduino
 ---

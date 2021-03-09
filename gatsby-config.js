@@ -8,14 +8,13 @@ module.exports = {
     {
       resolve: 'gatsby-theme-code-notes',
       options: {
-        basePath: '/',
         contentPath: 'content',
-        logo: '/img/logo.png',
-        showDescriptionInSidebar: true,
+        basePath: '/',
         gitRepoContentPath: 'https://github.com/pkolt/pkolt_site/tree/master/content/',
+        showDescriptionInSidebar: true,
         showThemeInfo: false,
-        // mdxOtherwiseConfigured: false,
-        // flexSearchEngineOptions: {},
+        logo: '/img/logo.png',
+        showDate: true,
       },
     },
   ],

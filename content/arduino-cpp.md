@@ -1,6 +1,8 @@
 ---
 title: Конструкции языка C++ в Arduino
 emoji: 🤓
+created: 2020-08-08
+modified: 2020-08-08
 tags:
   - Arduino
 ---

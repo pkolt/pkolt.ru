@@ -1,6 +1,8 @@
 ---
 title: Ошибка TypeScript "This expression is not constructable"
 emoji: 🤔
+created: 2020-08-08
+modified: 2020-08-08
 tags:
   - TypeScript
 ---
