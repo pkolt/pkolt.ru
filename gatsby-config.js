@@ -35,7 +35,13 @@ module.exports = {
         defer: false,
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        createLinkInHead: false,
+        addUncaughtPages: false,
+      },
+    },
     'gatsby-plugin-robots-txt',
   ],
 }
