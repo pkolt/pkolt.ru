@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://pkolt.ru/arduino-cpp</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/first-react-native-app</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/good-nodejs-modules</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/overview-arduino-uno</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/shared-project-typescript</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/this-expression-is-not-constructable</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/tag/android</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/tag/arduino</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/tag/java-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/tag/node-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/tag/react-native</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://pkolt.ru/tag/type-script</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-</urlset>
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://pkolt.ru/sitemap-pages.xml</loc><lastmod>2021-04-08T18:06:20.883Z</lastmod></sitemap></sitemapindex>
