@@ -10,7 +10,8 @@
     "clean": "gatsby clean",
     "dev": "gatsby develop",
     "start": "gatsby serve",
-    "check-spell": "yaspeller -e .md -f markdown -l ru ./content"
+    "check-spell": "yaspeller -e .md -f markdown -l ru ./content",
+    "check-updates": "ncu -i"
   },
   "dependencies": {
     "gatsby": "^2.28.0",
@@ -28,5 +29,8 @@
   },
   "bugs": {
     "url": "https://github.com/pkolt/pkolt_site/issues"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^11.4.1"
   }
 }
