@@ -1,8 +1,8 @@
 ---
 title: Обзор ATtiny13A
 emoji: 📻
-created: 2021-04-09
-modified: 2021-04-09
+created: 2021-04-13
+modified: 2021-04-13
 tags:
   - Microcontrollers
   - Arduino
