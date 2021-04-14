@@ -71,15 +71,15 @@ tags:
 
 ### Установка загрузчика в ATtiny13a
 
-1. Добавить поддержку ATtiny13a в Arduino IDE
-  1. Arduino -> Preferences... -> Дополнительные ссылки для менеджера плат -> Вставить `https://mcudude.github.io/MicroCore/package_MCUdude_MicroCore_index.json`
-  2. Инструменты -> Плата -> Менеджер плат -> Ввести `MicroCore` -> Установить
+1. Добавить поддержку ATtiny13a в Arduino IDE:  
+- Arduino -> Preferences... -> Дополнительные ссылки для менеджера плат -> Вставить `https://mcudude.github.io/MicroCore/package_MCUdude_MicroCore_index.json`
+- Инструменты -> Плата -> Менеджер плат -> Ввести `MicroCore` -> Установить
 2. Выбрать плату ATtiny13a (Инструменты -> Плата -> MicroCore -> ATtiny13)
-3. Настроить плату;
-  1. Инструменты -> BOD -> BOD 1.8V;
-  2. Инструменты -> EEPROM -> EEPROM retained;
-  3. Инструменты -> Clock -> 9.6 MHz internal osc.;
-  4. Инструменты -> Расчет времени -> Micros disabled;
+3. Настроить плату:  
+- Инструменты -> BOD -> BOD 1.8V;  
+- Инструменты -> EEPROM -> EEPROM retained;  
+- Инструменты -> Clock -> 9.6 MHz internal osc.;  
+- Инструменты -> Расчет времени -> Micros disabled;
 4. Выбрать программатор (Инструменты -> Программатор -> Arduino as ISP (MicroCore));
 5. Записать загрузчик (Инструменты -> Записать загрузчик);
 6. В нижней части Arduino IDE появиться надпись "Запись загрузчика завершена".
