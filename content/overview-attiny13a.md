@@ -40,6 +40,7 @@ tags:
 
 ## Прошивка ATtiny13a с помощью Arduino
 
+ATtiny13a будем прошивать через SPI. Прошивка через UART невозможна из-за отсутствия UART в микроконтроллере.
 ### Схема подключения Arduino к ATtiny13a (для прошивки)
 
 ![attiny13a bootloader](./overview-attiny13a/attiny13a_bootloader_1.jpg)
