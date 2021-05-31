@@ -57,9 +57,9 @@ Serial.println(val);
 #endif
 ```
 
-### Структура управления
+## Структура управления
 
-## if...else
+### if...else
 
 ```cpp
 if (val === 1) {
@@ -71,7 +71,7 @@ if (val === 1) {
 }
 ```
 
-## Тернарный оператор ветвления
+### Тернарный оператор ветвления
 
 <условие> ? <если истина> : <если ложь>
 
@@ -79,7 +79,7 @@ if (val === 1) {
 digitalWrite(LED_BUILTIN, isOn ? HIGH : LOW);
 ```
 
-## switch...case
+### switch...case
 
 ```cpp
 switch (value) {
@@ -95,7 +95,7 @@ switch (value) {
 }
 ```
 
-## break, continue
+### break, continue
 
 ```cpp
 for (int i = 0; i < 10; i++) {
@@ -109,7 +109,7 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-## for
+### for
 
 ```cpp
 for (int i = 0; i < 10; i++) {
@@ -117,13 +117,13 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-## while
+### while
 ```cpp
 while (condition) {
   // ...
 }
 ```
-## do...while
+### do...while
 ```cpp
 do {
   // ...
