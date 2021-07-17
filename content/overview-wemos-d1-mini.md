@@ -48,24 +48,24 @@ tags:
 
 ![Wemos D1 mini](./overview-wemos-d1-mini/wemos_d1_mini_2.jpg)
 
-| Pin | Pin ESP-8266EX | Описание                                                                         |
-|-----|----------------|----------------------------------------------------------------------------------|
-| TX  | TXD            | TXD (UART)                                                                       |
-| RX  | RXD            | RXD (UART)                                                                       |
-| A0  | A0             | Аналоговый вход, максимальное напряжение 3.2 V                                   |
-| D0  | GPIO16         | Цифровой вход/выход; В режиме глубокого сна подключается к Reset;                |
-| D1  | GPIO5          | Цифровой вход/выход; SCL (I2C)                                                   |
-| D2  | GPIO4          | Цифровой вход/выход; SDA (I2C)                                                   |
-| D3  | GPIO0          | Цифровой вход/выход; При INPUT_PULLUP подтянут 10K резистором к Vcc              |
-| D4  | GPIO2          | Цифровой вход/выход; При INPUT_PULLUP подтянут 10K резистором к Vcc; BUILTIN_LED |
-| D5  | GPIO14         | Цифровой вход/выход; SCK (SPI)                                                   |
-| D6  | GPIO12         | Цифровой вход/выход; MISO (SPI)                                                  |
-| D7  | GPIO13         | Цифровой вход/выход; MOSI (SPI)                                                  |
-| D8  | GPIO15         | Цифровой вход/выход; SS (SPI); При INPUT_PULLUP стянут 10K резистором к GND      |
-| GND | GND            | Земля                                                                            |
-| 5V  | -              | Питание 5 V                                                                      |
-| 3V3 | 3.3V           | Питание 3.3 V                                                                    |
-| RST | RST            | Сброс                                                                            |
+| Pin | Pin ESP-8266EX | Описание                                                           |
+|-----|----------------|--------------------------------------------------------------------|
+| TX  | TXD            | TXD (UART)                                                         |
+| RX  | RXD            | RXD (UART)                                                         |
+| A0  | A0             | Аналоговый вход, максимальное напряжение 3.2 V                     |
+| D0  | GPIO16         | IO (Цифровой вход/выход)                                           |
+| D1  | GPIO5          | IO / SCL (I2C)                                                     |
+| D2  | GPIO4          | IO / PWM / SDA (I2C)                                               |
+| D3  | GPIO0          | IO / При INPUT_PULLUP подтянут 10K резистором к Vcc                |
+| D4  | GPIO2          | IO / При INPUT_PULLUP подтянут 10K резистором к Vcc / BUILTIN_LED  |
+| D5  | GPIO14         | IO / PWM / SCK (SPI)                                               |
+| D6  | GPIO12         | IO / PWM / MISO (SPI)                                              |
+| D7  | GPIO13         | IO / MOSI (SPI)                                                    |
+| D8  | GPIO15         | IO / PWM / SS (SPI) / При INPUT_PULLUP стянут 10K резистором к GND |
+| GND | GND            | Земля                                                              |
+| 5V  | -              | Питание 5 V                                                        |
+| 3V3 | 3.3V           | Питание 3.3 V                                                      |
+| RST | RST            | Сброс                                                              |
 
 ![Wemos D1 mini](./overview-wemos-d1-mini/wemos_d1_mini_3.jpg)
 
