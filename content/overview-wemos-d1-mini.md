@@ -2,7 +2,7 @@
 title: Обзор Wemos D1 mini
 emoji: 🌐
 created: 2021-07-17
-modified: 2021-08-11
+modified: 2021-07-17
 tags:
   - Arduino
   - ESP8266
