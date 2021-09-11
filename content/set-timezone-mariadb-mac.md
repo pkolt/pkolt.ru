@@ -11,7 +11,7 @@ tags:
 
 Создать файлик `~/.my.cnf` для локальной настройки MariaDB с текстом (установите нужное вам значение временной зоны):
 
-```
+```ini
 [mariadb]
 
 default_time_zone = 'America/New_York'
@@ -21,7 +21,7 @@ default_time_zone = 'America/New_York'
 
 Перезапустить сервер MariaDB:
 
-```
+```bash
 brew services restart mariadb
 ```
 
