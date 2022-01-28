@@ -18,7 +18,7 @@
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-yandex-metrika": "^2.5.0",
-    "gatsby-theme-code-notes": "*",
+    "gatsby-theme-code-notes": "^2.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "yaspeller": "^7.0.0"
