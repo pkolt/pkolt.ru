@@ -14,14 +14,14 @@
     "check-updates": "ncu -i"
   },
   "dependencies": {
-    "gatsby": "^2.28.0",
-    "gatsby-plugin-advanced-sitemap": "^1.6.0",
-    "gatsby-plugin-robots-txt": "^1.5.5",
+    "gatsby": "^3.3.1",
+    "gatsby-plugin-advanced-sitemap": "^2.0.0",
+    "gatsby-plugin-robots-txt": "^1.7.0",
     "gatsby-plugin-yandex-metrika": "^2.5.0",
-    "gatsby-theme-code-notes": "^2.0.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "yaspeller": "^7.0.0"
+    "gatsby-theme-code-notes": "^2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "yaspeller": "^8.0.0"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,6 @@
     "url": "https://github.com/pkolt/pkolt_site/issues"
   },
   "devDependencies": {
-    "npm-check-updates": "^11.4.1"
+    "npm-check-updates": "^12.2.1"
   }
 }
