@@ -15,13 +15,13 @@
   },
   "dependencies": {
     "gatsby": "^3.3.1",
-    "gatsby-plugin-advanced-sitemap": "^2.0.0",
-    "gatsby-plugin-robots-txt": "^1.7.0",
+    "gatsby-plugin-advanced-sitemap": "^2.1.0",
+    "gatsby-plugin-robots-txt": "^1.7.1",
     "gatsby-plugin-yandex-metrika": "^2.5.0",
     "gatsby-theme-code-notes": "*",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "yaspeller": "^8.0.0"
+    "yaspeller": "^8.0.1"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,6 @@
     "url": "https://github.com/pkolt/pkolt_site/issues"
   },
   "devDependencies": {
-    "npm-check-updates": "^12.2.1"
+    "npm-check-updates": "^13.0.3"
   }
 }
