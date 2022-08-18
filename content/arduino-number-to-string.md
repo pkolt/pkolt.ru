@@ -75,8 +75,16 @@ sprintf(buffer, "%s C, %s mmHg", str_temperature, str_pressure); " 24.75 C, 733.
 
 Но если вы используете PlatformIO или что-то подобное, то можете просто добавить нужные флаги и включить полную поддержку вещественных чисел в sprintf().
 
-```bash
--Wl,-u,vfprintf -lprintf_flt -lm
+```ini
+# platformio.ini
+[env]
+build_flags = -lprintf_flt
+```
+
+```c
+// Вывод вещественного числа
+float val = 56.45;
+Serial.printf("val: %0.2f\n", val);
 ```
 
 ### Решение 3. Преобразуем с помощью sprintf() + %d.%d
