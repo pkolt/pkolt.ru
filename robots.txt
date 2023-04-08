@@ -1,4 +1,5 @@
-User-agent: *
+User-Agent: *
 Allow: /
-Sitemap: https://pkolt.ru/sitemap/sitemap-index.xml
+
 Host: https://pkolt.ru
+Sitemap: https://pkolt.ru/sitemap.xml
