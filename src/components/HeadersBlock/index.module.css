@@ -1,13 +1,8 @@
-.container {
-  display: inline-flex;
-  gap: var(--gap-1);
-}
-
-.container:hover a {
+.container:hover .link {
   visibility: visible;
 }
 
-.container a {
+.container .link {
   visibility: hidden;
   position: relative;
   color: var(--color-gray-4) !important;
@@ -15,8 +10,9 @@
   padding: 0.1rem 0.3rem;
   border-radius: var(--border-radius-1);
   transform: scale(1.2);
+  margin-left: var(--gap-1);
 }
 
-.container a:hover {
+.container .link:hover {
   background: var(--color-gray-1);
 }
