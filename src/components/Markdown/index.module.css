@@ -1,0 +1,97 @@
+.container {
+  font-size: var(--font-size-2);
+}
+
+.container > * {
+  margin: var(--gap-2) 0;
+}
+
+.container :is(p, li) {
+  line-height: 1.4;
+}
+
+/* Image */
+.container * img {
+  object-fit: contain;
+  object-position: left;
+}
+
+/* Link */
+.container a:link {
+  color: var(--color-link);
+}
+
+.container a:visited {
+  color: var(--color-link-visited);
+}
+
+.container a:hover {
+  color: var(--color-link-hover);
+}
+
+.container a:active {
+  color: var(--color-link-active);
+}
+
+/* Headers */
+.container :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--gap-3);
+  font-weight: var(--font-weight-bold);
+}
+
+.container h1 {
+  font-size: var(--font-size-5);
+}
+
+.container h2 {
+  font-size: var(--font-size-4);
+}
+
+.container h3 {
+  font-size: var(--font-size-3);
+}
+
+.container h4 {
+  font-size: var(--font-size-2);
+}
+
+.container h5 {
+  font-size: var(--font-size-2);
+  color: var(--color-gray-5);
+}
+
+.container h6 {
+  font-size: var(--font-size-2);
+}
+
+/*  Code block */
+.container pre:has(> code) {
+  margin: var(--gap-3) 0;
+}
+
+/* Table */
+.container th {
+  font-weight: var(--font-weight-bold);
+}
+
+.container table {
+  border-collapse: collapse;
+}
+
+.container :is(td, th) {
+  padding: var(--gap-1);
+  border: 1px solid var(--color-gray-2);
+}
+
+.container tbody tr:nth-child(odd) {
+  background: var(--color-gray-1);
+}
+
+/* List */
+.container :is(ul, ol) {
+  padding-left: var(--gap-2);
+}
+
+.container ul ::marker {
+  color: var(--color-blue-2);
+}

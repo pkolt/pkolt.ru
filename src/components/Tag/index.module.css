@@ -1,0 +1,17 @@
+.container {
+  list-style: none;
+  font-size: var(--font-size-0);
+  background: var(--color-gray-2);
+  border-radius: var(--border-radius-3);
+  padding: var(--gap-1);
+  white-space: nowrap;
+  opacity: 0.5;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.selected {
+  opacity: 1;
+}

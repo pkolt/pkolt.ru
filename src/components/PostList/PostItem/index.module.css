@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  gap: var(--gap-2);
+  align-items: center;
+  padding: var(--gap-1) var(--gap-2);
+  transition: background ease 400ms;
+  border-radius: var(--border-radius-2);
+  text-decoration: none;
+}
+
+.container:hover {
+  background: var(--color-primary);
+  transition: background ease 400ms;
+}
+
+.title {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-bold);
+}
+
+.tagList {
+  margin-left: auto;
+}

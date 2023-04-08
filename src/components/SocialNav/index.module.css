@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-2);
+}
+
+.container svg {
+  --size: 24px;
+  width: var(--size);
+  height: var(--size);
+}
+
+.github {
+  color: #000 !important;
+}
+
+.twitter {
+  color: #1da1f2 !important;
+}
+
+.linkedin {
+  color: #0072b1 !important;
+}

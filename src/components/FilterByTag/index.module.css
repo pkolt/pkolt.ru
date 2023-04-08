@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-1);
+  flex-wrap: wrap;
+}
+
+.tag {
+  list-style: none;
+}

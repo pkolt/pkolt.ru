@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 5rem auto 4rem;
+}
+
+.header {
+  background: linear-gradient(0deg, var(--color-primary), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--gap-2);
+}
+
+.header > * {
+  flex: 1;
+}
+
+.footer {
+  background: var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

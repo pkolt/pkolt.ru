@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 25%;
+  padding: var(--gap-3);
+}
+
+.main {
+  flex: 1;
+  padding: var(--gap-3);
+}

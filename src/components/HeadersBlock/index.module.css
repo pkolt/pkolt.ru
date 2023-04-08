@@ -1,0 +1,22 @@
+.container {
+  display: inline-flex;
+  gap: var(--gap-1);
+}
+
+.container:hover a {
+  visibility: visible;
+}
+
+.container a {
+  visibility: hidden;
+  position: relative;
+  color: var(--color-gray-4) !important;
+  text-decoration: none;
+  padding: 0.1rem 0.3rem;
+  border-radius: var(--border-radius-1);
+  transform: scale(1.2);
+}
+
+.container a:hover {
+  background: var(--color-gray-1);
+}
