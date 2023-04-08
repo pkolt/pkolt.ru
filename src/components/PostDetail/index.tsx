@@ -10,7 +10,7 @@ interface PostDetailProps {
 
 export const PostDetail: React.FC<PostDetailProps> = ({ post }) => {
   return (
-    <main className={styles.main}>
+    <main className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.postInfo}>
