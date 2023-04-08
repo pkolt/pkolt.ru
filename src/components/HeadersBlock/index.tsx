@@ -12,7 +12,9 @@ const createHeaderBlock = (elemType: HeaderType) => {
     const elemChildren = (
       <>
         {children}
-        <a href={`#${id}`} className={styles.link}>#</a>
+        <a href={`#${id}`} className={styles.link}>
+          #
+        </a>
       </>
     );
     return createElement(elemType, props, elemChildren);

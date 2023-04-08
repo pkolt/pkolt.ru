@@ -20,8 +20,7 @@ export default function icon() {
           justifyContent: 'center',
           color: 'white',
           borderRadius: '50%',
-        }}
-      >
+        }}>
         P
       </div>
     ),
