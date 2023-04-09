@@ -1,11 +1,12 @@
 .container {
   display: flex;
-  gap: var(--gap-2);
+  gap: var(--gap-1);
   align-items: center;
   padding: var(--gap-1) var(--gap-2);
   transition: background ease 400ms;
   border-radius: var(--border-radius-2);
   text-decoration: none;
+  flex-wrap: wrap;
 }
 
 .container:hover {
@@ -16,8 +17,36 @@
 .title {
   font-size: var(--font-size-2);
   font-weight: var(--font-weight-bold);
+  width: 100%;
+  order: 2;
+}
+
+.date {
+  order: 1;
 }
 
 .tagList {
-  margin-left: auto;
+  order: 2;
+}
+
+/** desktop */
+@media (min-width: 1024px) {
+  .container {
+    flex-wrap: initial;
+    gap: var(--gap-2);
+  }
+
+  .title {
+    width: initial;
+    order: initial;
+  }
+
+  .date {
+    order: initial;
+  }
+
+  .tagList {
+    margin-left: auto;
+    order: initial;
+  }
 }
