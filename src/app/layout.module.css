@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 100vw;
   grid-template-rows: 5rem 1fr 4rem;
 }
 
