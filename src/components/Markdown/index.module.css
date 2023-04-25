@@ -11,10 +11,15 @@
 }
 
 /* Image */
-.container * :is(img, video, iframe) {
+.container * img {
   max-inline-size: 100%;
   block-size: auto;
   object-fit: contain;
+}
+
+/* Video */
+.container * :is(video, iframe) {
+  max-inline-size: 100%;
 }
 
 /* Link */

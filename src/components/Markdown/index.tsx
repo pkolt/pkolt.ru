@@ -2,6 +2,7 @@ import Image, { ImageProps } from 'next/image';
 import cn from 'classnames';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkYoutube from 'remark-youtube';
 import styles from './index.module.css';
 import { CodeBlock } from '../CodeBlock';
 import { HeadersBlock } from '../HeadersBlock';
@@ -29,7 +30,7 @@ export const Markdown: React.FC<MarkdownProps> = ({ children }) => {
   return (
     <ReactMarkdown
       className={cn(styles.container, 'markdown-body')}
-      remarkPlugins={[remarkGfm]}
+      remarkPlugins={[remarkGfm, remarkYoutube]}
       components={components}>
       {children ?? ''}
     </ReactMarkdown>
