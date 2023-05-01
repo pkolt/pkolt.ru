@@ -1,80 +1,71 @@
-@keyframes logo-go-in {
+@keyframes walking {
   0% {
     transform: translate(100%, 0%) rotate(-2deg);
   }
-  10% {
+  3% {
     transform: translate(90%, 5%) rotate(2deg);
   }
-  20% {
+  6% {
     transform: translate(80%, 0%) rotate(-2deg);
   }
-  30% {
+  9% {
     transform: translate(70%, 7%) rotate(2deg);
   }
-  40% {
+  12% {
     transform: translate(60%, 0%) rotate(-2deg);
   }
-  50% {
+  15% {
     transform: translate(50%, 5%) rotate(2deg);
   }
-  60% {
+  18% {
     transform: translate(40%, 0%) rotate(-2deg);
   }
-  70% {
+  21% {
     transform: translate(30%, 7%) rotate(2deg);
   }
-  80% {
+  24% {
     transform: translate(20%, 0%) rotate(-2deg);
   }
-  90% {
+  27% {
     transform: translate(10%, 5%) rotate(2deg);
   }
-  100% {
+  30%,
+  70% {
     transform: translate(0%, 0%) rotate(0deg);
   }
-}
-
-@keyframes logo-go-out {
-  0% {
+  70% {
     transform: translate(0%, 0%) rotate(-2deg);
   }
-  10% {
+  73% {
     transform: translate(-10%, 5%) rotate(2deg);
   }
-  20% {
+  76% {
     transform: translate(-20%, 0%) rotate(-2deg);
   }
-  30% {
+  79% {
     transform: translate(-30%, 7%) rotate(2deg);
   }
-  40% {
+  82% {
     transform: translate(-40%, 0%) rotate(-2deg);
   }
-  50% {
+  85% {
     transform: translate(-50%, 5%) rotate(2deg);
   }
-  60% {
+  88% {
     transform: translate(-60%, 0%) rotate(-2deg);
   }
-  70% {
+  91% {
     transform: translate(-70%, 7%) rotate(2deg);
   }
-  80% {
+  94% {
     transform: translate(-80%, 0%) rotate(-2deg);
   }
-  90% {
+  97% {
     transform: translate(-90%, 5%) rotate(2deg);
   }
   100% {
     transform: translate(-100%, 0%) rotate(0deg);
   }
-}
-
-.container,
-.container svg {
-  --size: 50px;
-  height: var(--size);
-  width: var(--size);
 }
 
 .container {
@@ -87,12 +78,12 @@
 }
 
 .container svg {
-  animation: logo-go-in 2s linear;
   filter: saturate(150%);
-  transform-origin: bottom center;
-  transform: scale(1);
-}
-
-.container:hover svg {
-  animation: logo-go-out 2s linear forwards;
+  transform: translate(100%, 0%);
+  animation-name: walking;
+  animation-duration: 7s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
