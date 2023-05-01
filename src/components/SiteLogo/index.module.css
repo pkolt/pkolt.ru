@@ -1,0 +1,89 @@
+@keyframes walking {
+  0% {
+    transform: translate(100%, 0%) rotate(-2deg);
+  }
+  3% {
+    transform: translate(90%, 5%) rotate(2deg);
+  }
+  6% {
+    transform: translate(80%, 0%) rotate(-2deg);
+  }
+  9% {
+    transform: translate(70%, 7%) rotate(2deg);
+  }
+  12% {
+    transform: translate(60%, 0%) rotate(-2deg);
+  }
+  15% {
+    transform: translate(50%, 5%) rotate(2deg);
+  }
+  18% {
+    transform: translate(40%, 0%) rotate(-2deg);
+  }
+  21% {
+    transform: translate(30%, 7%) rotate(2deg);
+  }
+  24% {
+    transform: translate(20%, 0%) rotate(-2deg);
+  }
+  27% {
+    transform: translate(10%, 5%) rotate(2deg);
+  }
+  30%,
+  70% {
+    transform: translate(0%, 0%) rotate(0deg);
+  }
+  70% {
+    transform: translate(0%, 0%) rotate(-2deg);
+  }
+  73% {
+    transform: translate(-10%, 5%) rotate(2deg);
+  }
+  76% {
+    transform: translate(-20%, 0%) rotate(-2deg);
+  }
+  79% {
+    transform: translate(-30%, 7%) rotate(2deg);
+  }
+  82% {
+    transform: translate(-40%, 0%) rotate(-2deg);
+  }
+  85% {
+    transform: translate(-50%, 5%) rotate(2deg);
+  }
+  88% {
+    transform: translate(-60%, 0%) rotate(-2deg);
+  }
+  91% {
+    transform: translate(-70%, 7%) rotate(2deg);
+  }
+  94% {
+    transform: translate(-80%, 0%) rotate(-2deg);
+  }
+  97% {
+    transform: translate(-90%, 5%) rotate(2deg);
+  }
+  100% {
+    transform: translate(-100%, 0%) rotate(0deg);
+  }
+}
+
+.container {
+  border-radius: 50%;
+  overflow: hidden;
+  grid-row: auto / span 2;
+  margin-right: var(--gap-2);
+  background: #fff;
+  z-index: 1; /* bug safari overflow animation */
+}
+
+.container svg {
+  filter: saturate(150%);
+  transform: translate(100%, 0%);
+  animation-name: walking;
+  animation-duration: 7s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}

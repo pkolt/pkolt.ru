@@ -6,6 +6,7 @@ const nextConfig = {
     appDir: true,
   },
   webpack(config) {
+    // Support SVG (aviable )
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
@@ -13,7 +14,6 @@ const nextConfig = {
     return config;
   },
   output: 'export',
-  images: { unoptimized: true },
 };
 
 module.exports = nextConfig;

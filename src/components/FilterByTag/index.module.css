@@ -3,8 +3,16 @@
   flex-direction: row;
   gap: var(--gap-1);
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .tag {
   list-style: none;
+}
+
+/** desktop */
+@media (min-width: 1024px) {
+  .container {
+    justify-content: initial;
+  }
 }

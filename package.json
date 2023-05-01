@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --check src",
-    "format:fix": "prettier --write src"
+    "format-fix": "prettier --write src"
   },
   "dependencies": {
     "@types/node": "^18.11.9",
