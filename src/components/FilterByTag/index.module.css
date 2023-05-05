@@ -9,10 +9,3 @@
 .tag {
   list-style: none;
 }
-
-/** desktop */
-@media (min-width: 1024px) {
-  .container {
-    justify-content: initial;
-  }
-}
