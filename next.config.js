@@ -14,6 +14,10 @@ const nextConfig = {
     return config;
   },
   output: 'export',
+  images: {
+    // Error: Image Optimization using the default loader is not compatible with `{ output: 'export' }`.
+    unoptimized: true,
+  }
 };
 
 module.exports = nextConfig;
