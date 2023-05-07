@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SiteLogo } from '../SiteLogo';
+import { SiteLogo } from '@/components/SiteLogo';
 import styles from './index.module.css';
 
 export const SiteName: React.FC = () => {

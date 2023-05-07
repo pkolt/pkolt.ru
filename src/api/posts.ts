@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { DateTime } from 'luxon';
 import matter from 'gray-matter';
-import { Post } from '../types/post';
+import { Post } from '@/types/post';
 
 const postsDirectory = path.resolve('content', 'posts');
 const patternMarkdown = /\.md$/;

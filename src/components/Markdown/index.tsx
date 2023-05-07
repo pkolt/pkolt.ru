@@ -4,8 +4,8 @@ import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkYoutube from 'remark-youtube';
 import styles from './index.module.css';
-import { CodeBlock } from '../CodeBlock';
-import { HeadersBlock } from '../HeadersBlock';
+import { CodeBlock } from '@/components/CodeBlock';
+import { HeadersBlock } from '@/components/HeadersBlock';
 
 const ResponsiveImage: React.FC<ImageProps> = ({ src, alt }) => {
   return <Image src={src} alt={alt} width={650} height={350} />;

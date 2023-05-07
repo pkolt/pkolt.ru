@@ -1,17 +1,15 @@
-import { Tag } from '../Tag';
+import { Tag } from '@/components/Tag';
 import styles from './index.module.css';
 
 interface FilterByTagProps {
-  selectedTag?: string;
-  onSelectTag: (tag?: string) => void;
   tags: string[];
 }
 
-export const FilterByTag: React.FC<FilterByTagProps> = ({ tags, selectedTag, onSelectTag }) => {
+export const FilterByTag: React.FC<FilterByTagProps> = ({ tags }) => {
   return (
     <ul className={styles.container}>
       {tags.map((tag) => (
-        <Tag key={tag} text={tag} selected={tag === selectedTag} onSelect={onSelectTag} />
+        <Tag key={tag} text={tag} allowFilter />
       ))}
     </ul>
   );

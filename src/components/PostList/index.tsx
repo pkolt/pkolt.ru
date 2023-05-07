@@ -1,20 +1,22 @@
+'use client';
 import { useMemo } from 'react';
-import { Post } from '../../types/post';
+import { Post } from '@/types/post';
 import { PostItem } from './PostItem';
 import styles from './index.module.css';
+import { useFilterStore } from '@/store/filter';
 
 interface PostListProps {
   posts: Post[];
-  selectedTag?: string;
 }
 
-export const PostList: React.FC<PostListProps> = ({ posts, selectedTag }) => {
+export const PostList: React.FC<PostListProps> = ({ posts }) => {
+  const { tag } = useFilterStore();
   const filteredPosts = useMemo(() => {
-    if (selectedTag) {
-      return posts.filter((post) => post.tags.includes(selectedTag));
+    if (tag) {
+      return posts.filter((post) => post.tags.includes(tag));
     }
     return posts;
-  }, [posts, selectedTag]);
+  }, [posts, tag]);
 
   return (
     <section className={styles.container}>

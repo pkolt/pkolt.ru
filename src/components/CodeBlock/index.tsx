@@ -1,11 +1,10 @@
-'use client';
 import cn from 'classnames';
 import hljs from 'highlight.js';
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import 'highlight.js/styles/github.css';
 import styles from './index.module.css';
-import { copyTextToClipboard } from '../../utils/copyTextToClipboard';
-import { fontJetBrainsMono } from '../../fonts';
+import { fontJetBrainsMono } from '@/fonts';
+import { CopyButton } from './CopyButton';
 
 interface CodeBlockProps {
   children: string;
@@ -13,23 +12,14 @@ interface CodeBlockProps {
 }
 
 export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className }) => {
-  const [copied, setCopied] = useState(false);
   const language = useMemo(() => className?.match(/^language-(?<name>\w+)/)?.groups?.name, [className]);
-  const textCode = useMemo(() => String(children), [children]);
+  const content = useMemo(() => String(children), [children]);
   const html = useMemo(() => {
     if (language) {
-      return hljs.highlight(textCode, { language }).value;
+      return hljs.highlight(content, { language }).value;
     }
     return children;
-  }, [children, language, textCode]);
-
-  const onCopy = useCallback(async () => {
-    const result = await copyTextToClipboard(textCode);
-    if (result) {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  }, [textCode]);
+  }, [children, language, content]);
 
   if (!language) {
     return <code className={cn(className, styles.codeInline, fontJetBrainsMono.className)}>{children}</code>;
@@ -38,9 +28,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className }) => 
   return (
     <div className={styles.codeBlock}>
       <div className={styles.lang}>{language}</div>
-      <button className={styles.copy} onClick={onCopy}>
-        {copied ? 'Copied' : 'Copy'}
-      </button>
+      <CopyButton className={styles.copy} content={content} />
       <code className={cn(className, fontJetBrainsMono.className)} dangerouslySetInnerHTML={{ __html: html }}></code>
     </div>
   );

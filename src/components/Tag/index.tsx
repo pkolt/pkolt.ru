@@ -1,24 +1,27 @@
+'use client';
 import cn from 'classnames';
-import { useMemo } from 'react';
-import { getColorFromString } from '../../utils/getColorFromString';
+import { useCallback } from 'react';
+import { getColorFromString } from '@/utils/getColorFromString';
 import styles from './index.module.css';
+import { useFilterStore } from '@/store/filter';
 
 interface TagProps {
   text: string;
-  selected?: boolean;
-  onSelect?: (tag?: string) => void;
+  allowFilter?: boolean;
 }
 
-export const Tag: React.FC<TagProps> = ({ text, selected = true, onSelect }) => {
+export const Tag: React.FC<TagProps> = ({ text, allowFilter }) => {
   const color = getColorFromString(text);
-  const handleSelect = useMemo(() => {
-    if (onSelect) {
-      return () => onSelect(selected ? undefined : text);
+  const { tag, setTag } = useFilterStore();
+  const selected = text === tag;
+  const handleSelect = useCallback(() => {
+    if (allowFilter) {
+      setTag(text);
     }
-  }, [onSelect, selected, text]);
+  }, [allowFilter, setTag, text]);
   return (
     <li
-      className={cn(styles.container, selected && styles.selected, !!handleSelect && styles.cursor)}
+      className={cn(styles.container, (selected || !allowFilter) && styles.selected, allowFilter && styles.cursor)}
       style={{ background: color }}
       onClick={handleSelect}
       role="button">
