@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    margin: var(--gap-3) var(--gap-2);
+  }
+  
+  .main {
+    flex: 1;
+  }
+  
+  /** desktop */
+  @media (min-width: 1024px) {
+    .container {
+      flex-direction: row;
+      margin: var(--gap-3);
+    }
+  
+    .sidebar {
+      width: 25%;
+    }
+  }
+  
