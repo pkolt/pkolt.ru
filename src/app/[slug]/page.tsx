@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getPostDetail, getPostSlugs } from '../../api/posts';
-import { PostDetail } from '../../components/PostDetail';
+import { PostDetail } from '../../pages/PostDetail';
 
 interface PageProps {
   params: {

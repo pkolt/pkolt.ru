@@ -1,5 +1,5 @@
 import { getPostList, getTags } from '../api/posts';
-import { Home } from '../components/Home';
+import { Home } from '../pages/Home';
 
 const HomePage: React.FC = () => {
   const posts = getPostList();

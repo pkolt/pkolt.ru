@@ -1,8 +1,8 @@
 import { Post } from '../../types/post';
 import styles from './index.module.css';
-import { Markdown } from '../Markdown';
-import { TagList } from '../TagList';
-import { PostDate } from '../PostDate';
+import { Markdown } from '../../components/Markdown';
+import { TagList } from '../../components/TagList';
+import { PostDate } from '../../components/PostDate';
 
 interface PostDetailProps {
   post: Post;

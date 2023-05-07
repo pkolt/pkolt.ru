@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Post } from '../../types/post';
-import { PostList } from '../PostList';
-import { FilterByTag } from '../FilterByTag';
+import { PostList } from '../../components/PostList';
+import { FilterByTag } from '../../components/FilterByTag';
 import styles from './index.module.css';
 
 interface HomeProps {
