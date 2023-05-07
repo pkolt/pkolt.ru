@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Copyright } from '../components/Copyright';
-import { Navigation } from '../components/Navigation';
-import { SiteName } from '../components/SiteName';
-import { SocialNav } from '../components/SocialNav';
-import { fontOpenSans } from '../fonts';
-import '../styles/globals.css';
+import { Copyright } from '@/components/Copyright';
+import { Navigation } from '@/components/Navigation';
+import { SiteName } from '@/components/SiteName';
+import { SocialNav } from '@/components/SocialNav';
+import { fontOpenSans } from '@/fonts';
+import '@/styles/globals.css';
 import styles from './layout.module.css';
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
-import { getPostList, getTags } from '../api/posts';
-import { PostList } from '../components/PostList';
-import { FilterByTag } from '../components/FilterByTag';
+import { getPostList, getTags } from '@/api/posts';
+import { PostList } from '@/components/PostList';
+import { FilterByTag } from '@/components/FilterByTag';
 import styles from './page.module.css';
 
 const HomePage: React.FC = () => {

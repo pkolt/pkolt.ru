@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
-import { getPostList } from '../api/posts';
-import { SITE_URL } from '../constants';
+import { getPostList } from '@/api/posts';
+import { SITE_URL } from '@/constants';
 
 const sitemap = (): MetadataRoute.Sitemap => {
   const posts = getPostList().map((it) => ({

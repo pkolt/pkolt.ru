@@ -3,7 +3,7 @@ import hljs from 'highlight.js';
 import { useMemo } from 'react';
 import 'highlight.js/styles/github.css';
 import styles from './index.module.css';
-import { fontJetBrainsMono } from '../../fonts';
+import { fontJetBrainsMono } from '@/fonts';
 import { CopyButton } from './CopyButton';
 
 interface CodeBlockProps {

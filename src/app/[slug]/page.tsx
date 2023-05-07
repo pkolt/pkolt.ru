@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { getPostDetail, getPostSlugs } from '../../api/posts';
+import { getPostDetail, getPostSlugs } from '@/api/posts';
 import styles from './page.module.css';
-import { Markdown } from '../../components/Markdown';
-import { TagList } from '../../components/TagList';
-import { PostDate } from '../../components/PostDate';
+import { Markdown } from '@/components/Markdown';
+import { TagList } from '@/components/TagList';
+import { PostDate } from '@/components/PostDate';
 
 interface PageProps {
   params: {

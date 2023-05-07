@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { Tag } from '../Tag';
+import { Tag } from '@/components/Tag';
 import styles from './index.module.css';
 
 interface TagListProps {

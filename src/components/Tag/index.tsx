@@ -1,9 +1,9 @@
 'use client';
 import cn from 'classnames';
 import { useCallback } from 'react';
-import { getColorFromString } from '../../utils/getColorFromString';
+import { getColorFromString } from '@/utils/getColorFromString';
 import styles from './index.module.css';
-import { useFilterStore } from '../../store/filter';
+import { useFilterStore } from '@/store/filter';
 
 interface TagProps {
   text: string;

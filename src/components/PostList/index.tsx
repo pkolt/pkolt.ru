@@ -1,9 +1,9 @@
 'use client';
 import { useMemo } from 'react';
-import { Post } from '../../types/post';
+import { Post } from '@/types/post';
 import { PostItem } from './PostItem';
 import styles from './index.module.css';
-import { useFilterStore } from '../../store/filter';
+import { useFilterStore } from '@/store/filter';
 
 interface PostListProps {
   posts: Post[];
