@@ -4,6 +4,15 @@ import { DateTime } from 'luxon';
 import matter from 'gray-matter';
 import { Post } from '@/types/post';
 
+const isExistFile = (filePath: string): boolean => {
+  try {
+    fs.accessSync(filePath, fs.constants.F_OK);
+  } catch (err) {
+    return false;
+  }
+  return true;
+};
+
 const postsDirectory = path.resolve('content', 'posts');
 const patternMarkdown = /\.md$/;
 
@@ -14,9 +23,12 @@ export const getPostSlugs = (): string[] => {
     .map((name) => name.replace(patternMarkdown, ''));
 };
 
-const getPostBySlug = (slug: string, opts: { content?: boolean } = {}): Post => {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+const getPostBySlug = (slug: string, opts: { content?: boolean } = {}): Post | null => {
+  const filePath = path.join(postsDirectory, `${slug}.md`);
+  if (!isExistFile(filePath)) {
+    return null;
+  }
+  const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
   const created = DateTime.fromJSDate(data.created).toISO();
   const modified = DateTime.fromJSDate(data.modified).toISO();
@@ -37,12 +49,18 @@ const getPostBySlug = (slug: string, opts: { content?: boolean } = {}): Post => 
 };
 
 export const getPostList = (): Post[] => {
+  const posts: Post[] = [];
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (DateTime.fromISO(post1.created) > DateTime.fromISO(post2.created) ? -1 : 1));
-  return posts;
+  slugs.forEach((slug) => {
+    const post = getPostBySlug(slug);
+    if (post) {
+      posts.push(post);
+    }
+  });
+  const orderedPosts = posts.sort((post1, post2) =>
+    DateTime.fromISO(post1.created) > DateTime.fromISO(post2.created) ? -1 : 1,
+  );
+  return orderedPosts;
 };
 
 export const getPostDetail = (slug: string) => {
