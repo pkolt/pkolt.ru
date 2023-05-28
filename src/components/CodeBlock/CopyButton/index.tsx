@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { copyTextToClipboard } from '@/utils/copyTextToClipboard';
+import { copyTextToClipboard } from '@/utils/copy-text-to-clipboard';
 
 interface CopyButtonProps {
   content: string;

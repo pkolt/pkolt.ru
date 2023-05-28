@@ -1,0 +1,16 @@
+ls:
+  src:
+    .dir: lowercase
+    .tsx: kebab-case
+    .ts: kebab-case
+    .d.ts: kebab-case
+    .css: regex:[a-z]+.module | lowercase
+
+  src/components/*:
+    .dir: PascalCase
+
+ignore:
+  - .next
+  - .vscode
+  - out
+  - node_modules
