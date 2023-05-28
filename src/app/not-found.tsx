@@ -1,4 +1,9 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: 'Страница не найдена (404)',
+  };
 
 const NotFound: React.FC = () => {
   return (
