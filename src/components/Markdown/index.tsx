@@ -1,11 +1,10 @@
 import Image, { ImageProps } from 'next/image';
-import cn from 'classnames';
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkYoutube from 'remark-youtube';
-import styles from './index.module.css';
 import { CodeBlock } from '@/components/CodeBlock';
 import { HeadersBlock } from '@/components/HeadersBlock';
+import { Typography } from '@/components/Typography';
 
 const ResponsiveImage: React.FC<ImageProps> = ({ src, alt }) => {
   return <Image src={src} alt={alt} width={650} height={350} />;
@@ -28,11 +27,10 @@ interface MarkdownProps {
 
 export const Markdown: React.FC<MarkdownProps> = ({ children }) => {
   return (
-    <ReactMarkdown
-      className={cn(styles.container, 'markdown-body')}
-      remarkPlugins={[remarkGfm, remarkYoutube]}
-      components={components}>
-      {children ?? ''}
-    </ReactMarkdown>
+    <Typography>
+      <ReactMarkdown className="markdown-body" remarkPlugins={[remarkGfm, remarkYoutube]} components={components}>
+        {children ?? ''}
+      </ReactMarkdown>
+    </Typography>
   );
 };

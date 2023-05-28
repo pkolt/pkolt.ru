@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { getPostDetail, getPostSlugs } from '@/api/posts';
 import styles from './page.module.css';
 import { Markdown } from '@/components/Markdown';
@@ -13,6 +14,9 @@ interface PageProps {
 
 export const generateMetadata = ({ params: { slug } }: PageProps): Metadata => {
   const post = getPostDetail(slug);
+  if (!post) {
+    notFound();
+  }
   return { title: post.title, keywords: post.tags.join(', ') };
 };
 
@@ -23,8 +27,11 @@ export const generateStaticParams = () => {
 
 const PostPage: React.FC<PageProps> = ({ params: { slug } }) => {
   const post = getPostDetail(slug);
+  if (!post) {
+    notFound();
+  }
   return (
-    <main className={styles.container}>
+    <>
       <header className={styles.header}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.postInfo}>
@@ -33,7 +40,7 @@ const PostPage: React.FC<PageProps> = ({ params: { slug } }) => {
         </div>
       </header>
       <Markdown>{post.content}</Markdown>
-    </main>
+    </>
   );
 };
 

@@ -2,8 +2,12 @@
   font-size: var(--font-size-2);
 }
 
-.container > * {
+.container :is(p, ul, ol, h1, h2, h3, h4, h5, h6, table, pre) {
   margin: var(--gap-2) 0;
+}
+
+.container :first-child {
+  margin-top: 0;
 }
 
 .container :is(p, li) {
