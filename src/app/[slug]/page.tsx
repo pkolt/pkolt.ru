@@ -31,7 +31,7 @@ const PostPage: React.FC<PageProps> = ({ params: { slug } }) => {
     notFound();
   }
   return (
-    <main className={styles.container}>
+    <>
       <header className={styles.header}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.postInfo}>
@@ -40,7 +40,7 @@ const PostPage: React.FC<PageProps> = ({ params: { slug } }) => {
         </div>
       </header>
       <Markdown>{post.content}</Markdown>
-    </main>
+    </>
   );
 };
 

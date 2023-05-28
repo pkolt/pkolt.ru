@@ -6,6 +6,10 @@
   margin: var(--gap-2) 0;
 }
 
+.container :first-child {
+  margin-top: 0;
+}
+
 .container :is(p, li) {
   line-height: 1.4;
 }
