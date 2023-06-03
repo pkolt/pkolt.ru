@@ -14,7 +14,8 @@
     "ls-lint": "ls-lint",
     "format": "prettier --check src",
     "format-fix": "prettier --write src",
-    "lint-all": "npm run lint && npm run ls-lint && npm run format",
+    "knip": "knip",
+    "lint-all": "npm run lint && npm run ls-lint && npm run format && npm run knip",
     "prepare": "husky install",
     "pre-commit": "npm run lint-all"
   },
@@ -45,6 +46,7 @@
     "@types/color-hash": "^1.0.2",
     "@types/luxon": "^3.2.0",
     "husky": "^8.0.0",
+    "knip": "^2.13.0",
     "prettier": "^2.7.1",
     "typescript": "^5.0.4"
   }
