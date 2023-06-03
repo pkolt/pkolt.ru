@@ -47,6 +47,7 @@
 .container :is(h1, h2, h3, h4, h5, h6) {
   margin-top: var(--gap-3);
   font-weight: var(--font-weight-bold);
+  text-wrap: balance;
 }
 
 .container h1 {
