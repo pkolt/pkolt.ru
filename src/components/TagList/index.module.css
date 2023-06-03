@@ -1,4 +1,12 @@
 .tagList {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--gap-1);
+}
+
+/** desktop */
+@media (min-width: 1024px) {
+  .tagList {
+    flex-wrap: nowrap;
+  }
 }
