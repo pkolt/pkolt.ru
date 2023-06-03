@@ -15,7 +15,9 @@
     "format": "prettier --check src",
     "format-fix": "prettier --write src",
     "knip": "knip",
-    "lint-all": "npm run lint && npm run ls-lint && npm run format && npm run knip",
+    "stylelint": "stylelint 'src/**/*.css'",
+    "stylelint-fix": "stylelint --fix 'src/**/*.css'",
+    "lint-all": "npm run lint && npm run ls-lint && npm run format && npm run knip && npm run stylelint",
     "prepare": "husky install",
     "pre-commit": "npm run lint-all"
   },
@@ -48,6 +50,8 @@
     "husky": "^8.0.0",
     "knip": "^2.13.0",
     "prettier": "^2.7.1",
+    "stylelint": "^15.6.3",
+    "stylelint-config-standard": "^33.0.0",
     "typescript": "^5.0.4"
   }
 }

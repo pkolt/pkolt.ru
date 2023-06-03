@@ -1,8 +1,4 @@
-.container:hover .link {
-  visibility: visible;
-}
-
-.container .link {
+.link {
   visibility: hidden;
   position: relative;
   color: var(--color-gray-4) !important;
@@ -13,6 +9,10 @@
   margin-left: var(--gap-1);
 }
 
-.container .link:hover {
+.link:hover {
   background: var(--color-gray-1);
+}
+
+.container:hover .link {
+  visibility: visible;
 }
