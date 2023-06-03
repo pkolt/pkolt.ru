@@ -3,11 +3,7 @@ title: How to add a YouTube player to your website using Markdown?
 created: 2023-05-29
 modified: 2023-05-29
 tags:
-  - youtube
-  - remark
-  - markdown
-  - React
-  - Node.js
+  - Open Source
 ---
 
 Markdown is an excellent markup language for creating blogs and writing articles. However, sometimes it is necessary to embed videos on a website. There is a great npm package that will help you embed a YouTube player on your site.
