@@ -92,15 +92,15 @@
   margin-right: var(--gap-2);
   background: #fff;
   z-index: 1; /* bug safari overflow animation */
-}
 
-.container svg {
-  filter: saturate(150%);
-  transform: translate(100%, 0%);
-  animation-name: walking;
-  animation-duration: 7s;
-  animation-delay: 1s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+  & svg {
+    filter: saturate(150%);
+    transform: translate(100%, 0%);
+    animation-name: walking;
+    animation-duration: 7s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
 }

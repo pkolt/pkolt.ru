@@ -4,8 +4,7 @@
   margin: var(--gap-3);
 }
 
-/** desktop */
-@media (width >= 1024px) {
+@media (--viewport-desktop) {
   .container {
     margin: var(--gap-3) 15%;
   }

@@ -29,8 +29,7 @@
   order: 2;
 }
 
-/** desktop */
-@media (width >= 1024px) {
+@media (--viewport-desktop) {
   .container {
     flex-wrap: initial;
     gap: var(--gap-2);

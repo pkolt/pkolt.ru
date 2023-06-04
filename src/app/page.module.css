@@ -9,8 +9,7 @@
   flex: 1;
 }
 
-/** desktop */
-@media (width >= 1024px) {
+@media (--viewport-desktop) {
   .container {
     flex-direction: row;
     margin: var(--gap-3);
