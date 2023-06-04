@@ -4,8 +4,7 @@
   gap: var(--gap-1);
 }
 
-/** desktop */
-@media (width >= 1024px) {
+@media (--viewport-desktop) {
   .tagList {
     flex-wrap: nowrap;
   }

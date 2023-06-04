@@ -17,8 +17,7 @@
   margin-bottom: var(--gap-3);
 }
 
-/** desktop */
-@media (width >= 1024px) {
+@media (--viewport-desktop) {
   .postInfo {
     flex-wrap: nowrap;
   }
