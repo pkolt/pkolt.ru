@@ -11,6 +11,8 @@
 # next.js
 /.next/
 /out/
+/public/service-worker.js
+/public/service-worker-register.js
 
 # misc
 .DS_Store

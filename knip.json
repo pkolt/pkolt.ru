@@ -1,5 +1,6 @@
 {
   "$schema": "https://unpkg.com/knip@2/schema.json",
   "entry": ["next.config.{js,ts}", "src/app/**/*.{ts,tsx}"],
-  "ignoreDependencies": ["@svgr/webpack", "stylelint-config-standard"]
+  "ignore": ["src/service-worker-register.ts"],
+  "ignoreDependencies": ["@svgr/webpack", "stylelint-config-standard", "workbox-window"]
 }
