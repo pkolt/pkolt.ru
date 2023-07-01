@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Copyright } from '@/components/Copyright';
 import { Navigation } from '@/components/Navigation';
 import { SiteName } from '@/components/SiteName';
@@ -6,15 +7,20 @@ import { SocialNav } from '@/components/SocialNav';
 import { fontOpenSans } from '@/fonts';
 import '../styles/globals.css';
 import styles from './layout.module.css';
+import { UpdatePwaDialog } from '@/components/UpdatePwaDialog';
 
 export const metadata: Metadata = {
   title: 'Developer Blog',
   description: 'Developer blog by Pavel Koltyshev',
+  manifest: '/app.webmanifest',
 };
 
 const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en" className={fontOpenSans.className}>
+      {process.env.NODE_ENV === 'production' && (
+        <Script strategy="lazyOnload" src="/service-worker-register.js" type="module" async />
+      )}
       <body className={styles.container}>
         <header className={styles.header}>
           <SiteName />
@@ -25,6 +31,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
         <footer className={styles.footer}>
           <Copyright />
         </footer>
+        <UpdatePwaDialog />
       </body>
     </html>
   );
