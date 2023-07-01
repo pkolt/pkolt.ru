@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "next dev",
     "preview": "serve -l 4444 out",
-    "build": "next build",
-    "build-analyze": "ANALYZE=true next build",
+    "build": "npm run build-next && npm run build-sw",
+    "build-next": "next build",
+    "build-analyze": "ANALYZE=true npm run build-next",
     "build-sw": "esbuild ./src/service-worker.ts ./src/service-worker-register.ts --bundle --minify --tsconfig=tsconfig.sw.json --outdir=./out --banner:js=//ver.`date +%s`",
     "lint": "next lint",
     "ls-lint": "ls-lint",
