@@ -1,10 +1,13 @@
 {
   "name": "Developer Blog - Pavel Koltyshev",
   "short_name": "pkolt.ru",
-  "icons": [{ "src": "icons/512.png", "type": "image/png", "sizes": "512x512" }],
+  "icons": [
+    { "src": "icons/512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "icons/512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ],
   "start_url": "/",
   "display": "standalone",
   "id": "pkoltru",
-  "theme_color": "#822ee3",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }
