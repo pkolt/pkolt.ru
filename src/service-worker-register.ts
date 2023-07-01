@@ -1,28 +1,34 @@
-import { Workbox } from 'workbox-window';
+import { Workbox, WorkboxLifecycleWaitingEvent } from 'workbox-window';
+import { showUpdatePwaDialog, subscribeAcceptUpdatePwa } from './components/UpdatePwaDialog/utils';
 
 if ('serviceWorker' in navigator) {
   const wb = new Workbox('/service-worker.js');
 
-  wb.addEventListener('activated', (event) => {
-    if (!event.isUpdate) {
-      console.log('Service worker activated for the first time!');
-    }
-  });
+  const showSkipWaitingPrompt = async (event: WorkboxLifecycleWaitingEvent) => {
+    // Assuming the user accepted the update, set up a listener
+    // that will reload the page as soon as the previously waiting
+    // service worker has taken control.
+    wb.addEventListener('controlling', () => {
+      // At this point, reloading will ensure that the current
+      // tab is loaded under the control of the new service worker.
+      // Depending on your web app, you may want to auto-save or
+      // persist transient state before triggering the reload.
+      window.location.reload();
+    });
 
-  wb.addEventListener('waiting', (event) => {
-    console.log(
-      `A new service worker has installed, but it can't activate` +
-        `until all tabs running the current version have fully unloaded.`,
-    );
-  });
+    // When `event.wasWaitingBeforeRegister` is true, a previously
+    // updated service worker is still waiting.
+    // You may want to customize the UI prompt accordingly.
+    // const updateAccepted = await promptForUpdate();
+    showUpdatePwaDialog();
 
-  wb.addEventListener('message', (event) => {
-    if (event.data.type === 'CACHE_UPDATED') {
-      const { updatedURL } = event.data.payload;
+    // Wait accept update PWA
+    subscribeAcceptUpdatePwa(() => wb.messageSkipWaiting());
+  };
 
-      console.log(`A newer version of ${updatedURL} is available!`);
-    }
-  });
+  // Add an event listener to detect when the registered
+  // service worker has installed but is waiting to activate.
+  wb.addEventListener('waiting', showSkipWaitingPrompt);
 
   wb.register();
 }

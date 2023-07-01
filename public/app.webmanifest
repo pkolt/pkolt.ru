@@ -1,0 +1,10 @@
+{
+  "name": "Developer Blog - Pavel Koltyshev",
+  "short_name": "pkolt.ru",
+  "icons": [{ "src": "icons/512.png", "type": "image/png", "sizes": "512x512" }],
+  "start_url": "/",
+  "display": "standalone",
+  "id": "pkoltru",
+  "theme_color": "#822ee3",
+  "background_color": "#ffffff"
+}
