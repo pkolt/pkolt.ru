@@ -1,6 +1,6 @@
-import GithubIcon from '../../../public/images/github.svg';
-import TwitterIcon from '../../../public/images/twitter.svg';
-import LinkedinIcon from '../../../public/images/linkedin.svg';
+import GithubIcon from '../../../public/images/icons/github.svg';
+import TwitterIcon from '../../../public/images/icons/twitter.svg';
+import LinkedinIcon from '../../../public/images/icons/linkedin.svg';
 import styles from './index.module.css';
 
 export const SocialNav: React.FC = () => {
