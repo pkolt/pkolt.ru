@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 import cn from 'classnames';
-import CalendarIcon from '../../../public/images/calendar.svg';
+import CalendarIcon from '../../../public/images/icons/calendar.svg';
 import styles from './index.module.css';
 
 interface PostDateProps {

@@ -1,9 +1,11 @@
 {
-  "name": "Developer Blog - Pavel Koltyshev",
-  "short_name": "pkolt.ru",
+  "name": "Developer Blog",
+  "short_name": "Dev Blog",
+  "description": "Developer Blog - Pavel Koltyshev",
+  "orientation": "portrait",
   "icons": [
-    { "src": "icons/512.png", "type": "image/png", "sizes": "512x512" },
-    { "src": "icons/512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+    { "src": "images/pwa/512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "images/pwa/512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
   ],
   "start_url": "/",
   "display": "standalone",
