@@ -16,6 +16,7 @@
   /* Image */
   & img {
     max-inline-size: 100%;
+    max-block-size: 400px;
     block-size: auto;
     object-fit: contain;
   }
