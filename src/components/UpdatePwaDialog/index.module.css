@@ -23,7 +23,7 @@
     cursor: pointer;
 
     &[data-primary] {
-      background: var(--color-blue-1);
+      background: var(--color-blue-2);
       color: var(--color-white);
     }
   }

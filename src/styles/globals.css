@@ -10,21 +10,20 @@ body {
 }
 
 :root {
-  --color-primary: #edf2f7;
-  --color-secondary: #0a7373;
   --color-black: #000;
   --color-white: #fff;
-  --color-blue-1: #0476d9;
-  --color-blue-2: #91b7d9;
+  --color-blue-1: #edf2f7;
+  --color-blue-2: #0476d9;
+  --color-blue-3: #91b7d9;
   --color-gray-1: #f1eeee;
   --color-gray-2: #e0dfdf;
   --color-gray-3: #d3d3d3;
   --color-gray-4: #969696;
   --color-gray-5: #4a5568;
-  --color-link: var(--color-blue-1);
-  --color-link-visited: var(--color-blue-1);
-  --color-link-hover: var(--color-blue-1);
-  --color-link-active: var(--color-blue-1);
+  --color-link: var(--color-blue-2);
+  --color-link-visited: var(--color-blue-2);
+  --color-link-hover: var(--color-blue-2);
+  --color-link-active: var(--color-blue-2);
   --gap-1: 0.5rem;
   --gap-2: 1rem;
   --gap-3: 1.5rem;
