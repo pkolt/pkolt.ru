@@ -106,6 +106,6 @@
   }
 
   & ul ::marker {
-    color: var(--color-blue-2);
+    color: var(--color-blue-3);
   }
 }

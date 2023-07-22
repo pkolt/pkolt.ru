@@ -5,7 +5,7 @@
 }
 
 .header {
-  background: linear-gradient(0deg, var(--color-primary), transparent);
+  background: linear-gradient(0deg, var(--color-blue-1), transparent);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +17,7 @@
 }
 
 .footer {
-  background: var(--color-primary);
+  background: var(--color-blue-1);
   display: flex;
   justify-content: center;
   align-items: center;

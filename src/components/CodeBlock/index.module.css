@@ -39,7 +39,7 @@
 .lang {
   top: 0;
   left: var(--gap-2);
-  background: var(--color-blue-1);
+  background: var(--color-blue-2);
   border-radius: 0 0 var(--border-radius-1) var(--border-radius-1);
   color: var(--color-white);
   text-transform: uppercase;

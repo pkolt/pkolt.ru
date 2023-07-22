@@ -10,7 +10,7 @@
 }
 
 .container:hover {
-  background: var(--color-primary);
+  background: var(--color-blue-1);
   transition: background ease 400ms;
 }
 
