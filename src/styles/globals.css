@@ -10,16 +10,16 @@ body {
 }
 
 :root {
-  --color-black: #000;
-  --color-white: #fff;
-  --color-blue-1: #edf2f7;
-  --color-blue-2: #0476d9;
-  --color-blue-3: #91b7d9;
-  --color-gray-1: #f1eeee;
-  --color-gray-2: #e0dfdf;
-  --color-gray-3: #d3d3d3;
-  --color-gray-4: #969696;
-  --color-gray-5: #4a5568;
+  --color-black: oklch(0% 0 0);
+  --color-white: oklch(100% 0 0);
+  --color-blue-1: oklch(95.88% 0.009 247.92);
+  --color-blue-2: oklch(56.69% 0.175 253.25);
+  --color-blue-3: oklch(76.37% 0.064 245.77);
+  --color-gray-1: oklch(95.14% 0.003 17.21);
+  --color-gray-2: oklch(90.44% 0.001 17.18);
+  --color-gray-3: oklch(86.69% 0 0);
+  --color-gray-4: oklch(67.31% 0 0);
+  --color-gray-5: oklch(44.74% 0.034 261.32);
   --color-link: var(--color-blue-2);
   --color-link-visited: var(--color-blue-2);
   --color-link-hover: var(--color-blue-2);

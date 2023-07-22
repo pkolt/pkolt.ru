@@ -12,7 +12,7 @@
   }
 
   &::backdrop {
-    background: hsla(0deg 0% 0% / 60%);
+    background: oklch(0% 0 0 / 60%);
   }
 
   button {
