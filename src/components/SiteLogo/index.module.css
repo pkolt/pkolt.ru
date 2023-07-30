@@ -86,21 +86,22 @@
 }
 
 .container {
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   overflow: hidden;
-  grid-row: auto / span 2;
-  margin-right: var(--gap-2);
-  background: #fff;
+  background: var(--color-logo-bg);
   z-index: 1; /* bug safari overflow animation */
+}
 
-  & svg {
-    filter: saturate(150%);
-    transform: translate(100%, 0%);
-    animation-name: walking;
-    animation-duration: 7s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-  }
+.image {
+  display: flex;
+  justify-content: center;
+  transform: translate(100%, 0%);
+  animation-name: walking;
+  animation-duration: 7s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }

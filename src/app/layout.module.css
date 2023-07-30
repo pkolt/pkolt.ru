@@ -12,10 +12,6 @@
   padding: 0 var(--gap-2);
 }
 
-.header > * {
-  flex: 1;
-}
-
 .footer {
   background: var(--color-blue-1);
   display: flex;

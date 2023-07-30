@@ -1,29 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-}
-
 :root {
-  --color-black: oklch(0% 0 0);
-  --color-white: oklch(100% 0 0);
-  --color-blue-1: oklch(95.88% 0.009 247.92);
-  --color-blue-2: oklch(56.69% 0.175 253.25);
-  --color-blue-3: oklch(76.37% 0.064 245.77);
-  --color-gray-1: oklch(95.14% 0.003 17.21);
-  --color-gray-2: oklch(90.44% 0.001 17.18);
-  --color-gray-3: oklch(86.69% 0 0);
-  --color-gray-4: oklch(67.31% 0 0);
-  --color-gray-5: oklch(44.74% 0.034 261.32);
-  --color-link: var(--color-blue-2);
-  --color-link-visited: var(--color-blue-2);
-  --color-link-hover: var(--color-blue-2);
-  --color-link-active: var(--color-blue-2);
   --gap-1: 0.5rem;
   --gap-2: 1rem;
   --gap-3: 1.5rem;
@@ -52,18 +27,77 @@ body {
   --font-weight-bold: 700;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: oklch(0% 0 0);
+    --color-layout: oklch(100% 0 0);
+    --color-blue-1: oklch(95.88% 0.009 247.92);
+    --color-blue-2: oklch(56.69% 0.175 253.25);
+    --color-blue-3: oklch(76.37% 0.064 245.77);
+    --color-gray-1: oklch(95.14% 0.003 17.21);
+    --color-gray-2: oklch(90.44% 0.001 17.18);
+    --color-gray-3: oklch(86.69% 0 0);
+    --color-gray-4: oklch(67.31% 0 0);
+    --color-gray-5: oklch(44.74% 0.034 261.32);
+    --color-link: var(--color-blue-2);
+    --color-link-visited: var(--color-blue-2);
+    --color-link-hover: var(--color-blue-2);
+    --color-link-active: var(--color-blue-2);
+    --color-github: oklch(0% 0 0);
+    --color-twitter: oklch(68.18% 0.158 243.35);
+    --color-linkedin: oklch(53.13% 0.13 243.65);
+    --color-logo-bg: oklch(100% 0 0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: oklch(80% 0 0);
+    --color-layout: oklch(0% 0 0);
+    --color-blue-1: oklch(25.88% 0.009 247.92);
+    --color-blue-2: oklch(56.69% 0.175 253.25);
+    --color-blue-3: oklch(76.37% 0.064 245.77);
+    --color-gray-1: oklch(20.14% 0.003 17.21);
+    --color-gray-2: oklch(40.44% 0.001 17.18);
+    --color-gray-3: oklch(30.69% 0 0);
+    --color-gray-4: oklch(67.31% 0 0);
+    --color-gray-5: oklch(64.74% 0.034 261.32);
+    --color-link: var(--color-blue-2);
+    --color-link-visited: var(--color-blue-2);
+    --color-link-hover: var(--color-blue-2);
+    --color-link-active: var(--color-blue-2);
+    --color-github: oklch(100% 0 0);
+    --color-twitter: oklch(68.18% 0.158 243.35);
+    --color-linkedin: oklch(53.13% 0.13 243.65);
+    --color-logo-bg: oklch(40% 0 0);
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: var(--color-layout);
+  color: var(--color-text);
+}
+
 a:link {
-  color: var(--color-black);
+  color: var(--color-text);
 }
 
 a:visited {
-  color: var(--color-black);
+  color: var(--color-text);
 }
 
 a:hover {
-  color: var(--color-black);
+  color: var(--color-text);
 }
 
 a:active {
-  color: var(--color-black);
+  color: var(--color-text);
 }
