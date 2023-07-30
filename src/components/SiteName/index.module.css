@@ -1,8 +1,13 @@
 .container {
   display: grid;
+  column-gap: var(--gap-2);
   grid-template-columns: max-content max-content;
   margin-right: auto;
   text-decoration: none;
+}
+
+.logo {
+  grid-row: auto / span 2;
 }
 
 .name {

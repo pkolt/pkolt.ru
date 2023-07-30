@@ -12,13 +12,13 @@
 }
 
 .github {
-  color: #000 !important;
+  color: var(--color-github) !important;
 }
 
 .twitter {
-  color: #1da1f2 !important;
+  color: var(--color-twitter) !important;
 }
 
 .linkedin {
-  color: #0072b1 !important;
+  color: var(--color-linkedin) !important;
 }

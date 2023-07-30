@@ -41,7 +41,7 @@
   left: var(--gap-2);
   background: var(--color-blue-2);
   border-radius: 0 0 var(--border-radius-1) var(--border-radius-1);
-  color: var(--color-white);
+  color: var(--color-layout);
   text-transform: uppercase;
 }
 
@@ -49,7 +49,7 @@
   top: var(--gap-1);
   right: var(--gap-1);
   text-transform: uppercase;
-  background: var(--color-white);
+  background: var(--color-layout);
   border: 1px solid var(--color-gray-2);
   border-radius: var(--border-radius-1);
   color: var(--color-gray-5);

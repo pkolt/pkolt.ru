@@ -24,7 +24,7 @@
 
     &[data-primary] {
       background: var(--color-blue-2);
-      color: var(--color-white);
+      color: var(--color-layout);
     }
   }
 }
