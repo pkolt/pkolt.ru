@@ -24,7 +24,7 @@ interface MarkdownProps {
   children?: string;
 }
 
-export const Markdown: React.FC<MarkdownProps> = ({ children }) => {
+export const Markdown = ({ children }: MarkdownProps): JSX.Element => {
   return (
     <Typography>
       <ReactMarkdown className="markdown-body" remarkPlugins={[remarkGfm, remarkYoutube]} components={components}>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Workbox, WorkboxLifecycleWaitingEvent } from 'workbox-window';
 import { showUpdatePwaDialog, subscribeAcceptUpdatePwa } from './components/UpdatePwaDialog/utils';
 

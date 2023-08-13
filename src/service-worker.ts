@@ -47,7 +47,7 @@ registerRoute(matchCallback, strategy);
 
 const clearCache = async () => {
   const keys = await caches.keys();
-  await Promise.all(keys.map((cacheName) => caches.delete(cacheName)));
+  await Promise.all(keys.map((key) => caches.delete(key)));
 };
 
 addEventListener('message', (event) => {

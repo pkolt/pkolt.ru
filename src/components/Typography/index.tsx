@@ -1,5 +1,7 @@
 import styles from './index.module.css';
 
-export const Typography: React.FC<React.PropsWithChildren> = ({ children }) => {
+interface TypographyProps extends React.PropsWithChildren {}
+
+export const Typography = ({ children }: TypographyProps): JSX.Element => {
   return <div className={styles.container}>{children}</div>;
 };

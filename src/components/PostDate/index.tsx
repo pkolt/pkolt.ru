@@ -9,7 +9,7 @@ interface PostDateProps {
   className?: string;
 }
 
-export const PostDate: React.FC<PostDateProps> = ({ dateIso, showIcon, className }) => {
+export const PostDate = ({ dateIso, showIcon, className }: PostDateProps): JSX.Element => {
   const fmtDate = DateTime.fromISO(dateIso).toFormat('dd.MM.yyyy');
   return (
     <time dateTime={dateIso} className={cn(styles.container, className)}>

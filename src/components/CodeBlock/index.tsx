@@ -11,7 +11,7 @@ interface CodeBlockProps {
   className: string;
 }
 
-export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className }) => {
+export const CodeBlock = ({ children, className }: CodeBlockProps): JSX.Element => {
   const language = useMemo(() => className?.match(/^language-(?<name>\w+)/)?.groups?.name, [className]);
   const content = useMemo(() => String(children), [children]);
   const html = useMemo(() => {

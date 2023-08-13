@@ -6,7 +6,7 @@ interface CopyButtonProps {
   className?: string;
 }
 
-export const CopyButton: React.FC<CopyButtonProps> = ({ className, content }) => {
+export const CopyButton = ({ className, content }: CopyButtonProps): JSX.Element => {
   const [copied, setCopied] = useState(false);
   const onCopy = useCallback(async () => {
     const result = await copyTextToClipboard(content);

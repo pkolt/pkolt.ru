@@ -7,7 +7,7 @@ interface PostItemProps {
   post: Post;
 }
 
-export const PostItem: React.FC<PostItemProps> = ({ post }) => {
+export const PostItem = ({ post }: PostItemProps): JSX.Element => {
   return (
     <article>
       <a href={post.url} className={styles.container}>

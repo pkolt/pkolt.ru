@@ -9,7 +9,7 @@ interface TagProps {
   allowFilter?: boolean;
 }
 
-export const Tag: React.FC<TagProps> = ({ text, allowFilter }) => {
+export const Tag = ({ text, allowFilter }: TagProps): JSX.Element => {
   const color = getColorFromString(text);
   const { tag, setTag } = useFilterStore();
   const selected = text === tag;

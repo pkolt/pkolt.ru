@@ -15,10 +15,10 @@ interface PostListProps {
   posts: Post[];
 }
 
-export const PostList: React.FC<PostListProps> = ({ posts }) => {
+export const PostList = ({ posts }: PostListProps): JSX.Element => {
   const { tag } = useFilterStore();
 
-  const orderedPosts = useMemo(() => orderByDate(posts), []);
+  const orderedPosts = useMemo(() => orderByDate(posts), [posts]);
 
   const filteredPosts = useMemo(() => {
     if (tag) {
