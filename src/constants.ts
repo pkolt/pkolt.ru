@@ -8,5 +8,5 @@ export enum Page {
   Home = '/',
   Blog = '/blog',
   Electronics = '/electronics',
-  About = '/about'
+  About = '/about',
 }

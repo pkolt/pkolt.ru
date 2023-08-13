@@ -10,7 +10,7 @@ enum IconEnum {
   LinkedIn = 'linkedin',
 }
 
-type IconName = `${IconEnum}`
+type IconName = `${IconEnum}`;
 
 const config: Record<IconName, string> = {
   [IconEnum.Calendar]: CalendarIcon,
@@ -23,6 +23,4 @@ interface IconProps {
   name: IconName;
 }
 
-export const Icon = ({ name }: IconProps): JSX.Element => (
-  <div dangerouslySetInnerHTML={{ __html: config[name] }} />
-);
+export const Icon = ({ name }: IconProps): JSX.Element => <div dangerouslySetInnerHTML={{ __html: config[name] }} />;

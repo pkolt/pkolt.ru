@@ -8,9 +8,9 @@ tags:
   - React Native
 ---
 
-Написал очень простое [приложение фонарик](https://play.google.com/store/apps/details?id=com.pkolt.flashlight) на React Native. 
+Написал очень простое [приложение фонарик](https://play.google.com/store/apps/details?id=com.pkolt.flashlight) на React Native.
 
-При написании приложения столкнулся с трудностями, не мог найти подходящий модуль для включения фонарика на телефоне. 
+При написании приложения столкнулся с трудностями, не мог найти подходящий модуль для включения фонарика на телефоне.
 
 Пришлось погрузиться в дебри Java и написать свой собственный [NPM-модуль](https://github.com/pkolt/react-native-lantern) для управления подсветкой на телефоне.
 

@@ -19,15 +19,11 @@ import remarkGfm from 'remark-gfm';
 import remarkYoutube from 'remark-youtube';
 
 interface PageProps {
-    markdownContent?: string
+  markdownContent?: string;
 }
 
 export const Page: React.FC<PageProps> = ({ markdownContent = '' }) => {
-  return (
-    <ReactMarkdown remarkPlugins={[remarkGfm, remarkYoutube]}>
-        {markdownContent}
-    </ReactMarkdown>
-  );
+  return <ReactMarkdown remarkPlugins={[remarkGfm, remarkYoutube]}>{markdownContent}</ReactMarkdown>;
 };
 ```
 
@@ -49,7 +45,7 @@ You can also customize the size of the displayed YouTube player:
 export const Page: React.FC<PageProps> = ({ markdownContent = '' }) => {
   return (
     <ReactMarkdown remarkPlugins={[remarkGfm, [remarkYoutube, { width: 760, height: 515 }]]}>
-        {markdownContent}
+      {markdownContent}
     </ReactMarkdown>
   );
 };

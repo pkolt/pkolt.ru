@@ -1,4 +1,3 @@
-
 import cn from 'classnames';
 import { useCallback } from 'react';
 import { getColorFromString } from '@/utils/get-color-from-string';
