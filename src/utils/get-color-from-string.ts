@@ -1,4 +1,8 @@
-import ColorHash from 'color-hash';
+import ColorHashModule from 'color-hash';
+
+//! https://github.com/zenozeng/color-hash/issues/42
+//@ts-ignore
+const ColorHash: any = 'default' in ColorHashModule ? ColorHashModule.default : ColorHashModule;
 
 const colorHash = new ColorHash({
   lightness: 0.6,

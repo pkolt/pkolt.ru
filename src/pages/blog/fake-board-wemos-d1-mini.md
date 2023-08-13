@@ -12,7 +12,7 @@ tags:
 Эта история началась с того что у меня оказалась плата Wemos D1 mini, которую я заказывал на Aliexpress (реплика, не оригинал).
 Плата на первый взгляд была рабочая, успешно загружала скетчи и мигала светодиодом.
 
-![Wemos D1 mini](/posts/fake-board-wemos-d1-mini/wemos_d1_mini_clone_1.jpg)
+![Wemos D1 mini](/blog/fake-board-wemos-d1-mini/wemos_d1_mini_clone_1.jpg)
 
 Но как дело доходило до работы с Wi-Fi начиналась мистика, подключение к Wi-Fi занимало 1-5 минут. Мне показалось это странным, так как на том же ESP-01 подключение к Wi-Fi занимает считанные секунды. 
 
@@ -30,11 +30,11 @@ tags:
 
 **Оригинальная плата Wemos D1 mini из магазина LOLIN:**
 
-![Wemos D1 mini](/posts/overview-wemos-d1-mini/wemos_d1_mini_2.jpg)
+![Wemos D1 mini](/blog/overview-wemos-d1-mini/wemos_d1_mini_2.jpg)
 
 **Реплика Wemos D1 mini с модулем флеш памяти cFeon:**
 
-![Wemos D1 mini](/posts/fake-board-wemos-d1-mini/wemos_d1_mini_clone_2.jpg)
+![Wemos D1 mini](/blog/fake-board-wemos-d1-mini/wemos_d1_mini_clone_2.jpg)
 
 Проверив работу оригинальной платы Wemos D1 mini на том же самом скетче, я обнаружил что проблема исчезла, плата моментально подключается к Wi-Fi за считанные секунды (примерно также быстро как ESP-01).
 

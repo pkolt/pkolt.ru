@@ -11,7 +11,7 @@ tags:
 
 **Wemos D1 mini** - недорогая, Arduino-совместимая, миниатюрная плата для создания устройств интернета вещей от компании [WEMOS Electronics](https://www.wemos.cc/en/latest/d1/d1_mini.html).
 
-![Wemos D1 mini](/posts/overview-wemos-d1-mini/wemos_d1_mini_1.jpg)
+![Wemos D1 mini](/blog/overview-wemos-d1-mini/wemos_d1_mini_1.jpg)
 
 Купить Wemos D1 mini можно в [официальном магазине LOLIN](https://lolin.aliexpress.ru/).
 
@@ -47,7 +47,7 @@ tags:
 
 ## Контакты ввода - вывода
 
-![Wemos D1 mini](/posts/overview-wemos-d1-mini/wemos_d1_mini_2.jpg)
+![Wemos D1 mini](/blog/overview-wemos-d1-mini/wemos_d1_mini_2.jpg)
 
 | Pin | Pin ESP-8266EX | Описание                                                           |
 |-----|----------------|--------------------------------------------------------------------|
@@ -68,7 +68,7 @@ tags:
 | 3V3 | 3.3V           | Питание 3.3 V                                                      |
 | RST | RST            | Сброс                                                              |
 
-![Wemos D1 mini](/posts/overview-wemos-d1-mini/wemos_d1_mini_3.jpg)
+![Wemos D1 mini](/blog/overview-wemos-d1-mini/wemos_d1_mini_3.jpg)
 
 Перемычка SLEEP соединяет контакт GPIO16 (D0) с контактом RESET. Эти контакты соединяются для того чтобы устройство смогло выйти из режима глубокого сна (deep sleep). В режиме прошивки эти контакты должны быть разомкнуты.
 

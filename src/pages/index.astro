@@ -1,10 +1,14 @@
 ---
 import RootLayout from '../layouts/RootLayout.astro';
-import { getTags } from '@/api/posts';
 import { PostList } from '@/components/PostList';
 import { FilterByTag } from '@/components/FilterByTag';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants';
-import type { PostMarkdown } from '@/types/post';
+import type { Post, PostMarkdown } from '@/types/post';
+
+const getTags = (posts: Post[]): string[] => {
+  const tags = posts.map((post) => post.frontmatter.tags).flat();
+  return Array.from(new Set(tags)).sort();
+};
 
 const posts = await Astro.glob<PostMarkdown>('/src/pages/blog/*.md');
 const tags = getTags(posts);
