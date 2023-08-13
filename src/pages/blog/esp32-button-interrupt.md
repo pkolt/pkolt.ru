@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Как избежать дребезга кнопки в ESP32?
 created: 2022-06-04
 modified: 2022-06-04

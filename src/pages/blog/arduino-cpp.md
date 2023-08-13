@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Конструкции языка программирования Arduino
 created: 2020-08-08
 modified: 2021-05-29

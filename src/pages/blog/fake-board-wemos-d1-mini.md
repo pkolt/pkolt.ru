@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Не работает Wemos D1 mini
 created: 2021-08-11
 modified: 2021-08-11

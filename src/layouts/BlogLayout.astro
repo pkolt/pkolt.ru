@@ -1,42 +1,29 @@
 ---
-import { getPostDetail, getPostSlugs } from '@/api/posts';
+import type { MarkdownLayoutProps } from 'astro';
 import { Markdown } from '@/components/Markdown';
 import { PostDate } from '@/components/PostDate';
 import { TagList } from '@/components/TagList';
 import PageLayout from '@/layouts/PageLayout.astro';
+import type { PostMarkdown } from '@/types/post';
+import { Typography } from '@/components/Typography';
 
-export const getStaticPaths = () => {
-  const posts = getPostSlugs();
-  return posts.map((slug) => ({ params: { slug } }));
-};
+type Props = MarkdownLayoutProps<PostMarkdown>;
 
-const { slug } = Astro.params;
-
-const notFound = () => {
-  Astro.response.status = 404;
-  Astro.response.statusText = 'Not found';
-};
-
-if (!slug) {
-  return notFound();
-}
-
-const post = getPostDetail(slug);
-
-if (!post) {
-  return notFound();
-}
+const props = Astro.props;
 ---
 
-<PageLayout title={post.title} keywords={post.tags}>
+<PageLayout title={props.frontmatter.title} keywords={props.frontmatter.tags}>
   <header class="header">
-    <h1 class="title">{post.title}</h1>
+    <h1 class="title">{props.frontmatter.title}</h1>
     <div class="postInfo">
-      <PostDate dateIso={post.created} showIcon />
-      <TagList tags={post.tags} />
+      <PostDate dateIso={props.frontmatter.created} showIcon />
+      <TagList tags={props.frontmatter.tags} />
     </div>
   </header>
-  <Markdown>{post.content}</Markdown>
+  <!-- <Markdown>{frontmatter.content}</Markdown> -->
+  <Typography>
+    <slot />
+  </Typography>
 </PageLayout>
 
 <style>

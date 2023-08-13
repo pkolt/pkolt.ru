@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Обзор ESP32
 created: 2022-05-30
 modified: 2022-05-30

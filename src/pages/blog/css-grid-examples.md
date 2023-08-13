@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: CSS Grid в примерах
 created: 2023-07-09
 modified: 2023-07-09

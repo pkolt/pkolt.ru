@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Как преобразовать число в строку в Arduino?
 created: 2021-06-29
 modified: 2021-06-29

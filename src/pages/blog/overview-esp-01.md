@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Обзор ESP-01
 created: 2021-09-05
 modified: 2021-09-05

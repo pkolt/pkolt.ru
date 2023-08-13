@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Обзор Arduino Uno
 created: 2020-07-18
 modified: 2021-03-31

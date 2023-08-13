@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Изготовление печатных плат методом фоторезиста
 created: 2022-05-29
 modified: 2022-05-29

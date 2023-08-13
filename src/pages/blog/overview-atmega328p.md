@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Обзор ATmega328P
 created: 2021-05-23
 modified: 2021-05-23

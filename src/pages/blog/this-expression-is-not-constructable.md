@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Ошибка TypeScript "This expression is not constructable"
 created: 2020-08-08
 modified: 2020-08-08

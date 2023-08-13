@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Простой фонарик для Android
 created: 2021-01-16
 modified: 2021-01-16

@@ -1,4 +1,5 @@
 ---
+layout: src/layouts/BlogLayout.astro
 title: Обзор Wemos D1 mini
 created: 2021-07-17
 modified: 2021-07-17
