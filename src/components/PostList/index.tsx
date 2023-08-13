@@ -1,4 +1,4 @@
-'use client';
+
 import { useMemo } from 'react';
 import { Post } from '@/types/post';
 import { PostItem } from './PostItem';

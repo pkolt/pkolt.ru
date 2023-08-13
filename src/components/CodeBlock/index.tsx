@@ -3,7 +3,7 @@ import hljs from 'highlight.js';
 import { useMemo } from 'react';
 import 'highlight.js/styles/github.css';
 import styles from './index.module.css';
-import { fontJetBrainsMono } from '@/fonts';
+//! import { fontJetBrainsMono } from '@/fonts';
 import { CopyButton } from './CopyButton';
 
 interface CodeBlockProps {
@@ -22,14 +22,16 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ children, className }) => 
   }, [children, language, content]);
 
   if (!language) {
-    return <code className={cn(className, styles.codeInline, fontJetBrainsMono.className)}>{children}</code>;
+    // return <code className={cn(className, styles.codeInline, fontJetBrainsMono.className)}>{children}</code>;
+    return <code className={cn(className, styles.codeInline)}>{children}</code>;
   }
 
   return (
     <div className={styles.codeBlock}>
       <div className={styles.lang}>{language}</div>
       <CopyButton className={styles.copy} content={content} />
-      <code className={cn(className, fontJetBrainsMono.className)} dangerouslySetInnerHTML={{ __html: html }}></code>
+      {/* <code className={cn(className, fontJetBrainsMono.className)} dangerouslySetInnerHTML={{ __html: html }}></code> */}
+      <code className={cn(className)} dangerouslySetInnerHTML={{ __html: html }}></code>
     </div>
   );
 };

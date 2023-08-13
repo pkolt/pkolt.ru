@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { DateTime } from 'luxon';
 import matter from 'gray-matter';
-import { Post } from '@/types/post';
+import type { Post } from '@/types/post';
+import { Page } from '@/constants';
 
 const isExistFile = (filePath: string): boolean => {
   try {
@@ -41,6 +42,7 @@ const getPostBySlug = (slug: string, opts: { content?: boolean } = {}): Post | n
   return {
     title: data.title,
     slug,
+    url: `${Page.Blog}/${slug}`,
     created,
     modified,
     tags: data.tags,

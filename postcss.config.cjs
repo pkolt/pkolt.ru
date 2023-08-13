@@ -20,12 +20,13 @@ const presentEnvOptions = {
   }
 };
 
+/** @type {import('postcss-load-config').Config} */
 const config = {
-  plugins: [
-    ['@csstools/postcss-global-data', globalDataOptions],
-    ['@csstools/postcss-oklab-function', oklabFuncOptions],
-    ['postcss-preset-env', presentEnvOptions],
-  ],
+  plugins: {
+    '@csstools/postcss-global-data': globalDataOptions,
+    '@csstools/postcss-oklab-function': oklabFuncOptions,
+    'postcss-preset-env': presentEnvOptions,
+  },
 };
 
 module.exports = config;

@@ -1,0 +1,45 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import { getPostList, getTags } from '@/api/posts';
+import { PostList } from '@/components/PostList';
+import { FilterByTag } from '@/components/FilterByTag';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants';
+
+const posts = getPostList();
+const tags = getTags(posts);
+---
+
+<RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="container">
+    <aside class="sidebar">
+      <FilterByTag tags={tags} />
+    </aside>
+    <main class="main">
+      <PostList posts={posts} />
+    </main>
+  </div>
+</RootLayout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    margin: var(--gap-3) var(--gap-2);
+  }
+
+  .main {
+    flex: 1;
+  }
+
+  @media (--viewport-desktop) {
+    .container {
+      flex-direction: row;
+      margin: var(--gap-3);
+    }
+
+    .sidebar {
+      width: 25vw;
+    }
+  }
+</style>

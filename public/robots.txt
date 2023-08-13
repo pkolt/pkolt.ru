@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /tag/*
+Disallow: /shared-project-typescript/
+
+Host: https://pkolt.ru
+Sitemap: https://pkolt.ru/sitemap-index.xml

@@ -1,0 +1,67 @@
+---
+import { getPostDetail, getPostSlugs } from '@/api/posts';
+import { Markdown } from '@/components/Markdown';
+import { PostDate } from '@/components/PostDate';
+import { TagList } from '@/components/TagList';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+export const getStaticPaths = () => {
+  const posts = getPostSlugs();
+  return posts.map((slug) => ({ params: { slug } }));
+};
+
+const { slug } = Astro.params;
+
+const notFound = () => {
+  Astro.response.status = 404;
+  Astro.response.statusText = 'Not found';
+};
+
+if (!slug) {
+  return notFound();
+}
+
+const post = getPostDetail(slug);
+
+if (!post) {
+  return notFound();
+}
+---
+
+<PageLayout title={post.title} keywords={post.tags}>
+  <header class="header">
+    <h1 class="title">{post.title}</h1>
+    <div class="postInfo">
+      <PostDate dateIso={post.created} showIcon />
+      <TagList tags={post.tags} />
+    </div>
+  </header>
+  <Markdown>{post.content}</Markdown>
+</PageLayout>
+
+<style>
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: var(--font-size-4);
+    margin-bottom: var(--gap-3);
+    text-wrap: balance;
+  }
+
+  .postInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-3);
+    margin-bottom: var(--gap-3);
+  }
+
+  @media (--viewport-desktop) {
+    .postInfo {
+      flex-wrap: nowrap;
+    }
+  }
+</style>
