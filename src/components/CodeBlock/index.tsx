@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import hljs from 'highlight.js';
+// import hljs from 'highlight.js';
 import { useMemo } from 'react';
-import 'highlight.js/styles/github.css';
+// import 'highlight.js/styles/github.css';
 import styles from './index.module.css';
 //! import { fontJetBrainsMono } from '@/fonts';
 import { CopyButton } from './CopyButton';
@@ -16,10 +16,10 @@ export const CodeBlock = ({ children, className }: CodeBlockProps): JSX.Element 
   const content = useMemo(() => String(children), [children]);
   const html = useMemo(() => {
     if (language) {
-      return hljs.highlight(content, { language }).value;
+      // return hljs.highlight(content, { language }).value;
     }
     return children;
-  }, [children, language, content]);
+  }, [children, language]);
 
   if (!language) {
     // return <code className={cn(className, styles.codeInline, fontJetBrainsMono.className)}>{children}</code>;

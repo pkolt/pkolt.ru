@@ -5,10 +5,12 @@ import { SocialNav } from '../components/SocialNav';
 import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import { SITE_AUTHOR, APP_NAME } from '@/constants';
 import '../styles/globals.css';
+import prismOneLightUrl from 'prism-themes/themes/prism-one-light.css?url';
+import prismOneDarkUrl from 'prism-themes/themes/prism-one-dark.css?url';
 import '@fontsource-variable/open-sans';
 import '@fontsource-variable/jetbrains-mono';
 
-import type { RootLayoutProps } from './types';
+import type { RootLayoutProps } from '../types/layout';
 type Props = RootLayoutProps;
 
 const { title, description, keywords } = Astro.props;
@@ -30,6 +32,8 @@ const { title, description, keywords } = Astro.props;
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="manifest" href="/app.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="stylesheet" href={prismOneLightUrl} media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href={prismOneDarkUrl} media="(prefers-color-scheme: dark)" />
     <link
       href="/images/pwa/splash/apple-splash-2048-2732.jpg"
       media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"

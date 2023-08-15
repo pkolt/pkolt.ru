@@ -11,6 +11,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkYoutube],
     gfm: true,
+    syntaxHighlight: 'prism',
   },
   outDir: 'out',
   experimental: {
