@@ -9,13 +9,13 @@ tags:
   - ATtiny13a
 ---
 
-![attiny13a](/blog/overview-attiny13a/attiny13a_1.jpg)
+![attiny13a](../../assets/blog/overview-attiny13a/attiny13a_1.jpg)
 
 [ATtiny13a](https://www.microchip.com/wwwproducts/en/ATtiny13A) - Microchip picoPower® 8-разрядный AVR® микроконтроллер на базе RISC-архитектуры имеет: 1 KB флэш-памяти ISP, 64 bytes EEPROM, 64 bytes SRAM, 32 bytes регистровый файл и 4-канальный 10-разрядный аналого-цифровой преобразователь. Устройство обеспечивает пропускную способность до 20 MIPS на частоте 20 МГц при работе 1,8-5,5 V.
 
 ## Характеристики ATtiny13a
 
-![attiny13a](/blog/overview-attiny13a/attiny13a_2.jpg)
+![attiny13a](../../assets/blog/overview-attiny13a/attiny13a_2.jpg)
 
 | Параметр                            | Значение               |
 | ----------------------------------- | ---------------------- |
@@ -38,7 +38,7 @@ MIPS (Millions of Instructions Per Second) - миллион команд в се
 
 ## Схема микроконтроллера ATtiny13a
 
-![attiny13a pinout](/blog/overview-attiny13a/attiny13a_pinout.png)
+![attiny13a pinout](../../assets/blog/overview-attiny13a/attiny13a_pinout.png)
 
 ## Прошивка ATtiny13a с помощью Arduino
 
@@ -46,7 +46,7 @@ ATtiny13a будем прошивать через SPI. Прошивка чер�
 
 ### Схема подключения Arduino к ATtiny13a (для прошивки)
 
-![attiny13a bootloader](/blog/overview-attiny13a/attiny13a_bootloader_1.jpg)
+![attiny13a bootloader](../../assets/blog/overview-attiny13a/attiny13a_bootloader_1.jpg)
 
 | Arduino | ATtiny13a   |
 | ------- | ----------- |
@@ -59,7 +59,7 @@ ATtiny13a будем прошивать через SPI. Прошивка чер�
 
 Дополнительно для прошивки ATtiny13a нужно добавить конденсатор на 10 мкФ. Более длинный (положительный) контакт конденсатора подключите к выводу RESET микроконтроллера, короткий (отрицательный) контакт конденсатора подключите к выводу GND.
 
-![attiny13a bootloader](/blog/overview-attiny13a/attiny13a_bootloader_2.jpg)
+![attiny13a bootloader](../../assets/blog/overview-attiny13a/attiny13a_bootloader_2.jpg)
 
 ### Подготовка Arduino как ISP-программатора
 
@@ -71,7 +71,7 @@ ATtiny13a будем прошивать через SPI. Прошивка чер�
 6. Нажать в панели управления Arduino IDE кнопку "Загрузка";
 7. После успешной загрузки скетча, Arduino может использоваться как ISP-программатор.
 
-![attiny13a bootloader](/blog/overview-attiny13a/attiny13a_bootloader_3.jpg)
+![attiny13a bootloader](../../assets/blog/overview-attiny13a/attiny13a_bootloader_3.jpg)
 
 ### Установка загрузчика в ATtiny13a
 

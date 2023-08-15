@@ -9,7 +9,7 @@ tags:
 
 Markdown is an excellent markup language for creating blogs and writing articles. However, sometimes it is necessary to embed videos on a website. There is a great npm package that will help you embed a YouTube player on your site.
 
-![youtube](/blog/remark-youtube/image.jpg)
+![youtube](../../assets/blog/remark-youtube/image.jpg)
 
 This npm package is called [remark-youtube](https://www.npmjs.com/package/remark-youtube). If you are using React or Next.js, an example of adding YouTube player support would look something like this:
 
