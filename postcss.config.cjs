@@ -17,7 +17,7 @@ const presentEnvOptions = {
   features: {
     'nesting-rules': true,
     'custom-media-queries': true,
-  }
+  },
 };
 
 /** @type {import('postcss-load-config').Config} */

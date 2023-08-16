@@ -4,10 +4,11 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import remarkYoutube from 'remark-youtube';
 
-// https://astro.build/config
-export default defineConfig({
+/** @type {import('astro/config').AstroUserConfig} */
+const config = {
   site: 'https://pkolt.ru',
   integrations: [react(), sitemap(), mdx()],
+  compressHTML: true,
   markdown: {
     remarkPlugins: [remarkYoutube],
     gfm: true,
@@ -20,4 +21,6 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-});
+};
+
+export default defineConfig(config);

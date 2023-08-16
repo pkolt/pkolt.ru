@@ -7,10 +7,10 @@
     "node": ">= 18"
   },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --port 3007",
+    "start": "npm run dev",
     "build": "astro build && npm run build-sw",
-    "preview": "astro preview",
+    "preview": "astro preview --port 3008",
     "build-sw": "esbuild ./src/service-worker.ts ./src/service-worker-register.ts --bundle --minify --tsconfig=tsconfig.sw.json --outdir=./out --banner:js=//ver.`date +%s`",
     "pwa-splash": "pwa-asset-generator ./public/images/pwa/512.png ./public/images/pwa/splash --background \"#ffffff\" --index ./src/pwa.html --path-override /images/pwa/splash --portrait-only --splash-only --no-sandbox",
     "format": "prettier --check src",
