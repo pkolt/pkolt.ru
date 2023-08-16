@@ -1,0 +1,50 @@
+---
+import RootLayout from '../layouts/RootLayout.astro';
+import { PostList } from '@/components/PostList';
+import { FilterByTag } from '@/components/FilterByTag';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants/site';
+import type { Post, PostMarkdown } from '@/types/post';
+
+const getTags = (posts: Post[]): string[] => {
+  const tags = posts.map((post) => post.frontmatter.tags).flat();
+  return Array.from(new Set(tags)).sort();
+};
+
+const posts = await Astro.glob<PostMarkdown>('/src/pages/blog/*.md');
+const tags = getTags(posts);
+---
+
+<RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="container">
+    <aside class="sidebar">
+      <FilterByTag tags={tags} client:load />
+    </aside>
+    <main class="main">
+      <PostList posts={posts} client:load />
+    </main>
+  </div>
+</RootLayout>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+    margin: var(--gap-3) var(--gap-2);
+  }
+
+  .main {
+    flex: 1;
+  }
+
+  @media (--viewport-desktop) {
+    .container {
+      flex-direction: row;
+      margin: var(--gap-3);
+    }
+
+    .sidebar {
+      width: 25vw;
+    }
+  }
+</style>

@@ -19,6 +19,7 @@
     max-block-size: 400px;
     block-size: auto;
     object-fit: contain;
+    object-position: left;
   }
 
   /* Video */

@@ -1,0 +1,52 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+import { PostDate } from '@/components/PostDate';
+import { TagList } from '@/components/TagList';
+import PageLayout from '@/layouts/PageLayout.astro';
+import type { PostMarkdown } from '@/types/post';
+import { Typography } from '@/components/Typography';
+
+type Props = MarkdownLayoutProps<PostMarkdown>;
+
+const props = Astro.props;
+---
+
+<PageLayout title={props.frontmatter.title} keywords={props.frontmatter.tags}>
+  <header class="header">
+    <h1 class="title">{props.frontmatter.title}</h1>
+    <div class="postInfo">
+      <PostDate dateIso={props.frontmatter.created} showIcon />
+      <TagList tags={props.frontmatter.tags} />
+    </div>
+  </header>
+  <Typography>
+    <slot />
+  </Typography>
+</PageLayout>
+
+<style>
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: var(--font-size-4);
+    margin-bottom: var(--gap-3);
+    text-wrap: balance;
+  }
+
+  .postInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-3);
+    margin-bottom: var(--gap-3);
+  }
+
+  @media (--viewport-desktop) {
+    .postInfo {
+      flex-wrap: nowrap;
+    }
+  }
+</style>

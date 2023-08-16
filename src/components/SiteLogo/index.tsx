@@ -1,9 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
-import { CSSClassProps } from '@/types/components';
 import styles from './index.module.css';
 import cn from 'classnames';
 
-export const SiteLogo: React.FC<CSSClassProps> = ({ className }) => {
+interface SiteLogoProps {
+  className?: string;
+}
+
+export const SiteLogo = ({ className }: SiteLogoProps): JSX.Element => {
   return (
     <div className={cn(styles.container, className)}>
       <div className={styles.image}>

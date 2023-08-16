@@ -1,5 +1,3 @@
-'use client';
-
 import { useCallback, useRef, useState } from 'react';
 import styles from './index.module.css';
 import { UPDATE_PWA_DIALOG_ID } from './constants';

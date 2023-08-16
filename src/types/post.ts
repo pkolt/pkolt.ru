@@ -1,8 +1,10 @@
-export interface Post {
+import type { MarkdownInstance } from 'astro';
+
+export interface PostMarkdown {
   title: string;
-  slug: string;
   created: string;
   modified: string;
   tags: string[];
-  content?: string;
 }
+
+export type Post = MarkdownInstance<PostMarkdown>;

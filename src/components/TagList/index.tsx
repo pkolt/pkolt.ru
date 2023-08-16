@@ -7,7 +7,7 @@ interface TagListProps {
   className?: string;
 }
 
-export const TagList: React.FC<TagListProps> = ({ tags, className }) => {
+export const TagList = ({ tags, className }: TagListProps): JSX.Element => {
   return (
     <ul className={cn(styles.tagList, className)}>
       {tags.map((tag) => (

@@ -1,4 +1,3 @@
-'use client';
 import cn from 'classnames';
 import { useCallback } from 'react';
 import { getColorFromString } from '@/utils/get-color-from-string';
@@ -10,7 +9,7 @@ interface TagProps {
   allowFilter?: boolean;
 }
 
-export const Tag: React.FC<TagProps> = ({ text, allowFilter }) => {
+export const Tag = ({ text, allowFilter }: TagProps): JSX.Element => {
   const color = getColorFromString(text);
   const { tag, setTag } = useFilterStore();
   const selected = text === tag;

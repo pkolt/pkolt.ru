@@ -5,7 +5,7 @@ interface FilterByTagProps {
   tags: string[];
 }
 
-export const FilterByTag: React.FC<FilterByTagProps> = ({ tags }) => {
+export const FilterByTag = ({ tags }: FilterByTagProps): JSX.Element => {
   return (
     <ul className={styles.container}>
       {tags.map((tag) => (
