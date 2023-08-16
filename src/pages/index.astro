@@ -2,7 +2,7 @@
 import RootLayout from '../layouts/RootLayout.astro';
 import { PostList } from '@/components/PostList';
 import { FilterByTag } from '@/components/FilterByTag';
-import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants/site';
 import type { Post, PostMarkdown } from '@/types/post';
 
 const getTags = (posts: Post[]): string[] => {
