@@ -15,6 +15,7 @@ const config = {
     syntaxHighlight: 'prism',
   },
   outDir: 'out',
+  cacheDir: 'cache',
   experimental: {
     assets: true,
   },
