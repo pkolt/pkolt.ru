@@ -6,5 +6,7 @@ const { title } = Astro.props.frontmatter || Astro.props;
 ---
 
 <PageLayout title={title}>
-  <Typography><slot /></Typography>
+  <Typography>
+    <slot />
+  </Typography>
 </PageLayout>

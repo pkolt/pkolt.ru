@@ -9,6 +9,7 @@ const config = {
     'eslint-config-prettier',
     'astro-eslint-parser',
     'prism-themes',
+    'bootstrap-icons',
   ],
 };
 

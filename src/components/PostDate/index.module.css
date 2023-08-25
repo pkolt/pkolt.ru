@@ -6,3 +6,8 @@
   gap: var(--gap-1);
   align-items: center;
 }
+
+.icon {
+  display: inline-block;
+  font-size: 1rem;
+}
