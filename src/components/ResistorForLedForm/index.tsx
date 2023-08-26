@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
-import { Divider, FormControl, FormLabel, Input, Stack, Grid, Typography, Chip } from '@mui/joy';
+import { FormControl, FormLabel, Input, Typography, Chip } from '@mui/joy';
+import styles from './index.module.css';
 
 interface FormValues {
   batteryVoltage: number;
@@ -28,8 +29,8 @@ export const ResistorForLedForm = () => {
   }, [isValid, ledCurrent, resistance]);
 
   return (
-    <Grid container gap={6}>
-      <Grid container md={4} gap={2} flexDirection="column">
+    <div className={styles.container}>
+      <div className={styles.form}>
         <FormControl error={!!errors.batteryVoltage}>
           <FormLabel>Напряжение источника питания (Vcc)</FormLabel>
           <Input
@@ -48,26 +49,24 @@ export const ResistorForLedForm = () => {
           <FormLabel>Ток проходящий через светодиод (I)</FormLabel>
           <Input type="number" {...register('ledCurrent', { required: true, valueAsNumber: true })} endDecorator="mA" />
         </FormControl>
-      </Grid>
-      <Grid container gap={2} flexDirection="column" md>
-        <Stack flexDirection="column" gap={1}>
+      </div>
+      <div className={styles.result}>
+        <div className={styles.result_value}>
           <Typography level="title-lg">Сопротивление резистора (R): </Typography>
           <Typography>R = (Vcc - Vf) / I</Typography>
           <Chip variant="solid" color="primary">
             {resistance} Ω
           </Chip>
-        </Stack>
+        </div>
 
-        <Divider />
-
-        <Stack flexDirection="column" gap={1}>
+        <div className={styles.result_value}>
           <Typography level="title-lg">Мощность резистора (P): </Typography>
           <Typography>P = (I ^ 2) x R</Typography>
           <Chip variant="solid" color="primary">
             {power} W
           </Chip>
-        </Stack>
-      </Grid>
-    </Grid>
+        </div>
+      </div>
+    </div>
   );
 };
