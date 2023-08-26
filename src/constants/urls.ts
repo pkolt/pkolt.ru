@@ -1,7 +1,7 @@
 export enum PageUrl {
   Home = '/',
   Blog = '/blog',
-  RadioAmateur = '/radio-amateur',
-  ResistorForLed = '/radio-amateur/resistor-for-led',
+  RadioElectronics = '/radio-electronics',
+  ResistorForLed = '/radio-electronics/resistor-for-led',
   About = '/about',
 }

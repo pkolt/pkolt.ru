@@ -2,12 +2,13 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import { Typography } from '../../components/Typography';
 import { PageUrl } from '../../constants/urls';
-const title = 'Радиолюбитель';
+const title = 'Радиоэлектроника';
 ---
 
 <PageLayout title={title}>
   <Typography>
     <h2>{title}</h2>
+    <p>Полезная информация для тех кто занимается радиоэлектроникой.</p>
     <ul>
       <li>
         <a href={PageUrl.ResistorForLed}>Расчет резистора для светодиода</a>

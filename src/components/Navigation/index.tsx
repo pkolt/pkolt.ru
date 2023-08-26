@@ -5,9 +5,9 @@ import { PageUrl } from '@/constants/urls';
 export const Navigation: React.FC = () => {
   return (
     <nav className={styles.container}>
-      <a href={PageUrl.RadioAmateur} className={styles.link}>
+      <a href={PageUrl.RadioElectronics} className={styles.link}>
         <i className={cn('bi-boombox', styles.icon)}></i>
-        Радиолюбитель
+        Радиоэлектроника
       </a>
       {/* <a href={PageUrl.About} className={styles.link}>
         <i className={cn('bi-person', styles.icon)}></i>
