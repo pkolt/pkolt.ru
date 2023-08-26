@@ -14,29 +14,20 @@
   &::backdrop {
     background: oklch(0% 0 0 / 60%);
   }
-
-  button {
-    padding: var(--gap-1) var(--gap-2);
-    border-radius: var(--border-radius-2);
-    border: 0;
-    background: var(--color-gray-1);
-    cursor: pointer;
-
-    &[data-primary] {
-      background: var(--color-blue-2);
-      color: var(--color-layout);
-    }
-  }
 }
 
-@media (--viewport-desktop) {
-  .container[open] {
-    min-width: 300px;
-  }
+.text {
+  text-align: center;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
   gap: var(--gap-2);
+}
+
+@media (--viewport-desktop) {
+  .container[open] {
+    min-width: 300px;
+  }
 }

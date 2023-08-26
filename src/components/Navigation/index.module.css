@@ -1,5 +1,20 @@
 .container {
   display: flex;
-  justify-content: center;
   gap: var(--gap-2);
+}
+
+.link {
+  display: inline-flex;
+  gap: var(--gap-1);
+  align-items: center;
+  background-color: var(--color-layout);
+  padding: var(--gap-1) var(--gap-2);
+  border-radius: var(--border-radius-3);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  border: 1px solid var(--color-blue-1);
+}
+
+.icon {
+  font-size: 1.2rem;
 }

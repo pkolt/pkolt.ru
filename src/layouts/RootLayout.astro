@@ -2,13 +2,15 @@
 import { Copyright } from '../components/Copyright';
 import { SiteName } from '../components/SiteName';
 import { SocialNav } from '../components/SocialNav';
+import { Navigation } from '../components/Navigation';
 import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import { SITE_AUTHOR, APP_NAME } from '@/constants/site';
-import '../styles/globals.css';
 import prismOneLightUrl from 'prism-themes/themes/prism-one-light.css?url';
 import prismOneDarkUrl from 'prism-themes/themes/prism-one-dark.css?url';
 import '@fontsource-variable/open-sans';
 import '@fontsource-variable/jetbrains-mono';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../styles/globals.css';
 
 import type { RootLayoutProps } from '../types/layout';
 type Props = RootLayoutProps;
@@ -116,7 +118,9 @@ const { title, description, keywords } = Astro.props;
   <body class="container">
     <header class="header">
       <SiteName />
-      {/* <Navigation /> */}
+      <div class="navigation">
+        <Navigation />
+      </div>
       <SocialNav />
     </header>
     <slot />
@@ -146,9 +150,13 @@ const { title, description, keywords } = Astro.props;
   .header {
     background: linear-gradient(0deg, var(--color-blue-1), transparent);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 var(--gap-2);
+  }
+
+  .navigation {
+    margin-left: var(--gap-6);
+    flex-grow: 1;
   }
 
   .footer {
@@ -156,5 +164,11 @@ const { title, description, keywords } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  @media (--viewport-mobile) {
+    .navigation {
+      display: none;
+    }
   }
 </style>

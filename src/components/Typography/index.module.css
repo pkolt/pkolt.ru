@@ -88,7 +88,7 @@
     font-weight: var(--font-weight-bold);
   }
 
-  table {
+  & table {
     border-collapse: collapse;
     display: block;
     max-width: 100%;
@@ -111,5 +111,17 @@
 
   & ul ::marker {
     color: var(--color-blue-3);
+  }
+
+  /* Inline code */
+  & :not(pre) > code {
+    font-size: var(--font-size-1);
+    font-weight: 400;
+    line-height: 1.5;
+    background: var(--color-gray-1);
+    padding: 0 0.3rem;
+    border: 1px solid var(--color-gray-2);
+    border-radius: var(--border-radius-1);
+    overflow-wrap: break-word;
   }
 }

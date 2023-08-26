@@ -1,6 +1,7 @@
-export enum Url {
+export enum PageUrl {
   Home = '/',
   Blog = '/blog',
-  Electronics = '/electronics',
+  RadioElectronics = '/radio-electronics',
+  ResistorForLed = '/radio-electronics/resistor-for-led',
   About = '/about',
 }

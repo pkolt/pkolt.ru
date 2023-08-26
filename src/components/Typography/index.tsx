@@ -1,7 +1,11 @@
+import cn from 'classnames';
 import styles from './index.module.css';
 
-interface TypographyProps extends React.PropsWithChildren {}
+interface TypographyProps {
+  children: React.ReactNode;
+  className?: string;
+}
 
-export const Typography = ({ children }: TypographyProps): JSX.Element => {
-  return <div className={styles.container}>{children}</div>;
+export const Typography = ({ children, className }: TypographyProps): JSX.Element => {
+  return <div className={cn(styles.container, className)}>{children}</div>;
 };
