@@ -9,10 +9,10 @@ export const Navigation: React.FC = () => {
         <i className={cn('bi-boombox', styles.icon)}></i>
         Радиолюбитель
       </a>
-      <a href={PageUrl.About} className={styles.link}>
+      {/* <a href={PageUrl.About} className={styles.link}>
         <i className={cn('bi-person', styles.icon)}></i>
         Обо мне
-      </a>
+      </a> */}
     </nav>
   );
 };
