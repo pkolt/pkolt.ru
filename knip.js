@@ -10,6 +10,7 @@ const config = {
     'astro-eslint-parser',
     'prism-themes',
     'bootstrap-icons',
+    'sharp',
   ],
 };
 
