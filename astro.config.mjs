@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
@@ -16,12 +16,6 @@ const config = {
   },
   outDir: 'out',
   cacheDir: 'cache',
-  experimental: {
-    assets: true,
-  },
-  image: {
-    service: sharpImageService(),
-  },
   redirects: {
     '/arduino-cpp': '/blog/arduino-cpp',
     '/arduino-number-to-string': '/blog/arduino-number-to-string',
