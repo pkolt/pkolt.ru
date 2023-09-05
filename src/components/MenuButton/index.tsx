@@ -1,8 +1,6 @@
 import { useCallback, useState } from 'react';
 import cn from 'classnames';
-import Modal from '@mui/joy/Modal';
-import ModalDialog from '@mui/joy/ModalDialog';
-import ModalClose from '@mui/joy/ModalClose';
+import { Modal, ModalDialog, ModalClose } from '@mui/joy';
 import styles from './index.module.css';
 import { SocialNav } from '../SocialNav';
 import { Navigation } from '../Navigation';
