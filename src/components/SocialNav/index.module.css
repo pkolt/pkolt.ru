@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  justify-content: flex-end;
   gap: var(--gap-2);
 }
 
@@ -19,4 +18,10 @@
 
 .linkedin {
   color: var(--color-linkedin) !important;
+}
+
+@media (--viewport-mobile) {
+  .container {
+    justify-content: center;
+  }
 }

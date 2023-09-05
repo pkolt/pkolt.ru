@@ -2,6 +2,7 @@
 import { Copyright } from '../components/Copyright';
 import { SiteName } from '../components/SiteName';
 import { SocialNav } from '../components/SocialNav';
+import { MenuButton } from '../components/MenuButton';
 import { Navigation } from '../components/Navigation';
 import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import { SITE_AUTHOR, APP_NAME } from '@/constants/site';
@@ -118,10 +119,15 @@ const { title, description, keywords } = Astro.props;
   <body class="container">
     <header class="header">
       <SiteName />
-      <div class="navigation">
+      <div class="navigation onlyDesktop">
         <Navigation />
       </div>
-      <SocialNav />
+      <div class="onlyDesktop">
+        <SocialNav />
+      </div>
+      <div class="onlyMobile">
+        <MenuButton client:load />
+      </div>
     </header>
     <slot />
     <footer class="footer">
@@ -166,9 +172,20 @@ const { title, description, keywords } = Astro.props;
     align-items: center;
   }
 
+  .onlyMobile,
+  .onlyDesktop {
+    display: none;
+  }
+
   @media (--viewport-mobile) {
-    .navigation {
-      display: none;
+    .onlyMobile {
+      display: block;
+    }
+  }
+
+  @media (--viewport-desktop) {
+    .onlyDesktop {
+      display: block;
     }
   }
 </style>
