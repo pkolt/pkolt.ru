@@ -18,3 +18,9 @@
 .icon {
   font-size: 1.2rem;
 }
+
+@media (--viewport-mobile) {
+  .container {
+    flex-direction: column;
+  }
+}
