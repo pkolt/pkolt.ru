@@ -3,6 +3,7 @@ import { Copyright } from '../components/Copyright';
 import { SiteName } from '../components/SiteName';
 import { SocialNav } from '../components/SocialNav';
 import { MenuButton } from '../components/MenuButton';
+import { ThemeButton } from '../components/ThemeButton';
 import { Navigation } from '../components/Navigation';
 import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import { SITE_AUTHOR, APP_NAME } from '@/constants/site';
@@ -119,14 +120,16 @@ const { title, description, keywords } = Astro.props;
   <body class="container">
     <header class="header">
       <SiteName />
-      <div class="navigation onlyDesktop">
+      <div class="navigation">
         <Navigation />
       </div>
-      <div class="onlyDesktop">
-        <SocialNav />
-      </div>
-      <div class="onlyMobile">
+      <div class="icons-mobile">
+        <ThemeButton client:load />
         <MenuButton client:load />
+      </div>
+      <div class="icons-desktop">
+        <ThemeButton client:load />
+        <SocialNav />
       </div>
     </header>
     <slot />
@@ -172,20 +175,27 @@ const { title, description, keywords } = Astro.props;
     align-items: center;
   }
 
-  .onlyMobile,
-  .onlyDesktop {
+  .icons-mobile,
+  .icons-desktop {
     display: none;
   }
 
   @media (--viewport-mobile) {
-    .onlyMobile {
-      display: block;
+    .navigation {
+      display: none;
+    }
+
+    .icons-mobile {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-2);
     }
   }
 
   @media (--viewport-desktop) {
-    .onlyDesktop {
-      display: block;
+    .icons-desktop {
+      display: flex;
+      gap: var(--gap-4);
     }
   }
 </style>

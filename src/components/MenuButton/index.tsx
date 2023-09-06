@@ -24,9 +24,7 @@ export const MenuButton = (): JSX.Element => {
   //! Replace Modal to Drawer (https://mui.com/joy-ui/react-drawer/)
   return (
     <>
-      <div className={cn(styles.container, opened && styles.opened)} onClick={handleOpen} role="button">
-        <i className={cn('bi-list', styles.icon)} />
-      </div>
+      <i className={cn('bi-list', styles.icon, opened && styles.opened)} onClick={handleOpen} role="button" />
       <Modal open={openDialog} onClose={handleClose}>
         <ModalDialog sx={{ width: '90%', height: '100%' }}>
           <div className={styles.modal}>

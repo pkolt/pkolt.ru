@@ -1,0 +1,5 @@
+.container {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5rem;
+}
