@@ -3,7 +3,6 @@ import { Copyright } from '../components/Copyright';
 import { SiteName } from '../components/SiteName';
 import { SocialNav } from '../components/SocialNav';
 import { MenuButton } from '../components/MenuButton';
-import { ThemeButton } from '../components/ThemeButton';
 import { Navigation } from '../components/Navigation';
 import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import { SITE_AUTHOR, APP_NAME } from '@/constants/site';
@@ -124,11 +123,9 @@ const { title, description, keywords } = Astro.props;
         <Navigation />
       </div>
       <div class="icons-mobile">
-        <ThemeButton client:load />
         <MenuButton client:load />
       </div>
       <div class="icons-desktop">
-        <ThemeButton client:load />
         <SocialNav />
       </div>
     </header>

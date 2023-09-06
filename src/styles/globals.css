@@ -25,6 +25,8 @@
   --font-weight-light: 300;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: light) {
