@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import type { Post } from '@/types/post';
 import { PostItem } from './PostItem';
 import styles from './index.module.css';
-import { useFilterStore } from '@/store/filter';
+import { usePostsFilterStore } from '@/store/postsFilter';
 import { DateTime } from 'luxon';
 
 const orderByDate = (posts: Post[]) => {
@@ -16,7 +16,7 @@ interface PostListProps {
 }
 
 export const PostList = ({ posts }: PostListProps): JSX.Element => {
-  const { tag } = useFilterStore();
+  const { tag } = usePostsFilterStore();
 
   const orderedPosts = useMemo(() => orderByDate(posts), [posts]);
 

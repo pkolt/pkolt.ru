@@ -119,14 +119,14 @@ const { title, description, keywords } = Astro.props;
   <body class="container">
     <header class="header">
       <SiteName />
-      <div class="navigation onlyDesktop">
+      <div class="navigation">
         <Navigation />
       </div>
-      <div class="onlyDesktop">
-        <SocialNav />
-      </div>
-      <div class="onlyMobile">
+      <div class="icons-mobile">
         <MenuButton client:load />
+      </div>
+      <div class="icons-desktop">
+        <SocialNav />
       </div>
     </header>
     <slot />
@@ -172,20 +172,27 @@ const { title, description, keywords } = Astro.props;
     align-items: center;
   }
 
-  .onlyMobile,
-  .onlyDesktop {
+  .icons-mobile,
+  .icons-desktop {
     display: none;
   }
 
   @media (--viewport-mobile) {
-    .onlyMobile {
-      display: block;
+    .navigation {
+      display: none;
+    }
+
+    .icons-mobile {
+      display: flex;
+      align-items: center;
+      gap: var(--gap-2);
     }
   }
 
   @media (--viewport-desktop) {
-    .onlyDesktop {
-      display: block;
+    .icons-desktop {
+      display: flex;
+      gap: var(--gap-4);
     }
   }
 </style>

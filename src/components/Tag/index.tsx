@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { useCallback } from 'react';
 import { getColorFromString } from '@/utils/get-color-from-string';
 import styles from './index.module.css';
-import { useFilterStore } from '@/store/filter';
+import { usePostsFilterStore } from '@/store/postsFilter';
 
 interface TagProps {
   text: string;
@@ -11,7 +11,7 @@ interface TagProps {
 
 export const Tag = ({ text, allowFilter }: TagProps): JSX.Element => {
   const color = getColorFromString(text);
-  const { tag, setTag } = useFilterStore();
+  const { tag, setTag } = usePostsFilterStore();
   const selected = text === tag;
   const handleSelect = useCallback(() => {
     if (allowFilter) {
