@@ -3,10 +3,15 @@ import { Theme, useThemeStore } from '@/store/theme';
 import styles from './index.module.css';
 import { useCallback } from 'react';
 
-const mapIcons: Record<Theme, string> = {
-  [Theme.System]: 'bi-circle-half',
-  [Theme.Dark]: 'bi-circle-fill',
-  [Theme.Light]: 'bi-circle',
+interface ThemeInfo {
+  iconCls: string;
+  title: string;
+}
+
+const mapTheme: Record<Theme, ThemeInfo> = {
+  [Theme.System]: { iconCls: 'bi-circle-half', title: 'Auto' },
+  [Theme.Dark]: { iconCls: 'bi-circle-fill', title: 'Dark' },
+  [Theme.Light]: { iconCls: 'bi-circle', title: 'Light' },
 };
 
 export const ThemeButton = (): JSX.Element => {
@@ -19,5 +24,14 @@ export const ThemeButton = (): JSX.Element => {
     setTheme(nextTheme);
   }, [setTheme, theme]);
 
-  return <i className={cn(styles.container, mapIcons[theme])} onClick={handleClick} role="button" />;
+  const themeInfo = mapTheme[theme];
+
+  return (
+    <i
+      className={cn(styles.container, themeInfo.iconCls)}
+      title={themeInfo.title}
+      onClick={handleClick}
+      role="button"
+    />
+  );
 };
