@@ -57,8 +57,8 @@
     --color-text: oklch(80% 0 0);
     --color-layout: oklch(0% 0 0);
     --color-blue-1: oklch(25.88% 0.009 247.92);
-    --color-blue-2: oklch(56.69% 0.175 253.25);
-    --color-blue-3: oklch(76.37% 0.064 245.77);
+    --color-blue-2: oklch(50.69% 0.175 253.25);
+    --color-blue-3: oklch(46.37% 0.064 245.77);
     --color-gray-1: oklch(20.14% 0.003 17.21);
     --color-gray-2: oklch(40.44% 0.001 17.18);
     --color-gray-3: oklch(30.69% 0 0);
