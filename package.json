@@ -27,7 +27,6 @@
     "pre-commit": "npm run lint-all"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.0.2",
     "@astrojs/react": "^3.0.1",
     "@astrojs/sitemap": "^3.0.0",
     "@emotion/react": "^11.11.1",
