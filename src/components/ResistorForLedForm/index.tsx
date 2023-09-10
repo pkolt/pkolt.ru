@@ -1,19 +1,20 @@
+import { Chip, FormControl, FormLabel, Input, Typography } from '@mui/joy';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
-import { FormControl, FormLabel, Input, Typography, Chip } from '@mui/joy';
-import styles from './index.module.css';
+
 import { MUIWrapper } from '../MUIWrapper';
+import styles from './index.module.css';
 
 interface FormValues {
   batteryVoltage: number;
-  ledVoltage: number;
   ledCurrent: number;
+  ledVoltage: number;
 }
 
 export const ResistorForLedForm = () => {
-  const { register, formState, watch } = useForm<FormValues>({ mode: 'onChange' });
+  const { formState, register, watch } = useForm<FormValues>({ mode: 'onChange' });
   const { errors, isValid } = formState;
-  const { batteryVoltage, ledVoltage, ledCurrent } = watch();
+  const { batteryVoltage, ledCurrent, ledVoltage } = watch();
 
   const resistance = useMemo<number>(() => {
     if (isValid && batteryVoltage && ledVoltage && ledCurrent) {
@@ -64,7 +65,7 @@ export const ResistorForLedForm = () => {
           <div className={styles.result_value}>
             <Typography level="title-lg">Сопротивление резистора (R): </Typography>
             <Typography>R = (Vcc - Vf) / I</Typography>
-            <Chip variant="solid" color="primary">
+            <Chip color="primary" variant="solid">
               {resistance} Ω
             </Chip>
           </div>
@@ -72,7 +73,7 @@ export const ResistorForLedForm = () => {
           <div className={styles.result_value}>
             <Typography level="title-lg">Мощность резистора (P): </Typography>
             <Typography>P = (I ^ 2) x R</Typography>
-            <Chip variant="solid" color="primary">
+            <Chip color="primary" variant="solid">
               {power} W
             </Chip>
           </div>

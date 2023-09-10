@@ -1,9 +1,10 @@
 ---
-import PageLayout from '../../layouts/PageLayout.astro';
-import { Typography } from '../../components/Typography';
-import { ResistorForLedForm } from '../../components/ResistorForLedForm';
 import { Image } from 'astro:assets';
+
 import ResistoForLedImage from '../../assets/radio-electronics/resistor_for_led.jpg';
+import { ResistorForLedForm } from '../../components/ResistorForLedForm';
+import { Typography } from '../../components/Typography';
+import PageLayout from '../../layouts/PageLayout.astro';
 const title = 'Расчет резистора для светодиода';
 ---
 
@@ -13,7 +14,7 @@ const title = 'Расчет резистора для светодиода';
       <h2>{title}</h2>
     </Typography>
     <div class="main">
-      <Image src={ResistoForLedImage} width={400} alt="Резистор для светодиода" />
+      <Image alt="Резистор для светодиода" src={ResistoForLedImage} width={400} />
       <ResistorForLedForm client:load />
     </div>
   </div>

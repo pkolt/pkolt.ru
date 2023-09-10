@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import { useState } from 'react';
+
 import styles from './index.module.css';
 
 interface Heading {
@@ -23,14 +24,14 @@ export const PostHeadings = ({ headings }: PostHeadingsProps): JSX.Element | nul
 
   return (
     <div className={cn(styles.container, expanded && styles.expanded)}>
-      <div className={styles.title} role="button" onClick={handleClick}>
+      <div className={styles.title} onClick={handleClick} role="button">
         Содержание
         <i className="bi-chevron-down" />
       </div>
       {expanded && (
         <ol>
           {headings.map((it) => (
-            <li key={it.slug} data-depth={it.depth}>
+            <li data-depth={it.depth} key={it.slug}>
               <a href={`#${it.slug}`}>{it.text}</a>
             </li>
           ))}

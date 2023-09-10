@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'plugin:perfectionist/recommended-alphabetical',
   ],
   plugins: ['prettier', 'testing-library', '@typescript-eslint', 'import', 'jsx-a11y'],
   settings: {

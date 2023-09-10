@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Workbox, type WorkboxLifecycleWaitingEvent } from 'workbox-window';
+
 import { showUpdatePwaDialog, subscribeAcceptUpdatePwa } from './components/UpdatePwaDialog/utils';
 
 if ('serviceWorker' in navigator) {

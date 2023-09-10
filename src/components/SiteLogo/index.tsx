@@ -1,5 +1,6 @@
-import styles from './index.module.css';
 import cn from 'classnames';
+
+import styles from './index.module.css';
 
 interface SiteLogoProps {
   className?: string;
@@ -11,7 +12,7 @@ export const SiteLogo = ({ className }: SiteLogoProps): JSX.Element => {
       <div className={styles.image}>
         <picture>
           <source srcSet="/images/images/logo@1x.png 1x, /images/images/logo@2x.png 2x" type="image/png" />
-          <img src="/images/images/logo@1x.png" width="32px" height="50px" alt="Site logo" />
+          <img alt="Site logo" height="50px" src="/images/images/logo@1x.png" width="32px" />
         </picture>
       </div>
     </div>

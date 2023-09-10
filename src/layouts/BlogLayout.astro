@@ -1,25 +1,26 @@
 ---
-import type { MarkdownLayoutProps } from 'astro';
-import { PostDate } from '@/components/PostDate';
-import { TagList } from '@/components/TagList';
-import { PostHeadings } from '@/components/PostHeadings';
-import PageLayout from '@/layouts/PageLayout.astro';
 import type { PostMarkdown } from '@/types/post';
+import type { MarkdownLayoutProps } from 'astro';
+
+import { PostDate } from '@/components/PostDate';
+import { PostHeadings } from '@/components/PostHeadings';
+import { TagList } from '@/components/TagList';
 import { Typography } from '@/components/Typography';
+import PageLayout from '@/layouts/PageLayout.astro';
 
 type Props = MarkdownLayoutProps<PostMarkdown>;
 
 const props = Astro.props;
 ---
 
-<PageLayout title={props.frontmatter.title} keywords={props.frontmatter.tags}>
+<PageLayout keywords={props.frontmatter.tags} title={props.frontmatter.title}>
   <header class="header">
     <h1 class="title">{props.frontmatter.title}</h1>
     <div class="postInfo">
       <PostDate dateIso={props.frontmatter.created} showIcon />
       <TagList tags={props.frontmatter.tags} />
     </div>
-    <PostHeadings headings={props.headings} client:load />
+    <PostHeadings client:load headings={props.headings} />
   </header>
   <Typography>
     <slot />

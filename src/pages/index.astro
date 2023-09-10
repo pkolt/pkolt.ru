@@ -1,9 +1,11 @@
 ---
-import RootLayout from '../layouts/RootLayout.astro';
-import { PostList } from '@/components/PostList';
-import { FilterByTag } from '@/components/FilterByTag';
-import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants/site';
 import type { Post, PostMarkdown } from '@/types/post';
+
+import { FilterByTag } from '@/components/FilterByTag';
+import { PostList } from '@/components/PostList';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants/site';
+
+import RootLayout from '../layouts/RootLayout.astro';
 
 const getTags = (posts: Post[]): string[] => {
   const tags = posts.map((post) => post.frontmatter.tags).flat();
@@ -14,13 +16,13 @@ const posts = await Astro.glob<PostMarkdown>('/src/pages/blog/*.md');
 const tags = getTags(posts);
 ---
 
-<RootLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<RootLayout description={SITE_DESCRIPTION} title={SITE_TITLE}>
   <div class="container">
     <aside class="sidebar">
-      <FilterByTag tags={tags} client:load />
+      <FilterByTag client:load tags={tags} />
     </aside>
     <main class="main">
-      <PostList posts={posts} client:load />
+      <PostList client:load posts={posts} />
     </main>
   </div>
 </RootLayout>

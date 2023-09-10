@@ -1,5 +1,6 @@
 import React, { createElement } from 'react';
 import slugify from 'slugify';
+
 import styles from './index.module.css';
 
 type HeaderType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -8,11 +9,11 @@ const createHeader = (elemType: HeaderType) => {
   const HeaderBlock = ({ children }: React.PropsWithChildren): React.ReactElement => {
     const id = slugify(`${children}`, { lower: true });
     const className = styles.container;
-    const props = { id, className };
+    const props = { className, id };
     const elemChildren = (
       <>
         {children}
-        <a href={`#${id}`} className={styles.link}>
+        <a className={styles.link} href={`#${id}`}>
           #
         </a>
       </>

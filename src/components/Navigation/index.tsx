@@ -1,11 +1,12 @@
-import styles from './index.module.css';
-import cn from 'classnames';
 import { PageUrl } from '@/constants/urls';
+import cn from 'classnames';
+
+import styles from './index.module.css';
 
 export const Navigation: React.FC = () => {
   return (
     <nav className={styles.container}>
-      <a href={PageUrl.RadioElectronics} className={styles.link}>
+      <a className={styles.link} href={PageUrl.RadioElectronics}>
         <i className={cn('bi-boombox', styles.icon)}></i>
         Радиоэлектроника
       </a>

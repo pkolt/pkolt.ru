@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import { useColorScheme } from '@mui/joy';
+import { useEffect } from 'react';
 
 interface WrapperProps {
   children: React.ReactNode;

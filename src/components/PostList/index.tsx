@@ -1,9 +1,11 @@
-import { useMemo } from 'react';
 import type { Post } from '@/types/post';
-import { PostItem } from './PostItem';
-import styles from './index.module.css';
+
 import { usePostsFilterStore } from '@/store/postsFilter';
 import { DateTime } from 'luxon';
+import { useMemo } from 'react';
+
+import styles from './index.module.css';
+import { PostItem } from './PostItem';
 
 const orderByDate = (posts: Post[]) => {
   return posts.sort((post1, post2) =>

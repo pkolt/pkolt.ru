@@ -1,4 +1,5 @@
 import type { Post } from '../../../types/post';
+
 import { PostDate } from '../../PostDate';
 import { TagList } from '../../TagList';
 import styles from './index.module.css';
@@ -10,10 +11,10 @@ interface PostItemProps {
 export const PostItem = ({ post }: PostItemProps): JSX.Element => {
   return (
     <article>
-      <a href={post.url} className={styles.container}>
+      <a className={styles.container} href={post.url}>
         <h2 className={styles.title}>{post.frontmatter.title}</h2>
-        <TagList tags={post.frontmatter.tags} className={styles.tagList} />
-        <PostDate dateIso={post.frontmatter.created} className={styles.date} />
+        <TagList className={styles.tagList} tags={post.frontmatter.tags} />
+        <PostDate className={styles.date} dateIso={post.frontmatter.created} />
       </a>
     </article>
   );
