@@ -1,13 +1,14 @@
-import cn from 'classnames';
 import { Tag } from '@/components/Tag';
+import cn from 'classnames';
+
 import styles from './index.module.css';
 
 interface TagListProps {
-  tags: string[];
   className?: string;
+  tags: string[];
 }
 
-export const TagList = ({ tags, className }: TagListProps): JSX.Element => {
+export const TagList = ({ className, tags }: TagListProps): JSX.Element => {
   return (
     <ul className={cn(styles.tagList, className)}>
       {tags.map((tag) => (

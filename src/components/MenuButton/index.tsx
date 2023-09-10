@@ -1,10 +1,11 @@
-import { useCallback, useState } from 'react';
+import { Modal, ModalClose, ModalDialog } from '@mui/joy';
 import cn from 'classnames';
-import { Modal, ModalDialog, ModalClose } from '@mui/joy';
-import styles from './index.module.css';
-import { SocialNav } from '../SocialNav';
-import { Navigation } from '../Navigation';
+import { useCallback, useState } from 'react';
+
 import { MUIWrapper } from '../MUIWrapper';
+import { Navigation } from '../Navigation';
+import { SocialNav } from '../SocialNav';
+import styles from './index.module.css';
 
 const DELAY_MS = 250;
 
@@ -27,8 +28,8 @@ export const MenuButton = (): JSX.Element => {
     <>
       <i className={cn('bi-list', styles.icon, opened && styles.opened)} onClick={handleOpen} role="button" />
       <MUIWrapper>
-        <Modal open={openDialog} onClose={handleClose}>
-          <ModalDialog sx={{ width: '90%', height: '100%' }}>
+        <Modal onClose={handleClose} open={openDialog}>
+          <ModalDialog sx={{ height: '100%', width: '90%' }}>
             <div className={styles.modal}>
               <ModalClose />
               <Navigation />

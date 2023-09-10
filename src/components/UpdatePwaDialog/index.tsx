@@ -1,10 +1,11 @@
-import { useCallback, useRef, useState } from 'react';
 import { Button } from '@mui/joy';
-import styles from './index.module.css';
-import { UPDATE_PWA_DIALOG_ID } from './constants';
-import { sendAcceptUpdatePwa } from './utils';
-import { Typography } from '../Typography';
+import { useCallback, useRef, useState } from 'react';
+
 import { MUIWrapper } from '../MUIWrapper';
+import { Typography } from '../Typography';
+import { UPDATE_PWA_DIALOG_ID } from './constants';
+import styles from './index.module.css';
+import { sendAcceptUpdatePwa } from './utils';
 
 export const UpdatePwaDialog = () => {
   const [disabled, setDisabled] = useState(false);
@@ -30,10 +31,10 @@ export const UpdatePwaDialog = () => {
           <p>Обновить сайт и перезагрузить страницу?</p>
         </Typography>
         <div className={styles.buttons}>
-          <Button onClick={handleClickYes} loading={disabled} loadingPosition="start">
+          <Button loading={disabled} loadingPosition="start" onClick={handleClickYes}>
             Обновить
           </Button>
-          <Button color="neutral" onClick={handleClickNo} disabled={disabled}>
+          <Button color="neutral" disabled={disabled} onClick={handleClickNo}>
             Отмена
           </Button>
         </div>

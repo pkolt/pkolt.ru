@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
 type PostsFilterStore = {
-  tag: string;
   setTag: (tag: string) => void;
+  tag: string;
 };
 
 export const usePostsFilterStore = create<PostsFilterStore>()((set) => ({
-  tag: '',
   setTag: (tag) => set((state) => ({ tag: tag !== state.tag ? tag : '' })),
+  tag: '',
 }));

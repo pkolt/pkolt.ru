@@ -1,4 +1,5 @@
 import { CssVarsProvider } from '@mui/joy';
+
 import { Wrapper } from './Wrapper';
 
 interface MUIWrapperProps {

@@ -1,17 +1,18 @@
+import { usePostsFilterStore } from '@/store/postsFilter';
+import { getColorFromString } from '@/utils/get-color-from-string';
 import cn from 'classnames';
 import { useCallback } from 'react';
-import { getColorFromString } from '@/utils/get-color-from-string';
+
 import styles from './index.module.css';
-import { usePostsFilterStore } from '@/store/postsFilter';
 
 interface TagProps {
-  text: string;
   allowFilter?: boolean;
+  text: string;
 }
 
-export const Tag = ({ text, allowFilter }: TagProps): JSX.Element => {
+export const Tag = ({ allowFilter, text }: TagProps): JSX.Element => {
   const color = getColorFromString(text);
-  const { tag, setTag } = usePostsFilterStore();
+  const { setTag, tag } = usePostsFilterStore();
   const selected = text === tag;
   const handleSelect = useCallback(() => {
     if (allowFilter) {
@@ -21,9 +22,9 @@ export const Tag = ({ text, allowFilter }: TagProps): JSX.Element => {
   return (
     <li
       className={cn(styles.container, (selected || !allowFilter) && styles.selected, allowFilter && styles.cursor)}
-      style={{ background: color }}
       onClick={handleSelect}
-      role="button">
+      role="button"
+      style={{ background: color }}>
       {text}
     </li>
   );

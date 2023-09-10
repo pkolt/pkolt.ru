@@ -1,4 +1,5 @@
 import cn from 'classnames';
+
 import styles from './index.module.css';
 
 interface TypographyProps {

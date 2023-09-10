@@ -1,4 +1,4 @@
-import { UPDATE_PWA_DIALOG_ID, ACCEPT_UPDATE_PWA_TYPE } from './constants';
+import { ACCEPT_UPDATE_PWA_TYPE, UPDATE_PWA_DIALOG_ID } from './constants';
 
 export const showUpdatePwaDialog = () => {
   const dialog = document.getElementById(UPDATE_PWA_DIALOG_ID) as HTMLDialogElement | null;
