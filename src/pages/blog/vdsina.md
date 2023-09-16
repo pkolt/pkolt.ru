@@ -1,6 +1,6 @@
 ---
 layout: src/layouts/BlogLayout.astro
-title: VDSina меняют цены на услуги
+title: VDSina меняет цены на услуги
 created: 2023-09-16
 modified: 2023-09-16
 tags:
