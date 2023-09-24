@@ -1,34 +1,37 @@
-import { Chip, FormControl, FormLabel, Input, Typography } from '@mui/joy';
-import { useMemo } from 'react';
+import { Button, Chip, FormControl, FormLabel, Input, Typography } from '@mui/joy';
+import { Decimal } from 'decimal.js';
 import { useForm } from 'react-hook-form';
 
 import { MUIWrapper } from '../MUIWrapper';
 import styles from './index.module.css';
+import { getPower, getResistance, validateNumber } from './utils';
 
 interface FormValues {
-  batteryVoltage: number;
-  ledCurrent: number;
-  ledVoltage: number;
+  batteryVoltage: null | number;
+  ledCurrent: null | number;
+  ledVoltage: null | number;
 }
 
+const defaultValues: FormValues = { batteryVoltage: null, ledCurrent: null, ledVoltage: null };
+
 export const ResistorForLedForm = () => {
-  const { formState, register, watch } = useForm<FormValues>({ mode: 'onChange' });
+  const { formState, register, reset, watch } = useForm<FormValues>({ defaultValues, mode: 'onChange' });
   const { errors, isValid } = formState;
-  const { batteryVoltage, ledCurrent, ledVoltage } = watch();
+  const formValues = watch();
 
-  const resistance = useMemo<number>(() => {
-    if (isValid && batteryVoltage && ledVoltage && ledCurrent) {
-      return (batteryVoltage - ledVoltage) / (ledCurrent / 1000);
-    }
-    return 0;
-  }, [batteryVoltage, isValid, ledCurrent, ledVoltage]);
+  const batteryVoltage = formValues.batteryVoltage && new Decimal(formValues.batteryVoltage);
+  const ledCurrent = formValues.ledCurrent && new Decimal(formValues.ledCurrent);
+  const ledVoltage = formValues.ledVoltage && new Decimal(formValues.ledVoltage);
 
-  const power = useMemo<number>(() => {
-    if (isValid && resistance && ledCurrent) {
-      return Math.pow(ledCurrent / 1000, 2) * resistance;
-    }
-    return 0;
-  }, [isValid, ledCurrent, resistance]);
+  let resistance = new Decimal(0);
+  if (isValid && batteryVoltage && ledVoltage && ledCurrent) {
+    resistance = getResistance(batteryVoltage, ledVoltage, ledCurrent);
+  }
+
+  let power = new Decimal(0);
+  if (isValid && resistance && ledCurrent) {
+    power = getPower(resistance, ledCurrent);
+  }
 
   return (
     <MUIWrapper>
@@ -38,7 +41,8 @@ export const ResistorForLedForm = () => {
             <FormLabel>Напряжение источника питания (Vcc)</FormLabel>
             <Input
               type="number"
-              {...register('batteryVoltage', { required: true, valueAsNumber: true })}
+              {...register('batteryVoltage', { required: true, validate: validateNumber, valueAsNumber: true })}
+              autoFocus
               endDecorator="V"
             />
           </FormControl>
@@ -47,7 +51,7 @@ export const ResistorForLedForm = () => {
             <FormLabel>Падение напряжения на светодиоде (Vf)</FormLabel>
             <Input
               type="number"
-              {...register('ledVoltage', { required: true, valueAsNumber: true })}
+              {...register('ledVoltage', { required: true, validate: validateNumber, valueAsNumber: true })}
               endDecorator="V"
             />
           </FormControl>
@@ -56,25 +60,29 @@ export const ResistorForLedForm = () => {
             <FormLabel>Ток проходящий через светодиод (I)</FormLabel>
             <Input
               type="number"
-              {...register('ledCurrent', { required: true, valueAsNumber: true })}
+              {...register('ledCurrent', { required: true, validate: validateNumber, valueAsNumber: true })}
               endDecorator="mA"
             />
           </FormControl>
+
+          <Button color="neutral" onClick={() => reset(defaultValues)}>
+            Сброс
+          </Button>
         </div>
         <div className={styles.result}>
           <div className={styles.result_value}>
             <Typography level="title-lg">Сопротивление резистора (R): </Typography>
             <Typography>R = (Vcc - Vf) / I</Typography>
-            <Chip color="primary" variant="solid">
-              {resistance} Ω
+            <Chip color={isValid ? 'primary' : 'neutral'} variant="solid">
+              {resistance.toDecimalPlaces(2).toString()} Ω
             </Chip>
           </div>
 
           <div className={styles.result_value}>
             <Typography level="title-lg">Мощность резистора (P): </Typography>
             <Typography>P = (I ^ 2) x R</Typography>
-            <Chip color="primary" variant="solid">
-              {power} W
+            <Chip color={isValid ? 'primary' : 'neutral'} variant="solid">
+              {power.toDecimalPlaces(2).toString()} W
             </Chip>
           </div>
         </div>

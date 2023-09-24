@@ -9,7 +9,7 @@ export const SocialNav = (): JSX.Element => {
         <i className={cn('bi-github', styles.icon)} />
       </a>
       <a className={styles.twitter} href="https://twitter.com/pkolt" rel="noreferrer" target="_blank">
-        <i className={cn('bi-twitter', styles.icon)} />
+        <i className={cn('bi-twitter-x', styles.icon)} />
       </a>
       <a className={styles.linkedin} href="https://www.linkedin.com/in/pkolt" rel="noreferrer" target="_blank">
         <i className={cn('bi-linkedin', styles.icon)} />

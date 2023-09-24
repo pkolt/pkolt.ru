@@ -6,7 +6,6 @@ const config = {
     '@fontsource-variable/jetbrains-mono',
     '@fontsource-variable/open-sans',
     '@typescript-eslint/eslint-plugin',
-    'eslint-config-prettier',
     'astro-eslint-parser',
     'prism-themes',
     'bootstrap-icons',
