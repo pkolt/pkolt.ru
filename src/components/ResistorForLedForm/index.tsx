@@ -73,7 +73,7 @@ export const ResistorForLedForm = () => {
           <div className={styles.result_value}>
             <Typography level="title-lg">Сопротивление резистора (R): </Typography>
             <Typography>R = (Vcc - Vf) / I</Typography>
-            <Chip color={isValid ? 'primary' : 'danger'} variant="solid">
+            <Chip color={isValid ? 'primary' : 'neutral'} variant="solid">
               {resistance.toDecimalPlaces(2).toString()} Ω
             </Chip>
           </div>
@@ -81,7 +81,7 @@ export const ResistorForLedForm = () => {
           <div className={styles.result_value}>
             <Typography level="title-lg">Мощность резистора (P): </Typography>
             <Typography>P = (I ^ 2) x R</Typography>
-            <Chip color={isValid ? 'primary' : 'danger'} variant="solid">
+            <Chip color={isValid ? 'primary' : 'neutral'} variant="solid">
               {power.toDecimalPlaces(2).toString()} W
             </Chip>
           </div>
