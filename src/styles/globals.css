@@ -1,4 +1,6 @@
 :root {
+  --viewport-desktop: 0; /* For autocomplete */
+  --viewport-mobile: 0; /* For autocomplete */
   --gap-1: 0.5rem;
   --gap-2: 1rem;
   --gap-3: 1.5rem;
@@ -46,7 +48,7 @@
     --color-link-hover: var(--color-blue-2);
     --color-link-active: var(--color-blue-2);
     --color-github: oklch(0% 0 0);
-    --color-twitter: oklch(68.18% 0.158 243.35);
+    --color-twitter: oklch(0% 0 0);
     --color-linkedin: oklch(53.13% 0.13 243.65);
     --color-logo-bg: oklch(100% 0 0);
   }
@@ -69,7 +71,7 @@
     --color-link-hover: var(--color-blue-2);
     --color-link-active: var(--color-blue-2);
     --color-github: oklch(100% 0 0);
-    --color-twitter: oklch(68.18% 0.158 243.35);
+    --color-twitter: oklch(100% 0 0);
     --color-linkedin: oklch(53.13% 0.13 243.65);
     --color-logo-bg: oklch(40% 0 0);
   }
