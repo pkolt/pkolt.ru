@@ -2,7 +2,7 @@
 layout: src/layouts/BlogLayout.astro
 title: Ошибки с плавающей запятой в JavaScript
 created: 2023-09-12
-modified: 2023-09-12
+modified: 2023-09-24
 tags:
   - JavaScript
 ---
@@ -120,6 +120,28 @@ parseFloat('54.599999999999994'); // 54.599999999999994
 ## Как этого избежать?
 
 Используйте библиотеки [numeral.js](https://github.com/adamwdraper/Numeral-js) или [decimal.js](https://github.com/MikeMcl/decimal.js) для точных математических вычислений.
+
+```ts
+// decimal.js
+
+// `0.1 + 0.2 !== 0.3`
+new Decimal(0.1).add(0.2).equals(0.3); // true
+
+// Сложение
+new Decimal(1).add(2).toString(); // 3
+
+// Вычитание
+new Decimal(10).minus(4).toString(); // 6
+
+// Умножение
+new Decimal(10).mul(2).toString(); // 20
+
+// Деление
+new Decimal(50).div(3).toString(); // 16.666666666666666667
+
+// Форматирование
+new Decimal(50).div(3).toDecimalPlaces(2).toString(); // 16.67
+```
 
 Используйте целые числа вместо вещественных. Например, если вам нужно складывать рубли, то переводите их в копейки.
 
