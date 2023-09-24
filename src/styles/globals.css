@@ -74,6 +74,10 @@
     --color-twitter: oklch(100% 0 0);
     --color-linkedin: oklch(53.13% 0.13 243.65);
     --color-logo-bg: oklch(40% 0 0);
+
+    img {
+      filter: brightness(0.8) contrast(1.2);
+    }
   }
 }
 
