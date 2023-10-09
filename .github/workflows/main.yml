@@ -3,7 +3,8 @@ name: Main Workflow
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['master']
+    branches:
+      - '*'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,37 +40,6 @@ jobs:
         if: steps.cache-modules.outputs.cache-hit != 'true'
         shell: bash
         run: npm ci
-
-  build:
-    name: Build site
-    needs: [install]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout ✅
-        uses: actions/checkout@v3
-      - name: Setup Node 🤖
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.node_version }}
-          cache: npm
-      - name: Restore cache 🔮
-        id: cache
-        uses: actions/cache/restore@v3
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
-      - name: Cache Astro 🚀
-        id: cache-astro
-        uses: actions/cache@v3
-        with:
-          path: ./cache
-          key: ${{ runner.os }}-cache-astro
-      - name: Build site 🔥
-        run: npm run build
-      - name: Upload artifact 📀
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./out
 
   linters:
     name: Run Linters
@@ -113,10 +83,42 @@ jobs:
       - name: Check TypeScript 👷‍♂️
         run: npm run check-ts
 
+  build:
+    name: Build site
+    needs: [install]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ✅
+        uses: actions/checkout@v3
+      - name: Setup Node 🤖
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
+          cache: npm
+      - name: Restore cache 🔮
+        id: cache
+        uses: actions/cache/restore@v3
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
+      - name: Cache Astro 🚀
+        id: cache-astro
+        uses: actions/cache@v3
+        with:
+          path: ./cache
+          key: ${{ runner.os }}-cache-astro
+      - name: Build site 🔥
+        run: npm run build
+      - name: Upload artifact 📀
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./out
+
   deploy:
     name: Deploy site
     # Add a dependency to the build job
     needs: [build]
+    if: github.ref == 'refs/heads/master'
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
       pages: write # to deploy to Pages
