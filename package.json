@@ -24,7 +24,7 @@
     "stylelint-fix": "stylelint --fix 'src/**/*.css'",
     "lint-all": "npm run check-ts && npm run lint && npm run format && npm run stylelint && npm run knip",
     "prepare": "husky install",
-    "pre-commit": "npm run lint-all"
+    "pre-push": "npm run lint-all"
   },
   "dependencies": {
     "@astrojs/react": "^3.0.2",
