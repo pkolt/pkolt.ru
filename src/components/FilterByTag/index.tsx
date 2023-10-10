@@ -8,10 +8,10 @@ interface FilterByTagProps {
 
 export const FilterByTag = ({ tags }: FilterByTagProps): JSX.Element => {
   return (
-    <ul className={styles.container}>
+    <div className={styles.container}>
       {tags.map((tag) => (
-        <Tag allowFilter key={tag} text={tag} />
+        <Tag asButton key={tag} text={tag} />
       ))}
-    </ul>
+    </div>
   );
 };

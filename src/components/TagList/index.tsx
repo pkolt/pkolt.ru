@@ -10,10 +10,10 @@ interface TagListProps {
 
 export const TagList = ({ className, tags }: TagListProps): JSX.Element => {
   return (
-    <ul className={cn(styles.tagList, className)}>
+    <div className={cn(styles.tagList, className)}>
       {tags.map((tag) => (
         <Tag key={tag} text={tag} />
       ))}
-    </ul>
+    </div>
   );
 };

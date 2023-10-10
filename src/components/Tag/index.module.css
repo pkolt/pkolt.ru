@@ -1,17 +1,21 @@
 .container {
   list-style: none;
   font-size: var(--font-size-0);
-  background: var(--color-gray-2);
+  font-weight: var(--font-weight-medium);
+  outline: 2px solid var(--color);
+  color: var(--color-text);
   border-radius: var(--border-radius-3);
   padding: var(--gap-1);
   white-space: nowrap;
-  opacity: 0.5;
+  opacity: 0.8;
+  background: color-mix(in srgb, var(--color), var(--color-layout) 80%);
 }
 
-.cursor {
+.button {
   cursor: pointer;
 }
 
 .selected {
+  background: var(--color);
   opacity: 1;
 }
