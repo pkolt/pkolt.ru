@@ -6,26 +6,36 @@ import { useCallback } from 'react';
 import styles from './index.module.css';
 
 interface TagProps {
-  allowFilter?: boolean;
+  asButton?: boolean;
   text: string;
 }
 
-export const Tag = ({ allowFilter, text }: TagProps): JSX.Element => {
+export const Tag = ({ asButton, text }: TagProps): JSX.Element => {
   const color = getColorFromString(text);
   const { setTag, tag } = usePostsFilterStore();
-  const selected = text === tag;
-  const handleSelect = useCallback(() => {
-    if (allowFilter) {
-      setTag(text);
-    }
-  }, [allowFilter, setTag, text]);
+  const selected = !!tag && text === tag;
+
+  const handleClick = useCallback(() => {
+    setTag(text);
+  }, [setTag, text]);
+
+  if (asButton) {
+    return (
+      <div
+        className={cn(styles.container, selected && styles.selected, styles.button)}
+        onClick={handleClick}
+        role="button"
+        style={{ '--color': color } as React.CSSProperties}>
+        {text}
+      </div>
+    );
+  }
+
   return (
-    <li
-      className={cn(styles.container, (selected || !allowFilter) && styles.selected, allowFilter && styles.cursor)}
-      onClick={handleSelect}
-      role="button"
-      style={{ background: color }}>
+    <div
+      className={cn(styles.container, selected && styles.selected)}
+      style={{ '--color': color } as React.CSSProperties}>
       {text}
-    </li>
+    </div>
   );
 };
