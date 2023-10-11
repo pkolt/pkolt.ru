@@ -7,7 +7,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'plugin:perfectionist/recommended-alphabetical',
   ],
   plugins: ['prettier', 'testing-library', '@typescript-eslint', 'import', 'jsx-a11y'],
   settings: {
@@ -39,7 +38,6 @@ module.exports = {
         // "astro/no-set-html-directive": "error"
         'react/no-unknown-property': 0,
         'react/jsx-filename-extension': 0,
-        'perfectionist/sort-astro-attributes': 0,
       },
     },
   ],
