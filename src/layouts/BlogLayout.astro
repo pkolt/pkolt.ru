@@ -11,9 +11,10 @@ import PageLayout from '@/layouts/PageLayout.astro';
 type Props = MarkdownLayoutProps<PostMarkdown>;
 
 const props = Astro.props;
+
 ---
 
-<PageLayout keywords={props.frontmatter.tags} title={props.frontmatter.title}>
+<PageLayout title={props.frontmatter.title} description={props.frontmatter.seo_description} keywords={props.frontmatter.seo_tags || props.frontmatter.tags} url={props.url}>
   <header class="header">
     <h1 class="title">{props.frontmatter.title}</h1>
     <div class="postInfo">

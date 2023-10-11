@@ -1,5 +1,5 @@
 ---
-import { APP_NAME, SITE_AUTHOR } from '@/constants/site';
+import { APP_NAME, SITE_AUTHOR, SITE_URL } from '@/constants/site';
 import '@/utils/analytics';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/open-sans';
@@ -18,15 +18,17 @@ import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import '../styles/globals.css';
 type Props = RootLayoutProps;
 
-const { description, keywords, title } = Astro.props;
+const { description, keywords, title, url, noindex } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    {description && <meta content={description} name="description" />}
-    {keywords && <meta content={keywords.join(', ')} name="keywords" />}
+    {description && <meta name="description" content={description} />}
+    {keywords && <meta name="keywords" content={keywords.join(', ')} />}
+    {url && <link rel="canonical" href={`${SITE_URL}${url}`} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="application-name" content={APP_NAME} />
     <meta name="author" content={SITE_AUTHOR} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
