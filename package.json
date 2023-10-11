@@ -65,6 +65,7 @@
     "@types/color-hash": "^1.0.2",
     "@types/luxon": "^3.3.2",
     "@typescript-eslint/parser": "^6.7.4",
+    "astro-eslint-parser": "^0.16.0",
     "esbuild": "^0.19.4",
     "eslint": "^8.51.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
