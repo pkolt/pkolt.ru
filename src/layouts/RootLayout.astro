@@ -1,5 +1,5 @@
 ---
-import { APP_NAME, SITE_AUTHOR, SITE_URL } from '@/constants/site';
+import { APP_NAME, SITE_AUTHOR, SITE_TITLE, SITE_URL, TWITTER_USER } from '@/constants/site';
 import '@/utils/analytics';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/open-sans';
@@ -18,7 +18,7 @@ import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import '../styles/globals.css';
 type Props = RootLayoutProps;
 
-const { description, keywords, title, url, noindex } = Astro.props;
+const { description, keywords, title, url, noindex, createdAt, modifiedAt } = Astro.props;
 ---
 
 <html lang="en">
@@ -29,6 +29,27 @@ const { description, keywords, title, url, noindex } = Astro.props;
     {keywords && <meta name="keywords" content={keywords.join(', ')} />}
     {url && <link rel="canonical" href={`${SITE_URL}${url}`} />}
     {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    {/* <meta property="og:locale" content="en_US" /> */}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    {/* <meta property="og:image" content="LINK TO THE IMAGE FILE" /> */}
+    {url && <meta property="og:url" content={url} />}
+    <meta property="og:site_name" content={SITE_TITLE} />
+    {modifiedAt && <meta property="og:updated_time" content={modifiedAt} />}
+
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    {/* <meta name="twitter:image" content="LINK TO IMAGE" /> */}
+    <meta name="twitter:site" content={TWITTER_USER} />
+    <meta name="twitter:creator" content={TWITTER_USER} />
+
+    {createdAt && <meta property="article:published_time" content={createdAt} />}
+    {modifiedAt && <meta property="article:modified_time" content={modifiedAt} />}
+    <meta property="article:section" content={title} />
+    {keywords && keywords.map((keyword) => <meta property="article:tag" content={keyword} />)}
+
     <meta name="application-name" content={APP_NAME} />
     <meta name="author" content={SITE_AUTHOR} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

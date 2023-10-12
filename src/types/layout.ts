@@ -4,4 +4,6 @@ export interface RootLayoutProps {
   url?: string;
   title: string;
   noindex?: boolean;
+  createdAt?: string;
+  modifiedAt?: string;
 }
