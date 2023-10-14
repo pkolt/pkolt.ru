@@ -3,6 +3,12 @@ layout: src/layouts/BlogLayout.astro
 title: Ошибки с плавающей запятой в JavaScript
 created: 2023-09-12
 modified: 2023-09-24
+seo_description: Расскажу почему при работе с вещественных числами в JavaScript вы получите ошибочный результат
+seo_tags:
+  - JavaScript
+  - Float
+  - DEC64
+  - decimal.js
 tags:
   - JavaScript
 ---

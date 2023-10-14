@@ -3,6 +3,11 @@ layout: src/layouts/BlogLayout.astro
 title: Полезные Node.js модули
 created: 2020-06-23
 modified: 2020-06-23
+seo_description: Мой список полезных NPM-модулей
+seo_tags:
+  - JavaScript
+  - Node.js
+  - NPM
 tags:
   - JavaScript
   - Node.js

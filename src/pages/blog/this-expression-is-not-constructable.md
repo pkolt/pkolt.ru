@@ -3,6 +3,10 @@ layout: src/layouts/BlogLayout.astro
 title: Ошибка TypeScript "This expression is not constructable"
 created: 2020-08-08
 modified: 2020-08-08
+seo_description: Как в TypeScript исправить ошибку This expression is not constructable
+seo_tags:
+  - TypeScript
+  - Not constructable
 tags:
   - TypeScript
 ---

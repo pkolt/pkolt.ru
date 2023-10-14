@@ -3,6 +3,12 @@ layout: src/layouts/BlogLayout.astro
 title: Именование переменных и функций в JavaScript
 created: 2023-09-07
 modified: 2023-09-07
+seo_description: Перевод статьи про то как правильно подбирать имена для переменных и функций в JavaScript
+seo_tags:
+  - JavaScript
+  - TypeScript
+  - Именование переменных
+  - Именование функций
 tags:
   - TypeScript
   - JavaScript

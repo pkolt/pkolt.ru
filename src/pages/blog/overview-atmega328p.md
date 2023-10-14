@@ -3,6 +3,10 @@ layout: src/layouts/BlogLayout.astro
 title: Обзор ATmega328P
 created: 2021-05-23
 modified: 2021-05-23
+seo_description: Рассмотрим возможности микроконтроллера ATmega328P
+seo_tags:
+  - Arduino
+  - ATmega328P
 tags:
   - Microcontrollers
   - Arduino

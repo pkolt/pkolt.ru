@@ -3,6 +3,10 @@ layout: src/layouts/BlogLayout.astro
 title: CSS Grid в примерах
 created: 2023-07-09
 modified: 2023-07-09
+seo_description: Рассмотрим примеры использования CSS Grid
+seo_tags:
+  - CSS
+  - Grid
 tags:
   - CSS
 ---

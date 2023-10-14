@@ -3,6 +3,13 @@ layout: src/layouts/BlogLayout.astro
 title: Файловая система SPIFFS в ESP32
 created: 2022-06-12
 modified: 2022-06-12
+seo_description: Рассмотрим как использовать файловую систему SPIFFS в ESP32
+seo_tags:
+  - ESP32
+  - ESP-IDF
+  - SPIFFS
+  - FreeRTOS
+  - Serial Peripheral Interface Flash File System
 tags:
   - ESP32
 ---
