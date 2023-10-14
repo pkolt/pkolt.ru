@@ -3,6 +3,10 @@ layout: src/layouts/BlogLayout.astro
 title: Типизации кода в TypeScript
 created: 2023-08-27
 modified: 2023-08-27
+seo_description: Рассмотрим как типизировать код в TypeScript
+seo_tags:
+  - TypeScript
+  - Типизация
 tags:
   - TypeScript
 ---

@@ -3,6 +3,11 @@ layout: src/layouts/BlogLayout.astro
 title: Обзор Arduino Pro Mini
 created: 2021-04-09
 modified: 2021-04-09
+seo_description: Рассмотрим плату Arduino Pro Mini
+seo_tags:
+  - Arduino
+  - Arduino Pro Mini
+  - ATmega328
 tags:
   - Arduino
 ---

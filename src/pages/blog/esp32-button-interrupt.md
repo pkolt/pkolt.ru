@@ -3,6 +3,12 @@ layout: src/layouts/BlogLayout.astro
 title: Как избежать дребезга кнопки в ESP32?
 created: 2022-06-04
 modified: 2022-06-04
+seo_description: Рассмотрим как избежать дребезга кнопки при использовании ESP-IDF для ESP32
+seo_tags:
+  - ESP32
+  - ESP-IDF
+  - FreeRTOS
+  - Дребезг кнопки
 tags:
   - ESP32
 ---

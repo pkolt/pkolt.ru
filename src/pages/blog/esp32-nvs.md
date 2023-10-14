@@ -3,6 +3,13 @@ layout: src/layouts/BlogLayout.astro
 title: Энергонезависимое хранилище NVS в ESP32
 created: 2022-06-12
 modified: 2022-06-12
+seo_description: Рассмотрим как использовать энергонезависимое хранилище NVS в ESP32
+seo_tags:
+  - ESP32
+  - ESP-IDF
+  - FreeRTOS
+  - NVS
+  - Non-volatile storage
 tags:
   - ESP32
 ---

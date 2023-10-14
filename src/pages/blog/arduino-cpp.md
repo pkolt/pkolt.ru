@@ -3,6 +3,12 @@ layout: src/layouts/BlogLayout.astro
 title: Конструкции языка программирования Arduino
 created: 2020-08-08
 modified: 2021-05-29
+seo_description: Рассмотрим основные конструкции языка для написания программ для Arduino
+seo_tags:
+  - Arduino
+  - Wiring
+  - C
+  - C++
 tags:
   - Arduino
 ---

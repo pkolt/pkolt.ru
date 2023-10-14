@@ -3,8 +3,11 @@ layout: src/layouts/BlogLayout.astro
 title: Обзор ESP32
 created: 2022-05-30
 modified: 2022-05-30
+seo_description: Рассмотрим возможности модуля ESP32-WROOM-32E
 tags:
   - ESP32
+  - ESP32-WROOM-32E
+  - Espressif Systems
 ---
 
 В данной статье будет рассмотрен модуль ESP32-WROOM-32E и его вариация ESP32-WROOM-32UE с внешней антенной. Модуль разработан китайской компанией Espressif Systems находящейся в Шанхае.

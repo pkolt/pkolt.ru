@@ -3,6 +3,11 @@ layout: src/layouts/BlogLayout.astro
 title: Как преобразовать число в строку в Arduino?
 created: 2021-06-29
 modified: 2021-06-29
+seo_description: Рассмотрим как преобразовать число в строку в Arduino
+seo_tags:
+  - Arduino
+  - sprintf()
+  - itoa()
 tags:
   - Arduino
 ---

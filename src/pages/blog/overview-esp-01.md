@@ -3,6 +3,11 @@ layout: src/layouts/BlogLayout.astro
 title: Обзор ESP-01
 created: 2021-09-05
 modified: 2021-09-05
+seo_description: Рассмотрим возможности модуля ESP-01
+seo_tags:
+  - ESP-01
+  - ESP8266
+  - Expressif
 tags:
   - ESP8266
   - ESP-01

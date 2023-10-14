@@ -3,6 +3,10 @@ layout: src/layouts/BlogLayout.astro
 title: Обзор ATtiny13A
 created: 2021-04-13
 modified: 2021-04-13
+seo_description: Рассмотрим возможности микроконтроллера ATtiny13A
+seo_tags:
+  - Arduino
+  - ATtiny13A
 tags:
   - Microcontrollers
   - Arduino

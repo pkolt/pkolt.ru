@@ -3,6 +3,11 @@ layout: src/layouts/BlogLayout.astro
 title: Простой фонарик для Android
 created: 2021-01-16
 modified: 2021-01-16
+seo_description: Написал NPM-модуль для создания фонарика на React Native
+seo_tags:
+  - Android
+  - React Native
+  - react-native-lantern
 tags:
   - Android
   - React Native
