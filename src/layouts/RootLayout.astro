@@ -1,5 +1,5 @@
 ---
-import { APP_NAME, SITE_AUTHOR, SITE_TITLE, SITE_URL, TWITTER_USER } from '@/constants/site';
+import { APP_NAME, SITE_AUTHOR, SITE_TITLE, TWITTER_USER } from '@/constants/site';
 import '@/utils/analytics';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/open-sans';
@@ -18,7 +18,7 @@ import { UpdatePwaDialog } from '../components/UpdatePwaDialog';
 import '../styles/globals.css';
 type Props = RootLayoutProps;
 
-const { description, keywords, title, url, noindex, createdAt, modifiedAt } = Astro.props;
+const { description, keywords, title, noindex, createdAt, modifiedAt } = Astro.props;
 ---
 
 <html lang="en">
@@ -27,7 +27,7 @@ const { description, keywords, title, url, noindex, createdAt, modifiedAt } = As
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {keywords && <meta name="keywords" content={keywords.join(', ')} />}
-    {url && <link rel="canonical" href={`${SITE_URL}${url}`} />}
+    <link rel="canonical" href={Astro.url} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     {/* <meta property="og:locale" content="en_US" /> */}
@@ -35,7 +35,7 @@ const { description, keywords, title, url, noindex, createdAt, modifiedAt } = As
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     {/* <meta property="og:image" content="LINK TO THE IMAGE FILE" /> */}
-    {url && <meta property="og:url" content={url} />}
+    <meta property="og:url" content={Astro.url} />
     <meta property="og:site_name" content={SITE_TITLE} />
     {modifiedAt && <meta property="og:updated_time" content={modifiedAt} />}
 
