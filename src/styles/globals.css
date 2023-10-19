@@ -85,7 +85,17 @@
   padding: 0;
   margin: 0;
   line-height: 1;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  text-size-adjust: none;
 }
 
 body {
