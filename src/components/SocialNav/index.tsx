@@ -9,14 +9,6 @@ export const SocialNav = (): JSX.Element => {
         <i className={cn('bi-github', styles.icon)} />
       </a>
       <a
-        aria-label="Twitter"
-        className={styles.twitter}
-        href="https://twitter.com/pkolt"
-        rel="noreferrer"
-        target="_blank">
-        <i className={cn('bi-twitter-x', styles.icon)} />
-      </a>
-      <a
         aria-label="LinkedIn"
         className={styles.linkedin}
         href="https://www.linkedin.com/in/pkolt"
