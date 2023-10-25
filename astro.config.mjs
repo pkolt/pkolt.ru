@@ -8,6 +8,12 @@ import remarkYoutube from 'remark-youtube';
 
 const SITE_URL = 'https://pkolt.ru';
 
+const trimSlash = (url) => {
+  url = url.startsWith('/') ? url.slice(1) : url;
+  url = url.endsWith('/') ? url.slice(0, -1) : url;
+  return url;
+};
+
 /** @type {import('astro/config').AstroUserConfig} */
 const config = {
   site: SITE_URL,
@@ -18,10 +24,6 @@ const config = {
       changefreq: 'daily', // default <changefreq>
       filter: (url) => !url.endsWith('/about/'),
       serialize: (item) => {
-        if (item.url.endsWith('/')) {
-          item.url = item.url.slice(0, -1);
-        }
-
         if (item.url === SITE_URL) {
           item.priority = 1.0;
           item.lastmod = DateTime.now().toISO();
@@ -29,7 +31,7 @@ const config = {
 
         if (item.url.includes('/blog/')) {
           item.priority = 0.8;
-          const postFile = path.resolve('./', 'src/pages', `${new URL(item.url).pathname.slice(1)}.md`);
+          const postFile = path.resolve('./', 'src/pages', `${trimSlash(new URL(item.url).pathname)}.md`);
           const postContent = fs.readFileSync(postFile, 'utf8');
           const modified = /modified:\s+(\d{4}-\d{2}-\d{2})/.exec(postContent)[1];
           if (modified) {
