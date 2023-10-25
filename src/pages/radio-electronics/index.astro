@@ -1,4 +1,5 @@
 ---
+import { wrapUrl } from '@/utils/seo';
 import { Typography } from '../../components/Typography';
 import { PageUrl } from '../../constants/urls';
 import PageLayout from '../../layouts/PageLayout.astro';
@@ -11,7 +12,7 @@ const title = 'Радиоэлектроника';
     <p>Полезная информация для тех кто занимается радиоэлектроникой.</p>
     <ul>
       <li>
-        <a href={PageUrl.ResistorForLed}>Расчет резистора для светодиода</a>
+        <a href={wrapUrl(PageUrl.ResistorForLed)}>Расчет резистора для светодиода</a>
       </li>
     </ul>
   </Typography>
