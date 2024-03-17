@@ -2,14 +2,7 @@
 const config = {
   entry: ['src/**/*.{ts,tsx,astro,md,mdx}', 'astro.config.mjs', 'postcss.config.cjs'],
   ignore: [],
-  ignoreDependencies: [
-    '@fontsource-variable/jetbrains-mono',
-    '@fontsource-variable/open-sans',
-    '@typescript-eslint/eslint-plugin',
-    'prism-themes',
-    'bootstrap-icons',
-    'sharp',
-  ],
+  ignoreDependencies: ['@typescript-eslint/eslint-plugin', 'sharp'],
 };
 
 export default config;
