@@ -24,7 +24,7 @@ export const PostHeadings = ({ headings }: PostHeadingsProps): JSX.Element | nul
 
   return (
     <div className={cn(styles.container, expanded && styles.expanded)}>
-      <div className={styles.title} onClick={handleClick} role="button">
+      <div className={styles.title} onClick={handleClick} onKeyUp={handleClick} role="button" tabIndex={0}>
         Содержание
         <i className="bi-chevron-down" />
       </div>

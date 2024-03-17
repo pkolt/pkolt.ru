@@ -24,6 +24,8 @@ export const Tag = ({ asButton, text }: TagProps): JSX.Element => {
       <div
         className={cn(styles.container, selected && styles.selected, styles.button)}
         onClick={handleClick}
+        onKeyUp={handleClick}
+        tabIndex={0}
         role="button"
         style={{ '--color': color } as React.CSSProperties}>
         {text}
