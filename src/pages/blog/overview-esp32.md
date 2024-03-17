@@ -189,5 +189,3 @@ void app_main(void)
     }
 }
 ```
-
-https://www.youtube.com/watch?v=3xcEfRHej8o
