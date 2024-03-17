@@ -61,7 +61,7 @@ jobs:
           path: ./node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
       - name: Check Linters 🕵️‍♂️
-        run: npm run lint-all
+        run: npm run all-check
 
   typescript:
     name: Check TypeScript
@@ -83,7 +83,7 @@ jobs:
           path: ./node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
       - name: Check TypeScript 👷‍♂️
-        run: npm run check-ts
+        run: npm run ts-check
 
   build:
     name: Build site
