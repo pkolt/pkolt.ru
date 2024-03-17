@@ -22,7 +22,7 @@ const config = {
     sitemap({
       priority: 0.6, // default <priority>
       changefreq: 'daily', // default <changefreq>
-      filter: (url) => !url.endsWith('/about/'),
+      // filter: (url) => !url.endsWith('/about/'),
       serialize: (item) => {
         if (item.url === SITE_URL) {
           item.priority = 1.0;
@@ -51,6 +51,7 @@ const config = {
   },
   outDir: 'out',
   cacheDir: 'cache',
+  trailingSlash: 'always',
 };
 
 export default defineConfig(config);
