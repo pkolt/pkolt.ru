@@ -1,8 +1,8 @@
 ---
 layout: src/layouts/BlogLayout.astro
 title: Задачи по TypeScript (часть 2)
-created: 2024-08-21
-modified: 2024-08-21
+created: 2024-08-26
+modified: 2024-08-26
 seo_description: Решаем задачи по TypeScript (часть 2)
 seo_tags:
   - TypeScript
