@@ -1,8 +1,8 @@
 ---
 layout: src/layouts/BlogLayout.astro
 title: Метеостанция на ионисторе
-created: 2024-04-30
-modified: 2024-04-30
+created: 2024-05-01
+modified: 2024-05-01
 seo_description: Статья расскажет о том как создать метеостанцию на ESP8266
 seo_tags:
   - метеостанция
