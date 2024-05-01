@@ -121,6 +121,10 @@ tags:
 ![Корпус устройства](../../assets/blog/weather-station-by-ionistor/box1.jpg)
 ![Корпус устройства](../../assets/blog/weather-station-by-ionistor/box2.jpg)
 
+## Схема подключения модулей
+
+![Схема подключения модулей](../../assets/blog/weather-station-by-ionistor/schematic.png)
+
 ## Пишем прошивку
 
 Для программирования я использовал PlatformIO.
