@@ -20,4 +20,8 @@
   .container {
     justify-content: center;
   }
+
+  .icon {
+    font-size: 2rem;
+  }
 }

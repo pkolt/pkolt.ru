@@ -1,3 +1,13 @@
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
 .icon {
   transition: transform 200ms ease-in-out;
   transform: rotate(0deg);
@@ -9,9 +19,32 @@
   transform: rotate(90deg);
 }
 
-.modal {
+.dialog::backdrop {
+  background: var(--color-layout);
+  filter: invert(1);
+  opacity: 0.5;
+}
+
+.dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.dialog[open] {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-4);
-  margin-top: var(--gap-6);
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw; /* bug 100% width */
+  max-height: 100vh; /* bug 100% height */
+  border: 0;
+  padding: var(--gap-3);
+  animation: slide-in 600ms ease-in;
+  background: var(--color-layout);
+}
+
+.close {
+  font-size: 2rem;
+  margin-left: auto;
+  margin-bottom: var(--gap-6);
 }
