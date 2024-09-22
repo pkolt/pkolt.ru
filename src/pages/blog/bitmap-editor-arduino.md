@@ -45,11 +45,15 @@ tags:
 
 Вы можете что-то рисовать, используя правую кнопку мыши, инвертировать цвет, отменять свои действия, настраивать сетку.
 
-![Рисование изображения](../../assets/blog/bitmap-editor-arduino/draw_image_ru.png)
+![Редактирование изображения](../../assets/blog/bitmap-editor-arduino/dinosaur_editor_ru.png)
 
 Обратите внимание, что ваши правки сохраняются автоматически в локальном хранилище браузера.
 
 Для возврата к списку ваших изображений нажмите на логотип приложения.
+
+После загрузки изображения в Arduino мы увидим на экране:
+
+![Динозавр на экране SSD1306](../../assets/blog/bitmap-editor-arduino/dinosaur.jpg)
 
 ## Создание изображения из картинки
 
@@ -67,7 +71,11 @@ tags:
 
 Заполните имя изображения и нажмите кнопку «Сохранить».
 
-![Создание bitmap из изображения](../../assets/blog/bitmap-editor-arduino/create_from_image_ru.png)
+![Создание bitmap из изображения](../../assets/blog/bitmap-editor-arduino/mickey_mouse_editor_ru.png)
+
+После загрузки изображения в Arduino мы увидим на экране:
+
+![Микки Маус на экране SSD1306](../../assets/blog/bitmap-editor-arduino/mickey_mouse.jpg)
 
 ## Создание изображения из коллекции иконок
 
@@ -109,13 +117,13 @@ tags:
 
 На странице редактирования изображения нажимаем кнопку «Экспорт в C».
 
-![Экспорт bitmap](../../assets/blog/bitmap-editor-arduino/export_image_ru.png)
+![Экспорт bitmap](../../assets/blog/bitmap-editor-arduino/arduino_editor_1_ru.png)
 
 В диалоговом окне настраиваем параметры экспорта.
 
 Самое важное здесь — это правильно указать «Порядок битов» в зависимости от используемой вами библиотеки OLED-дисплея: U8g2 или Adafruit.
 
-![Настройка экспорта](../../assets/blog/bitmap-editor-arduino/export_setup_ru.png)
+![Настройка экспорта](../../assets/blog/bitmap-editor-arduino/arduino_editor_2_ru.png)
 
 Пример кода для U8g2:
 
@@ -191,6 +199,10 @@ void setup() {
 void loop() {}
 ```
 
+После загрузки изображения в Arduino мы увидим на экране:
+
+![Ардуино на экране SSD1306](../../assets/blog/bitmap-editor-arduino/arduino.jpg)
+
 ## Работа со шрифтами
 
 Как таковой, работы со шрифтами в редакторе нет.
@@ -212,6 +224,8 @@ void loop() {}
 ![Иконки шрифта](../../assets/blog/bitmap-editor-arduino/font_icons_ru.png)
 
 ## Итоги
+
+![Habr](../../assets/blog/bitmap-editor-arduino/habr.jpg)
 
 Этот редактор помог мне доделать проект метеостанции на Arduino.
 
