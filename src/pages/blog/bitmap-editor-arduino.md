@@ -1,8 +1,8 @@
 ---
 layout: src/layouts/BlogLayout.astro
 title: Редактор изображений для Arduino
-created: 2024-09-01
-modified: 2024-09-01
+created: 2024-09-29
+modified: 2024-09-29
 seo_description: Рассмотрим возможности редактора bitmap-изображений для Arduino
 seo_tags:
   - Arduino
