@@ -48,7 +48,6 @@
     --color-link-hover: var(--color-blue-2);
     --color-link-active: var(--color-blue-2);
     --color-github: oklch(0% 0 0);
-    --color-linkedin: oklch(53.13% 0.13 243.65);
     --color-logo-bg: oklch(100% 0 0);
   }
 }
@@ -70,7 +69,6 @@
     --color-link-hover: var(--color-blue-2);
     --color-link-active: var(--color-blue-2);
     --color-github: oklch(100% 0 0);
-    --color-linkedin: oklch(53.13% 0.13 243.65);
     --color-logo-bg: oklch(40% 0 0);
 
     img {
