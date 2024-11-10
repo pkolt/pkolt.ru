@@ -12,10 +12,6 @@
   color: var(--color-github) !important;
 }
 
-.linkedin {
-  color: var(--color-linkedin) !important;
-}
-
 @media (--viewport-mobile) {
   .container {
     justify-content: center;
