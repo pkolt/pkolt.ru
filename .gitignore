@@ -1,8 +1,6 @@
-# build output
-out/
-
-# generated types
-.astro/
+# React Router
+/.react-router/
+/build/
 
 # dependencies
 node_modules/
@@ -21,6 +19,3 @@ pnpm-debug.log*
 
 # editors
 .vscode/
-
-# cache
-cache/

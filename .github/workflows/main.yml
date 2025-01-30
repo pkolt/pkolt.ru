@@ -83,7 +83,7 @@ jobs:
           path: ./node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
       - name: Check TypeScript 👷‍♂️
-        run: npm run check-ts
+        run: npm run typecheck
 
   build:
     name: Build site

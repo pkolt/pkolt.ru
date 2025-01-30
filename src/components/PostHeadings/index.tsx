@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 
 import styles from './index.module.css';
 

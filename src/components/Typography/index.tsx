@@ -1,6 +1,7 @@
 import cn from 'classnames';
 
 import styles from './index.module.css';
+import type { JSX } from 'react';
 
 interface TypographyProps {
   children: React.ReactNode;

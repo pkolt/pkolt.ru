@@ -1,7 +1,7 @@
 import { usePostsFilterStore } from '@/store/postsFilter';
 import { getColorFromString } from '@/utils/get-color-from-string';
 import cn from 'classnames';
-import { useCallback } from 'react';
+import { useCallback, type JSX } from 'react';
 
 import styles from './index.module.css';
 

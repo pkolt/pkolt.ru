@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import type { Post } from '../../../types/post';
 
 import { PostDate } from '../../PostDate';
@@ -12,9 +13,9 @@ export const PostItem = ({ post }: PostItemProps): JSX.Element => {
   return (
     <article>
       <a className={styles.container} href={post.url}>
-        <h2 className={styles.title}>{post.frontmatter.title}</h2>
-        <TagList className={styles.tagList} tags={post.frontmatter.tags} />
-        <PostDate className={styles.date} dateIso={post.frontmatter.created} />
+        <h2 className={styles.title}>{post.title}</h2>
+        <TagList className={styles.tagList} tags={post.tags} />
+        <PostDate className={styles.date} dateIso={post.created} />
       </a>
     </article>
   );

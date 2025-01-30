@@ -2,15 +2,13 @@ import type { Post } from '@/types/post';
 
 import { usePostsFilterStore } from '@/store/postsFilter';
 import { DateTime } from 'luxon';
-import { useMemo } from 'react';
+import { useMemo, type JSX } from 'react';
 
 import styles from './index.module.css';
 import { PostItem } from './PostItem';
 
 const orderByDate = (posts: Post[]) => {
-  return posts.sort((post1, post2) =>
-    DateTime.fromISO(post1.frontmatter.created) > DateTime.fromISO(post2.frontmatter.created) ? -1 : 1,
-  );
+  return posts.sort((post1, post2) => (DateTime.fromISO(post1.created) > DateTime.fromISO(post2.created) ? -1 : 1));
 };
 
 interface PostListProps {
@@ -24,7 +22,7 @@ export const PostList = ({ posts }: PostListProps): JSX.Element => {
 
   const filteredPosts = useMemo(() => {
     if (tag) {
-      return orderedPosts.filter((post) => post.frontmatter.tags.includes(tag));
+      return orderedPosts.filter((post) => post.tags.includes(tag));
     }
     return orderedPosts;
   }, [orderedPosts, tag]);
