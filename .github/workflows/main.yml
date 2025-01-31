@@ -116,7 +116,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
-          path: ./out
+          path: ./build
 
   deploy:
     name: Deploy site
