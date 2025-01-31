@@ -9,47 +9,63 @@ import { SocialNav } from '@/components/SocialNav';
 import { Copyright } from '@/components/Copyright';
 import prismOneDarkUrl from 'prism-themes/themes/prism-one-dark.css?url';
 import prismOneLightUrl from 'prism-themes/themes/prism-one-light.css?url';
-import { SITE_AUTHOR } from '@/constants/site';
+import { SITE_AUTHOR, SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from '@/constants/site';
 import '@/styles/globals.css';
 import '@fontsource-variable/jetbrains-mono';
 import '@fontsource-variable/open-sans';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-// export const links: Route.LinksFunction = () => [];
+export const links: Route.LinksFunction = () => [
+  {
+    rel: 'canonical',
+    href: SITE_URL,
+  },
+  {
+    rel: 'sitemap',
+    href: '/sitemap-index.xml',
+  },
+  {
+    rel: 'stylesheet',
+    media: '(prefers-color-scheme: light)',
+    href: prismOneLightUrl,
+  },
+  {
+    rel: 'stylesheet',
+    media: '(prefers-color-scheme: dark)',
+    href: prismOneDarkUrl,
+  },
+  {
+    rel: 'icon',
+    href: '/images/icons/favicon.png',
+  },
+];
+
+export const meta: Route.MetaFunction = () => {
+  return [
+    { charSet: 'utf-8' },
+    { title: SITE_TITLE },
+    { name: 'description', content: SITE_DESCRIPTION },
+    { property: 'og:locale', content: 'ru_RU' },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:title', content: SITE_TITLE },
+    { property: 'og:description', content: SITE_DESCRIPTION },
+    // {property: 'og:url', content: 'url to article'},
+    { property: 'og:site_name', content: SITE_TITLE },
+    // { property: 'og:updated_time', content: modifiedAt },
+    // { property: 'article:published_time', content: createdAt },
+    // { property: 'article:modified_time', content: modifiedAt },
+    { property: 'article:section', content: SITE_TITLE },
+    // {property: 'article:tag', content: keyword},
+    { name: 'author', content: SITE_AUTHOR },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { name: 'robots', content: 'index, follow' },
+  ];
+};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
-        <meta charSet="utf-8" />
-        {/* <title>{title}</title> */}
-        {/* {description && <meta name="description" content={description} />} */}
-        {/* {keywords && <meta name="keywords" content={keywords.join(', ')} />} */}
-        {/* <link rel="canonical" href={Astro.url} /> */}
-        {/* {noindex && <meta name="robots" content="noindex, nofollow" />} */}
-
-        {/* <meta property="og:locale" content="en_US" /> */}
-        <meta property="og:type" content="article" />
-        {/* <meta property="og:title" content={title} /> */}
-        {/* {description && <meta property="og:description" content={description} />} */}
-        {/* <meta property="og:image" content="LINK TO THE IMAGE FILE" /> */}
-        {/* <meta property="og:url" content={Astro.url} /> */}
-        {/* <meta property="og:site_name" content={SITE_TITLE} /> */}
-        {/* {modifiedAt && <meta property="og:updated_time" content={modifiedAt} />} */}
-
-        {/* {createdAt && <meta property="article:published_time" content={createdAt} />} */}
-        {/* {modifiedAt && <meta property="article:modified_time" content={modifiedAt} />} */}
-        {/* <meta property="article:section" content={title} /> */}
-        {/* {keywords && keywords.map((keyword) => <meta property="article:tag" content={keyword} />)} */}
-        <meta name="author" content={SITE_AUTHOR} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
-        <link href="/sitemap-index.xml" rel="sitemap" />
-        <link href={prismOneLightUrl} media="(prefers-color-scheme: light)" rel="stylesheet" />
-        <link href={prismOneDarkUrl} media="(prefers-color-scheme: dark)" rel="stylesheet" />
-
-        <link href="/images/icons/favicon.png" rel="icon" />
-
         {/* Google tag (gtag.js) */}
         {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2F75QK070"></script> */}
         {/* <script>
