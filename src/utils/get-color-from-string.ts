@@ -1,12 +1,13 @@
 import ColorHashModule from 'color-hash';
 
-type ColorHashModuleType = typeof ColorHashModule;
-type ColorHashType = ColorHashModuleType & {
-  default: ColorHashModuleType;
+type ColorHashType = typeof ColorHashModule;
+type ColorHashFixType = ColorHashType & {
+  default: ColorHashType;
 };
 
 //! https://github.com/zenozeng/color-hash/issues/42
-const ColorHash = (ColorHashModule as unknown as ColorHashType).default;
+const ColorHash =
+  'default' in ColorHashModule ? (ColorHashModule as unknown as ColorHashFixType).default : ColorHashModule;
 
 const colorHash = new ColorHash({
   lightness: 0.6,
