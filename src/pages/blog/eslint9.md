@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Настройка ESLint 9
 created: 2024-12-10
 modified: 2024-12-10

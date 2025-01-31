@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Метеостанция на ионисторе
 created: 2024-05-01
 modified: 2024-05-01

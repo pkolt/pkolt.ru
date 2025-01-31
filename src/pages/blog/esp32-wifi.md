@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Как подключиться к WiFi в ESP32?
 created: 2022-06-12
 modified: 2022-06-12

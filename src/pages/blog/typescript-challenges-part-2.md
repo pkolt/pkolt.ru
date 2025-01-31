@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Задачи по TypeScript (часть 2)
 created: 2024-03-26
 modified: 2024-03-26

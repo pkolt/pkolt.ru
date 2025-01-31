@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Редактор изображений для Arduino
 created: 2024-09-29
 modified: 2024-09-29

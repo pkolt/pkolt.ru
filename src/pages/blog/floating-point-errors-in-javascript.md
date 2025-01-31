@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Ошибки с плавающей запятой в JavaScript
 created: 2023-09-12
 modified: 2023-09-24

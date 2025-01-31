@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Типизации кода в TypeScript
 created: 2023-08-27
 modified: 2023-08-27

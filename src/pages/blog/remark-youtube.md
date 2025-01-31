@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: How to add a YouTube player to your website using Markdown?
 created: 2023-05-29
 modified: 2023-05-29

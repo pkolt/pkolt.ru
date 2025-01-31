@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Настройки TypeScript о которых вам следует знать
 created: 2024-11-20
 modified: 2024-11-20

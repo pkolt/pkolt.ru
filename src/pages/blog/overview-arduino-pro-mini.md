@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Обзор Arduino Pro Mini
 created: 2021-04-09
 modified: 2021-04-09

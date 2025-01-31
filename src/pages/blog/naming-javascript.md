@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Именование переменных и функций в JavaScript
 created: 2023-09-07
 modified: 2023-09-07

@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Полезные Node.js модули
 created: 2020-06-23
 modified: 2020-06-23

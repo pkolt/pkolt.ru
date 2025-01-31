@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Обзор ATtiny13A
 created: 2021-04-13
 modified: 2021-04-13

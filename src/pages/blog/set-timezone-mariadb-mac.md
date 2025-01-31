@@ -1,5 +1,4 @@
 ---
-layout: src/layouts/BlogLayout.astro
 title: Как задать временную зону для MariaDB в MacOS?
 created: 2021-09-11
 modified: 2021-09-11
