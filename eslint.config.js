@@ -27,7 +27,7 @@ export default [
     },
   },
   pluginJs.configs.recommended,
-  pluginRefresh.configs.recommended,
+  pluginRefresh.configs.vite,
   pluginReact.configs.flat.recommended,
   pluginImport.flatConfigs.recommended,
   pluginImport.flatConfigs.typescript,
@@ -44,6 +44,7 @@ export default [
         'error',
         {
           allowConstantExport: true,
+          allowExportNames: ['meta', 'links', 'headers', 'loader', 'action'],
         },
       ],
       'no-console': ['error', { allow: ['warn', 'error'] }],
