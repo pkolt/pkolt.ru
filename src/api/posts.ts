@@ -7,7 +7,8 @@ import remarkStringify from 'remark-stringify';
 import remarkFrontmatter from 'remark-frontmatter';
 import { matter } from 'vfile-matter';
 
-const POSTS_DIR = path.join(import.meta.dirname, '../pages/blog');
+const PROJ_DIR = path.join(import.meta.dirname, '..', '..'); // Fixed run from `build` dir
+const POSTS_DIR = path.join(PROJ_DIR, 'src/pages/blog');
 
 async function getPostByFilePath(filePath: string): Promise<Post> {
   const file = await unified()
