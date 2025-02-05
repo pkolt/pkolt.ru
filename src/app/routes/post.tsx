@@ -5,6 +5,7 @@ import { PostDate } from '@/components/PostDate';
 import { TagList } from '@/components/TagList';
 import { Typography } from '@/components/Typography';
 import { PostHeadings } from '@/components/PostHeadings';
+import { Seo } from '@/components/Seo';
 
 export async function loader({ params }: Route.LoaderArgs) {
   const post = await getPostBySlug(params.slug);
@@ -15,6 +16,14 @@ export default function Post({ loaderData }: Route.ComponentProps) {
   const { post } = loaderData;
   return (
     <>
+      <Seo
+        title={post.matter.title}
+        description={post.matter.seo_description}
+        keywords={post.matter.seo_tags}
+        createdAt={post.matter.created}
+        modifiedAt={post.matter.modified}
+        url={post.url}
+      />
       <header className={styles.header}>
         <h1 className={styles.title}>{post.matter.title}</h1>
         <div className={styles.postInfo}>
