@@ -32,7 +32,7 @@ async function getPostByFilePath(filePath: string): Promise<Post> {
   const headings = (file.data.headings ?? []) as unknown as PostHeader[];
   const slug = path.basename(path.dirname(filePath));
   const url = `/blog/${slug}/`;
-  const post = { matter, headings, url, content: file.value } as Post;
+  const post: Post = { matter, headings, url, content: String(file.value) };
   return post;
 }
 
