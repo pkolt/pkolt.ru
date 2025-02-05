@@ -2,15 +2,10 @@ import cn from 'classnames';
 import { useState, type JSX } from 'react';
 
 import styles from './index.module.css';
-
-interface Heading {
-  depth: number;
-  slug: string;
-  text: string;
-}
+import type { PostHeader } from '@/types/post';
 
 interface PostHeadingsProps {
-  headings: Heading[];
+  headings: PostHeader[];
 }
 
 export const PostHeadings = ({ headings }: PostHeadingsProps): JSX.Element | null => {
@@ -31,8 +26,8 @@ export const PostHeadings = ({ headings }: PostHeadingsProps): JSX.Element | nul
       {expanded && (
         <ol>
           {headings.map((it) => (
-            <li data-depth={it.depth} key={it.slug}>
-              <a href={`#${it.slug}`}>{it.text}</a>
+            <li data-depth={it.depth} key={it.data.id}>
+              <a href={`#${it.data.id}`}>{it.value}</a>
             </li>
           ))}
         </ol>

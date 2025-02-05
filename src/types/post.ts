@@ -1,4 +1,4 @@
-export interface PostMeta {
+export interface PostMatter {
   created: string;
   modified: string;
   title: string;
@@ -7,7 +7,15 @@ export interface PostMeta {
   seo_tags: string[];
 }
 
-export interface Post extends PostMeta {
+export interface PostHeader {
+  depth: number;
+  value: string;
+  data: { id: string };
+}
+
+export interface Post {
+  matter: PostMatter;
+  headings: PostHeader[];
   url: string;
   content: string;
 }
