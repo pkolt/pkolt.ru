@@ -3,9 +3,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
-import remarkStringify from 'remark-stringify';
 import remarkFrontmatter from 'remark-frontmatter';
 import { matter } from 'vfile-matter';
+import remarkGfm from 'remark-gfm';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 
 const PROJ_DIR = path.join(import.meta.dirname, '..', '..'); // Fixed run from `build` dir
 const POSTS_DIR = path.join(PROJ_DIR, 'data/blog');
@@ -15,15 +17,17 @@ async function getPostByFilePath(filePath: string): Promise<Post> {
 
   const file = await unified()
     .use(remarkParse)
-    .use(remarkStringify)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeStringify)
     .use(remarkFrontmatter, { type: 'yaml', marker: '-' })
-    .use(() => (_, file) => matter(file))
+    .use(() => (_, file) => matter(file)) // Converted matter string to JSON
     .process(content);
 
   const meta = file.data.matter as unknown as PostMeta;
   const slug = path.basename(path.dirname(filePath));
   const url = `/blog/${slug}/`;
-  const post = { ...meta, url } as Post;
+  const post = { ...meta, url, content: file.value } as Post;
   return post;
 }
 

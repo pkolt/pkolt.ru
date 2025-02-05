@@ -3,8 +3,8 @@ import type { Route } from './+types/post';
 import styles from './post.module.css';
 import { PostDate } from '@/components/PostDate';
 import { TagList } from '@/components/TagList';
+import { Typography } from '@/components/Typography';
 // import { PostHeadings } from '@/components/PostHeadings';
-// import { Typography } from '@/components/Typography';
 
 export async function loader({ params }: Route.LoaderArgs) {
   const post = await getPostBySlug(params.slug);
@@ -23,7 +23,9 @@ export default function Post({ loaderData }: Route.ComponentProps) {
         </div>
         {/* <PostHeadings headings={post.headings} /> */}
       </header>
-      {/* <Typography></Typography> */}
+      <Typography>
+        <div style={{ display: 'contents' }} dangerouslySetInnerHTML={{ __html: post.content }}></div>
+      </Typography>
     </>
   );
 }

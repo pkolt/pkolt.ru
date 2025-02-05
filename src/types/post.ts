@@ -9,4 +9,5 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
   url: string;
+  content: string;
 }
