@@ -1,7 +1,7 @@
 import type { Post, PostHeader, PostMatter } from '@/types/post';
 import fs from 'node:fs';
 import path from 'node:path';
-import { unified } from 'unified';
+import { unified, type Transformer } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkFrontmatter from 'remark-frontmatter';
 import { matter as vFileMatter } from 'vfile-matter';
@@ -10,25 +10,42 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import remarkHeadings from '@vcarl/remark-headings';
 import remarkHeadingId from 'remark-heading-id';
+import remarkPrism from 'remark-prism';
+import remarkStringify from 'remark-stringify';
 import { SITE_URL } from '../constants/site';
+
+type RemarkPrism = (...args: Parameters<typeof remarkPrism>) => Transformer; // Fixed legacy plugin
 
 const PROJ_DIR = path.join(import.meta.dirname, '..', '..'); // Fixed run from `build` dir
 const POSTS_DIR = path.join(PROJ_DIR, 'data/blog');
 
-async function getPostByFilePath(filePath: string): Promise<Post> {
+interface PostOptions {
+  parseContent?: boolean;
+}
+
+async function getPostByFilePath(filePath: string, options: PostOptions = {}): Promise<Post> {
   const content = fs.readFileSync(filePath);
 
-  const file = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkHeadingId, { defaults: true })
-    .use(remarkHeadings)
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .use(remarkFrontmatter, { type: 'yaml', marker: '-' })
-    .use(() => (_, file) => vFileMatter(file)) // Converted matter string to JSON
-    .process(content);
+  const processor = unified();
+  processor.use(remarkParse);
 
+  if (options.parseContent) {
+    processor
+      .use(remarkGfm)
+      .use(remarkPrism as RemarkPrism)
+      .use(remarkHeadingId, { defaults: true })
+      .use(remarkHeadings)
+      .use(remarkRehype)
+      .use(rehypeStringify);
+  } else {
+    processor.use(remarkStringify);
+  }
+
+  processor
+    .use(remarkFrontmatter, { type: 'yaml', marker: '-' }) // Parsed matter
+    .use(() => (_, file) => vFileMatter(file)); // Converted matter string to JSON
+
+  const file = await processor.process(content);
   const matter = (file.data.matter ?? {}) as unknown as PostMatter;
   const headings = (file.data.headings ?? []) as unknown as PostHeader[];
   const slug = path.basename(path.dirname(filePath));
@@ -40,7 +57,7 @@ async function getPostByFilePath(filePath: string): Promise<Post> {
 
 export function getPostBySlug(slug: string): Promise<Post> {
   const filePath = path.join(POSTS_DIR, slug, 'index.md');
-  return getPostByFilePath(filePath);
+  return getPostByFilePath(filePath, { parseContent: true });
 }
 
 export async function getPosts(): Promise<Post[]> {
