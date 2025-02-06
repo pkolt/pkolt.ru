@@ -21,7 +21,8 @@
     "lint-all": "npm run eslint && npm run format && npm run stylelint && npm run knip",
     "lint-all-fix": "npm run eslint-fix && npm run format-fix && npm run stylelint-fix",
     "prepare": "git config core.hooksPath .git-hooks",
-    "pre-push": "npm run typecheck && npm run lint-all"
+    "pre-push": "npm run typecheck && npm run lint-all",
+    "sitemap": "tsx ./src/scripts/sitemap.ts"
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.1.2",
@@ -71,9 +72,11 @@
     "remark-heading-id": "^1.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.1",
+    "sitemap": "^8.0.0",
     "stylelint": "^16.14.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^37.0.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.22.0",
     "unified": "^11.0.5",

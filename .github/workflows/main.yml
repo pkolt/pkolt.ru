@@ -104,14 +104,16 @@ jobs:
         with:
           path: ./node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
-      - name: Cache Astro 🚀
-        id: cache-astro
+      - name: Cache App 🚀
+        id: cache-app
         uses: actions/cache@v4
         with:
           path: ./cache
-          key: ${{ runner.os }}-cache-astro
+          key: ${{ runner.os }}-cache-app
       - name: Build site 🔥
         run: npm run build
+      - name: Build sitemap 🧭
+        run: npm run sitemap
       - name: Upload artifact 📀
         uses: actions/upload-pages-artifact@v3
         with:

@@ -39,7 +39,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
 
         <link rel="canonical" href={SITE_URL} />
-        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="sitemap" href="/sitemap.xml" />
         <link href={prismOneLightUrl} media="(prefers-color-scheme: light)" rel="stylesheet" />
         <link href={prismOneDarkUrl} media="(prefers-color-scheme: dark)" rel="stylesheet" />
         <link href="/images/icons/favicon.png" rel="icon" />

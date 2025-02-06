@@ -17,5 +17,6 @@ export interface Post {
   matter: PostMatter;
   headings: PostHeader[];
   url: string;
+  pathname: string;
   content: string;
 }

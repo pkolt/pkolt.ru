@@ -10,6 +10,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import remarkHeadings from '@vcarl/remark-headings';
 import remarkHeadingId from 'remark-heading-id';
+import { SITE_URL } from '@/constants/site';
 
 const PROJ_DIR = path.join(import.meta.dirname, '..', '..'); // Fixed run from `build` dir
 const POSTS_DIR = path.join(PROJ_DIR, 'data/blog');
@@ -31,8 +32,9 @@ async function getPostByFilePath(filePath: string): Promise<Post> {
   const matter = (file.data.matter ?? {}) as unknown as PostMatter;
   const headings = (file.data.headings ?? []) as unknown as PostHeader[];
   const slug = path.basename(path.dirname(filePath));
-  const url = `/blog/${slug}/`;
-  const post: Post = { matter, headings, url, content: String(file.value) };
+  const pathname = `/blog/${slug}/`;
+  const url = new URL(pathname, SITE_URL).toString();
+  const post: Post = { matter, headings, url, pathname, content: String(file.value) };
   return post;
 }
 

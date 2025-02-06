@@ -8,7 +8,7 @@ export default {
       const { getPosts } = await import('./src/api/posts');
       const posts = await getPosts();
       posts.forEach((post) => {
-        urls.push(post.url);
+        urls.push(post.pathname);
       });
     }
     return urls;

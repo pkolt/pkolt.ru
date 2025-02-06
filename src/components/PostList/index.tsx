@@ -32,7 +32,7 @@ export const PostList = ({ posts }: PostListProps): JSX.Element => {
   return (
     <section className={styles.container}>
       {filteredPosts.map((post) => (
-        <PostItem key={post.url} post={post} />
+        <PostItem key={post.pathname} post={post} />
       ))}
     </section>
   );
