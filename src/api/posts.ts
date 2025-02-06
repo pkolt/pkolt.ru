@@ -10,7 +10,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import remarkHeadings from '@vcarl/remark-headings';
 import remarkHeadingId from 'remark-heading-id';
-import { SITE_URL } from '@/constants/site';
+import { SITE_URL } from '../constants/site';
 
 const PROJ_DIR = path.join(import.meta.dirname, '..', '..'); // Fixed run from `build` dir
 const POSTS_DIR = path.join(PROJ_DIR, 'data/blog');
