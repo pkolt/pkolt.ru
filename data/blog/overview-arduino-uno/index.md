@@ -11,8 +11,8 @@ tags:
   - Arduino
 ---
 
-![Arduino Uno](../../assets/blog/overview-arduino-uno/arduino-top.jpg)
-![Arduino Uno](../../assets/blog/overview-arduino-uno/arduino-bottom.jpg)
+![Arduino Uno](./arduino-top.jpg)
+![Arduino Uno](./arduino-bottom.jpg)
 
 ## Память
 
@@ -24,7 +24,7 @@ tags:
 
 Питание платы осуществляется через USB или разъем внешнего блока питания (от 7,5 до 12 В). Сама плата Arduino потребляет 50 mA.
 
-![Arduino analog input](../../assets/blog/overview-arduino-uno/arduino-power-analog.jpg)
+![Arduino analog input](./arduino-power-analog.jpg)
 
 - первый контакт не подписан и зарезервирован для использования в будущем.
 - **IOREF** - служит для определения опорного напряжения, на котором работает плата (на Arduino Uno это 5 В).
@@ -39,7 +39,7 @@ tags:
 
 ## Цифровые выходы (Digital output)
 
-![Arduino digital output](../../assets/blog/overview-arduino-uno/arduino-digital.jpg)
+![Arduino digital output](./arduino-digital.jpg)
 
 - **0-13** - контакты которые можно использовать как цифровые входы или выходы. Цифровые выходы могут отдавать ток до 40 мА с напряжением 5 В. Контакты 0 (RX) и 1 (TX) используются для подключения к компьютеру или другим устройствам через последовательный порт. Контакты 2 и 3 могут обрабатывать внешние прерывания, соответствуют прерываниям 0 и 1.
 - **PWM~** - контакты, отмеченные значком `~` (3, 5, 6, 9, 10, 11) могут работать как выходы с широтно-импульсной модуляцией (Pulse-Width Modulation, PWM). Управляя длительностью импульсов создают эффект изменения напряжения.

@@ -52,11 +52,11 @@ board_build.partitions = partitions.csv
 
 В PlatformIO создаем каталог `data`, все что в нем будет находиться можно будет достать на ESP32 как файл. Не забываем что SPIFFS не умеет работать с каталогами, каталоги внутри каталога `data` создавать нельзя.
 
-![ESP32 SPIFFS Folder](../../assets/blog/esp32-spiffs/data_folder.png)
+![ESP32 SPIFFS Folder](./data_folder.png)
 
 Для загрузки каталога его нужно сбилдить (**Platform -> Build Filesystem Image**) и загрузить в ESP32 (**Platform -> Upload Filesystem Image**).
 
-![ESP32 Build and upload SPIFFS](../../assets/blog/esp32-spiffs/steps.png)
+![ESP32 Build and upload SPIFFS](./steps.png)
 
 Ниже приведен пример кода как можно считать содержимое файла из `data/hello.txt`:
 

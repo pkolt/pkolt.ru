@@ -16,7 +16,7 @@ tags:
 
 Макет нашей исходной демо-страницы имеет вид (ниже мы будем добавлять CSS для его преобразования к нужному виду):
 
-![Demo 1](../../assets/blog/css-grid-examples/grid_demo_1.jpg)
+![Demo 1](./grid_demo_1.jpg)
 
 Код HTML-страницы:
 
@@ -71,7 +71,7 @@ tags:
 
 **Как сделать первый элемент размером в 3 колонки, а третий элемент в 2 колонки?**
 
-![Demo 2](../../assets/blog/css-grid-examples/grid_demo_2.jpg)
+![Demo 2](./grid_demo_2.jpg)
 
 ```css
 .grid-cell:nth-child(1) {
@@ -87,7 +87,7 @@ tags:
 
 **Четвертый элемент должен отступить одну колонку и занять ширину в 2 колонки.**
 
-![Demo 3](../../assets/blog/css-grid-examples/grid_demo_3_1.jpg)
+![Demo 3](./grid_demo_3_1.jpg)
 
 ```css
 .grid-cell:nth-child(4) {
@@ -98,7 +98,7 @@ tags:
 
 Номера линий сетки можно посмотреть в DevTools (Google Chrome) нажав на бейдж "grid" у элемента сетки.
 
-![Demo 3](../../assets/blog/css-grid-examples/grid_demo_3_2.jpg)
+![Demo 3](./grid_demo_3_2.jpg)
 
 Этот же результат можно получить если не использовать `span`, а опираться только на линии сетки:
 
@@ -126,7 +126,7 @@ tags:
 
 **Поменять местами первый и последний элементы.**
 
-![Demo 4](../../assets/blog/css-grid-examples/grid_demo_4.jpg)
+![Demo 4](./grid_demo_4.jpg)
 
 ```css
 .grid-cell:first-child {
@@ -142,7 +142,7 @@ tags:
 
 **Необходимо сделать так, чтобы вторая колонка заняла по высоте все доступное место.**
 
-![Demo 5](../../assets/blog/css-grid-examples/grid_demo_5.jpg)
+![Demo 5](./grid_demo_5.jpg)
 
 ```css
 .grid-cell:nth-child(2) {
@@ -163,7 +163,7 @@ tags:
 
 Иногда мы не знаем на сколько столбцов нам нужно разбить таблицу, мы хотим сделать столько столбцов сколько уместится в зависимости от ширины элемента.
 
-![Demo 6](../../assets/blog/css-grid-examples/grid_demo_6.jpg)
+![Demo 6](./grid_demo_6.jpg)
 
 ```css
 .grid {
@@ -177,7 +177,7 @@ tags:
 
 ### auto-fill
 
-![Demo 7](../../assets/blog/css-grid-examples/grid_demo_7_fill.jpg)
+![Demo 7](./grid_demo_7_fill.jpg)
 
 ```css
 .grid {
@@ -187,7 +187,7 @@ tags:
 
 ### auto-fit
 
-![Demo 7](../../assets/blog/css-grid-examples/grid_demo_7_fit.jpg)
+![Demo 7](./grid_demo_7_fit.jpg)
 
 ```css
 .grid {
@@ -216,21 +216,21 @@ tags:
 
 ### grid-auto-flow: row
 
-![Demo 8](../../assets/blog/css-grid-examples/grid_demo_8_row.jpg)
+![Demo 8](./grid_demo_8_row.jpg)
 
 ### grid-auto-flow: dense
 
-![Demo 8](../../assets/blog/css-grid-examples/grid_demo_8_dense.jpg)
+![Demo 8](./grid_demo_8_dense.jpg)
 
 ### grid-auto-flow: column
 
-![Demo 8](../../assets/blog/css-grid-examples/grid_demo_8_column.jpg)
+![Demo 8](./grid_demo_8_column.jpg)
 
 ## Области сетки
 
 Grid Area в CSS используется для определения именованных областей в сетке. С помощью этого свойства можно назначить элементу конкретную область в сетке, указав имя области или указав начальную и конечную позиции ячеек. Это позволяет гибко располагать элементы внутри сетки и управлять их размещением на странице.
 
-![Demo 9](../../assets/blog/css-grid-examples/grid_demo_9.jpg)
+![Demo 9](./grid_demo_9.jpg)
 
 ```css
 .grid {
@@ -257,7 +257,7 @@ Grid Area в CSS используется для определения имен
 
 ## Разместить элемент по центру
 
-![Demo 10](../../assets/blog/css-grid-examples/grid_demo_10.jpg)
+![Demo 10](./grid_demo_10.jpg)
 
 ```css
 .grid {
@@ -286,7 +286,7 @@ Grid Area в CSS используется для определения имен
 
 ## Выравнивание внутри области элемента сетки
 
-![Demo 11](../../assets/blog/css-grid-examples/grid_demo_11.jpg)
+![Demo 11](./grid_demo_11.jpg)
 
 ```css
 .grid {
@@ -318,7 +318,7 @@ Grid Area в CSS используется для определения имен
 
 Есть свойства очень похожие на них: `align-content` и `justify-content`. Разница между ними в том, что последние делают выравнивание если у таблицы есть нераспределенное пространство по горизонтали или по вертикали.
 
-![Demo 12](../../assets/blog/css-grid-examples/grid_demo_12_1.jpg)
+![Demo 12](./grid_demo_12_1.jpg)
 
 ```css
 .grid {
@@ -335,7 +335,7 @@ Grid Area в CSS используется для определения имен
 
 С `align-items` и `justify-items` такое выравнивание не сработает.
 
-![Demo 12](../../assets/blog/css-grid-examples/grid_demo_12_2.jpg)
+![Demo 12](./grid_demo_12_2.jpg)
 
 ```css
 .grid {
