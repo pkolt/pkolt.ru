@@ -1,7 +1,7 @@
 # React Router
 /.react-router/
 /build/
-/public/images/thumbnails/
+/public/images/thumbnails
 
 # dependencies
 node_modules/

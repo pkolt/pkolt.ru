@@ -14,7 +14,7 @@ import remarkHeadingId from 'remark-heading-id';
 import remarkPrism from 'remark-prism';
 import remarkStringify from 'remark-stringify';
 import { SITE_URL } from '../constants/site';
-import { remarkTransformImages } from '../utils/remark-transform-images';
+import { remarkThumbnails } from '../utils/remark-thumbnails';
 
 type RemarkPrism = (...args: Parameters<typeof remarkPrism>) => Transformer; // Fixed legacy plugin
 
@@ -35,7 +35,7 @@ async function getPostByFilePath(filePath: string, options: PostOptions = {}): P
     processor
       .use(remarkGfm)
       .use(remarkPrism as RemarkPrism)
-      .use(remarkTransformImages)
+      .use(remarkThumbnails)
       .use(remarkHeadingId, { defaults: true })
       .use(remarkHeadings)
       .use(remarkRehype)

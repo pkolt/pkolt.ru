@@ -8,33 +8,38 @@ import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 
 const PROJ_DIR = path.resolve(import.meta.dirname, '..', '..');
-const THUMBNAILS_DIR = path.resolve(PROJ_DIR, 'public', 'images', 'thumbnails');
+const THUMBNAILS_BUILD_DIR = path.resolve(PROJ_DIR, 'build', 'client', 'images', 'thumbnails');
+const THUMBNAILS_PUBLIC_DIR = path.resolve(PROJ_DIR, 'public', 'images', 'thumbnails');
 const THUMBNAIL_URL = '/images/thumbnails/';
 const THUMBNAIL_FORMAT = 'webp';
 const THUMBNAIL_SIZE = 1024;
 
-async function uploadImage(filepath: string, url: string): Promise<string> {
-  const sourceDir = path.dirname(filepath);
-  const imagePathname = path.join(sourceDir, url);
-  const imageBuffer = fs.readFileSync(imagePathname);
+async function makeThumbnail(markdownPath: string, imageSubpath: string): Promise<string> {
+  const sourceDir = path.dirname(markdownPath);
+  const imagePath = path.join(sourceDir, imageSubpath);
+  const imageBuffer = fs.readFileSync(imagePath);
   const hash = createHash('md5').update(imageBuffer).digest('hex');
   const shortHash = hash.slice(0, 8);
-  const ext = path.extname(url);
-  const name = path.basename(url, ext);
+  const ext = path.extname(imageSubpath);
+  const name = path.basename(imageSubpath, ext);
   const thumbnailName = `${name}.${shortHash}.${THUMBNAIL_FORMAT}`;
-  const thumbnailFilepath = path.join(THUMBNAILS_DIR, thumbnailName);
+  const thumbnailPath = path.join(THUMBNAILS_BUILD_DIR, thumbnailName);
 
-  if (!fs.existsSync(thumbnailFilepath)) {
+  if (!fs.existsSync(thumbnailPath)) {
     const outputBuffer = await sharp(imageBuffer).resize(THUMBNAIL_SIZE).toFormat(THUMBNAIL_FORMAT).toBuffer();
-    fs.writeFileSync(thumbnailFilepath, outputBuffer);
+    fs.writeFileSync(thumbnailPath, outputBuffer);
   }
 
   return `${THUMBNAIL_URL}${thumbnailName}`;
 }
 
-export const remarkTransformImages: Plugin<[], Root> = () => {
-  if (!fs.existsSync(THUMBNAILS_DIR)) {
-    fs.mkdirSync(THUMBNAILS_DIR, { recursive: true });
+export const remarkThumbnails: Plugin<[], Root> = () => {
+  if (!fs.existsSync(THUMBNAILS_BUILD_DIR)) {
+    fs.mkdirSync(THUMBNAILS_BUILD_DIR, { recursive: true });
+  }
+
+  if (!fs.existsSync(THUMBNAILS_PUBLIC_DIR)) {
+    fs.symlinkSync(THUMBNAILS_BUILD_DIR, THUMBNAILS_PUBLIC_DIR);
   }
 
   return async (tree, file: VFile) => {
@@ -42,7 +47,7 @@ export const remarkTransformImages: Plugin<[], Root> = () => {
 
     visit(tree, 'image', (node: Image) => {
       if (node.url) {
-        const promise = uploadImage(file.path, node.url).then((newUrl) => {
+        const promise = makeThumbnail(file.path, node.url).then((newUrl) => {
           node.url = newUrl;
         });
         promises.push(promise);
