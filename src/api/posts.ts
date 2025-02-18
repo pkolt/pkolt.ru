@@ -5,6 +5,7 @@ import { unified, type Transformer } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkFrontmatter from 'remark-frontmatter';
 import { matter as vFileMatter } from 'vfile-matter';
+import { VFile } from 'vfile';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
@@ -13,6 +14,7 @@ import remarkHeadingId from 'remark-heading-id';
 import remarkPrism from 'remark-prism';
 import remarkStringify from 'remark-stringify';
 import { SITE_URL } from '../constants/site';
+import { remarkTransformImages } from '../utils/remark-transform-images';
 
 type RemarkPrism = (...args: Parameters<typeof remarkPrism>) => Transformer; // Fixed legacy plugin
 
@@ -33,6 +35,7 @@ async function getPostByFilePath(filePath: string, options: PostOptions = {}): P
     processor
       .use(remarkGfm)
       .use(remarkPrism as RemarkPrism)
+      .use(remarkTransformImages)
       .use(remarkHeadingId, { defaults: true })
       .use(remarkHeadings)
       .use(remarkRehype)
@@ -45,13 +48,14 @@ async function getPostByFilePath(filePath: string, options: PostOptions = {}): P
     .use(remarkFrontmatter, { type: 'yaml', marker: '-' }) // Parsed matter
     .use(() => (_, file) => vFileMatter(file)); // Converted matter string to JSON
 
-  const file = await processor.process(content);
-  const matter = (file.data.matter ?? {}) as unknown as PostMatter;
-  const headings = (file.data.headings ?? []) as unknown as PostHeader[];
+  const file = new VFile({ path: filePath, value: content });
+  const result = await processor.process(file);
+  const matter = (result.data.matter ?? {}) as unknown as PostMatter;
+  const headings = (result.data.headings ?? []) as unknown as PostHeader[];
   const slug = path.basename(path.dirname(filePath));
   const pathname = `/blog/${slug}/`;
   const url = new URL(pathname, SITE_URL).toString();
-  const post: Post = { matter, headings, url, pathname, content: String(file.value) };
+  const post: Post = { matter, headings, url, pathname, content: String(result.value) };
   return post;
 }
 
