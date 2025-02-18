@@ -10,7 +10,8 @@
     "build": "rimraf public/images/thumbnails && react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc",
+    "typegen": "react-router typegen",
+    "typecheck": "tsc --noEmit",
     "eslint": "eslint .",
     "eslint-fix": "npm run eslint -- --fix",
     "stylelint": "stylelint 'src/**/*.css'",
@@ -21,6 +22,7 @@
     "lint-all": "npm run eslint && npm run format && npm run stylelint && npm run knip",
     "lint-all-fix": "npm run eslint-fix && npm run format-fix && npm run stylelint-fix",
     "prepare": "git config core.hooksPath .git-hooks",
+    "postinstall": "npm run typegen",
     "pre-push": "npm run typecheck && npm run lint-all",
     "sitemap": "tsx ./src/scripts/sitemap.ts"
   },
