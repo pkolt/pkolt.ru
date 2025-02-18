@@ -34,7 +34,7 @@ tags:
 
 **Оригинальная плата Wemos D1 mini из магазина LOLIN:**
 
-![Wemos D1 mini](./wemos_d1_mini_2.jpg)
+![Wemos D1 mini](../overview-wemos-d1-mini/wemos_d1_mini_2.jpg)
 
 **Реплика Wemos D1 mini с модулем флеш памяти cFeon:**
 

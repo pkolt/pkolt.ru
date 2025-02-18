@@ -265,4 +265,4 @@ const LoadingButton = ({ isLoading, ...props }: LoadingButtonProps) => (
 
 > Совет: если вы обнаружили, что используете много операторов if/else для разных вариантов или поведений, вы, вероятно, нарушаете принцип открытости-закрытости. Рассмотрите возможность использования композиции вместо этого.
 
-> Этот пост использует материалы статьи [https://cekrem.github.io/posts/open-closed-principle-in-react/](https://cekrem.github.io/posts/open-closed-principle-in-react/)
+> Оригинал статьи [https://cekrem.github.io/posts/open-closed-principle-in-react/](https://cekrem.github.io/posts/open-closed-principle-in-react/)
