@@ -39,7 +39,7 @@ export const remarkThumbnails: Plugin<[], Root> = () => {
   }
 
   if (!fs.existsSync(THUMBNAILS_PUBLIC_DIR)) {
-    fs.symlinkSync(THUMBNAILS_BUILD_DIR, THUMBNAILS_PUBLIC_DIR);
+    fs.symlinkSync(THUMBNAILS_BUILD_DIR, THUMBNAILS_PUBLIC_DIR, 'dir');
   }
 
   return async (tree, file: VFile) => {
