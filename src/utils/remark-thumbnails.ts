@@ -2,9 +2,10 @@ import { visit } from 'unist-util-visit';
 import type { Plugin } from 'unified';
 import type { Root, Image } from 'mdast';
 import { VFile } from 'vfile';
+import fsPromises from 'node:fs/promises';
 import fs from 'node:fs';
 import path from 'node:path';
-import { createHash } from 'node:crypto';
+import crypto from 'node:crypto';
 import sharp from 'sharp';
 
 const PROJ_DIR = path.resolve(import.meta.dirname, '..', '..');
@@ -14,20 +15,38 @@ const THUMBNAIL_URL = '/images/thumbnails/';
 const THUMBNAIL_FORMAT = 'webp';
 const THUMBNAIL_SIZE = 1024;
 
+async function fileExists(filepath: string): Promise<boolean> {
+  try {
+    await fsPromises.access(filepath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function generateMD5(filePath: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const hash = crypto.createHash('md5');
+    const stream = fs.createReadStream(filePath);
+    stream.on('data', (chunk) => hash.update(chunk));
+    stream.on('end', () => resolve(hash.digest('hex')));
+    stream.on('error', reject);
+  });
+}
+
 async function makeThumbnail(markdownPath: string, imageSubpath: string): Promise<string> {
   const sourceDir = path.dirname(markdownPath);
   const imagePath = path.join(sourceDir, imageSubpath);
-  const imageBuffer = fs.readFileSync(imagePath);
-  const hash = createHash('md5').update(imageBuffer).digest('hex');
+  const hash = await generateMD5(imagePath);
   const shortHash = hash.slice(0, 8);
   const ext = path.extname(imageSubpath);
   const name = path.basename(imageSubpath, ext);
   const thumbnailName = `${name}.${shortHash}.${THUMBNAIL_FORMAT}`;
   const thumbnailPath = path.join(THUMBNAILS_BUILD_DIR, thumbnailName);
 
-  if (!fs.existsSync(thumbnailPath)) {
-    const outputBuffer = await sharp(imageBuffer).resize(THUMBNAIL_SIZE).toFormat(THUMBNAIL_FORMAT).toBuffer();
-    fs.writeFileSync(thumbnailPath, outputBuffer);
+  const isExistsThumbnail = await fileExists(thumbnailPath);
+  if (!isExistsThumbnail) {
+    await sharp(imagePath).resize(THUMBNAIL_SIZE).toFormat(THUMBNAIL_FORMAT).toFile(thumbnailPath);
   }
 
   return `${THUMBNAIL_URL}${thumbnailName}`;
