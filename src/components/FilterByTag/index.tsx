@@ -1,6 +1,7 @@
 import { Tag } from '@/components/Tag';
 
 import styles from './index.module.css';
+import type { JSX } from 'react';
 
 interface FilterByTagProps {
   tags: string[];

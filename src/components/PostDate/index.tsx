@@ -2,6 +2,7 @@ import cn from 'classnames';
 import { DateTime } from 'luxon';
 
 import styles from './index.module.css';
+import type { JSX } from 'react';
 
 interface PostDateProps {
   className?: string;

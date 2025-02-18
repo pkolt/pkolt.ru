@@ -1,6 +1,4 @@
-import type { MarkdownInstance } from 'astro';
-
-export interface PostMarkdown {
+export interface PostMatter {
   created: string;
   modified: string;
   title: string;
@@ -9,4 +7,16 @@ export interface PostMarkdown {
   seo_tags: string[];
 }
 
-export type Post = MarkdownInstance<PostMarkdown>;
+export interface PostHeader {
+  depth: number;
+  value: string;
+  data: { id: string };
+}
+
+export interface Post {
+  matter: PostMatter;
+  headings: PostHeader[];
+  url: string;
+  pathname: string;
+  content: string;
+}

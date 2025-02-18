@@ -2,6 +2,7 @@ import { Tag } from '@/components/Tag';
 import cn from 'classnames';
 
 import styles from './index.module.css';
+import type { JSX } from 'react';
 
 interface TagListProps {
   className?: string;
