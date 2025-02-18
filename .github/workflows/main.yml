@@ -41,8 +41,8 @@ jobs:
         shell: bash
         run: npm ci
 
-  linters:
-    name: Run Linters
+  check:
+    name: Check Code
     needs: [install]
     if: github.ref != 'refs/heads/master'
     runs-on: ubuntu-latest
@@ -60,28 +60,10 @@ jobs:
         with:
           path: ./node_modules
           key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
+      - name: Build Types
+        run: npm run typegen
       - name: Check Linters 🕵️‍♂️
         run: npm run lint-all
-
-  typescript:
-    name: Check TypeScript
-    needs: [install]
-    if: github.ref != 'refs/heads/master'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout ✅
-        uses: actions/checkout@v4
-      - name: Setup Node 🤖
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.node_version }}
-          cache: npm
-      - name: Restore cache 🔮
-        id: cache
-        uses: actions/cache/restore@v4
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
       - name: Check TypeScript 👷‍♂️
         run: npm run typecheck
 
