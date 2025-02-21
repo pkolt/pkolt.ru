@@ -119,3 +119,111 @@ class EmployeeSaver {
 Например вам нужно сформировать отчет по финансовым данным для бухгалтерии. При этом вы можете добавить точку для расширения этого функционала, например чтобы позже добавить формирование отчета для отдела снабжения. Возможно в будущем вам потребуется формировать отчеты для других отделов компании.
 
 Многие популярные библиотеки имеют возможность для добавления нового функционала без переписывания их исходного кода, например [express.js](https://expressjs.com/) позволяет добавлять функционал используя `middlewares`, а [fastify](https://fastify.dev/) расширяется через систему плагинов.
+
+## LSP: Liskov Substitution Principle (принцип подстановки Барбары Лисков)
+
+![Барбара Лисков](./barbara_liskov.jpg)
+
+Барбара Лисков, американский ученый в области информатики в 1987 году впервые сформулировала этот принцип в своем докладе "Абстракция данных и иерархия" ("Data Abstraction and Hierarchy").
+
+Позже, в 1994 году, Лисков и Джин Винг формализовали этот принцип в статье "Поведенческое понятие подтипизации" ("A Behavioral Notion of Subtyping"):
+
+> Если S является подтипом T, то объекты типа T в программе могут быть заменены объектами типа S без изменения работы программы.
+
+Это означает, что подклассы должны полностью сохранять поведение суперклассов, а не просто расширять или изменять их. Нарушение этого принципа может привести к неожиданным ошибкам при использовании наследования.
+
+Классическим примером нарушения принципа подстановки Барбары Лисков может служить известная проблема квадрат/прямоугольник:
+
+```ts
+/** Прямоугольник */
+class Rectangle {
+  constructor(
+    public width: number,
+    public height: number,
+  ) {}
+
+  setWidth(value: number) {
+    this.width = value;
+  }
+
+  setHeight(value: number) {
+    this.height = value;
+  }
+
+  /** Возвращает площадь */
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+/** Квадрат */
+class Square extends Rectangle {
+  constructor(public size: number) {
+    super(size, size);
+  }
+
+  /** Возвращает площадь */
+  getArea() {
+    return this.size ** 2;
+  }
+}
+
+function printArea(rect: Rectangle) {
+  rect.setWidth(2);
+  rect.setHeight(5);
+  console.log(rect.getArea());
+}
+
+printArea(new Rectangle(0, 0)); // 10 (площадь рассчитана ПРАВИЛЬНО)
+printArea(new Square(0)); // 0 (площадь рассчитана НЕПРАВИЛЬНО)
+```
+
+Почему этот кода нарушает принцип подстановки Барбары Лисков?
+
+1. Подкласс `Square` изменяет контракт поведения родителя `Rectangle`.
+2. Код, который ожидает работать с `Rectangle`, может вести себя **непредсказуемо** при подстановке `Square`.
+3. `Square` не может быть подтипом `Rectangle`, потому что его поведение отличается.
+
+Для исправления нарушения принципа подстановки Барбары Лисков нам нужно вынести наши подклассы `Rectangle`, `Square` под общий суперкласс `Shape`.
+
+```ts
+class Shape {
+  getArea(): number {
+    throw new Error('Not implemented');
+  }
+}
+
+/** Прямоугольник */
+class Rectangle extends Shape {
+  constructor(
+    public width: number,
+    public height: number,
+  ) {
+    super();
+  }
+
+  /** Возвращает площадь */
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+/** Квадрат */
+class Square extends Shape {
+  constructor(public size: number) {
+    super();
+  }
+
+  /** Возвращает площадь */
+  getArea() {
+    return this.size ** 2;
+  }
+}
+
+function printArea(rect: Shape) {
+  console.log(rect.getArea());
+}
+
+printArea(new Rectangle(2, 5)); // 10 (площадь рассчитана ПРАВИЛЬНО)
+printArea(new Square(2)); // 4 (площадь рассчитана ПРАВИЛЬНО)
+```
