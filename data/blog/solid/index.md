@@ -137,10 +137,8 @@ class EmployeeSaver {
 ```ts
 /** Прямоугольник */
 class Rectangle {
-  constructor(
-    public width: number,
-    public height: number,
-  ) {}
+  width = 0;
+  height = 0;
 
   setWidth(value: number) {
     this.width = value;
@@ -158,9 +156,7 @@ class Rectangle {
 
 /** Квадрат */
 class Square extends Rectangle {
-  constructor(public size: number) {
-    super(size, size);
-  }
+  size = 0;
 
   /** Возвращает площадь */
   getArea() {
@@ -174,8 +170,8 @@ function printArea(rect: Rectangle) {
   console.log(rect.getArea());
 }
 
-printArea(new Rectangle(0, 0)); // 10 (площадь рассчитана ПРАВИЛЬНО)
-printArea(new Square(0)); // 0 (площадь рассчитана НЕПРАВИЛЬНО)
+printArea(new Rectangle()); // 10 (площадь рассчитана ПРАВИЛЬНО)
+printArea(new Square()); // 0 (площадь рассчитана НЕПРАВИЛЬНО)
 ```
 
 Почему этот кода нарушает принцип подстановки Барбары Лисков?
@@ -227,3 +223,5 @@ function printArea(rect: Shape) {
 printArea(new Rectangle(2, 5)); // 10 (площадь рассчитана ПРАВИЛЬНО)
 printArea(new Square(2)); // 4 (площадь рассчитана ПРАВИЛЬНО)
 ```
+
+## ISP: Interface Segregation Principle (принцип разделения интерфейсов)
