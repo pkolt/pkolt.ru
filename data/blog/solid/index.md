@@ -27,7 +27,7 @@ tags:
   Сформулированное в 1988 году определение подтипов Барбары Лисков гласит, что для построения программных систем из взаимозаменяемых компонентов эти компоненты должны соблюдать контракт, обеспечивающий их корректную замену друг другом.
 - **ISP: Interface Segregation Principle** - принцип разделения интерфейсов.  
   Этот принцип рекомендует разработчикам избегать зависимостей от неиспользуемого функционала.
-- **DIP: Dependency Inversion Principle** - принцип инверсии зависимости.  
+- **DIP: Dependency Inversion Principle** - принцип инверсии зависимостей.  
   Код, определяющий высокоуровневую логику, не должен зависеть от кода, реализующего низкоуровневые детали. Напротив, детали должны зависеть от этой логики.
 
 Разберем каждый принцип более детально.
@@ -298,3 +298,71 @@ class Duck implements Walkable, Flyable {
 ```
 
 Соблюдения принципа разделения интерфейсов позволяет нам не перегружать классы неиспользуемыми методами, при этом интерфейсы остаются простыми и компактными.
+
+## DIP: Dependency Inversion Principle (принцип инверсии зависимостей)
+
+![Роберт Мартин](./robert_martin3.jpg)
+
+Принцип инверсии зависимостей звучит так:
+
+> Модули верхнего уровня не должны зависеть от модулей нижнего уровня. Оба должны зависеть от абстракций.
+> Абстракции не должны зависеть от деталей. Детали должны зависеть от абстракций.
+
+Рассмотрим пример нарушения принципа инверсии зависимостей:
+
+```ts
+class SberBankCard {
+  pay(amount: number) {
+    console.log('Оплата');
+  }
+}
+
+class PaymentService {
+  bankCard = new SberBankCard(); // Жесткая зависимость
+
+  userPay(amount: number) {
+    this.bankCard.pay(amount);
+  }
+}
+```
+
+Класс `PaymentService` напрямую зависит от класса `SberBankCard`, его нельзя легко заменить, например на `MockBankCard`.
+
+Для устранения нарушения принципа инверсии зависимостей нам необходимо ввести интерфейс `IBankCard` от которого будут зависеть реализации `PaymentService` и `SberBankCard`.
+
+```ts
+interface IBankCard {
+  pay(amount: number): void;
+}
+
+class SberBankCard implements IBankCard {
+  pay(amount: number) {
+    console.log('Оплата');
+  }
+}
+
+class MockBankCard implements IBankCard {
+  pay(amount: number) {
+    console.log('Имитация оплаты для тестов');
+  }
+}
+
+class PaymentService {
+  constructor(public bankCard: IBankCard) {}
+
+  userPay(amount: number) {
+    this.bankCard.pay(amount);
+  }
+}
+
+// Легко подставляем нужную карту для оплаты
+const sberService = new PaymentService(new SberBankCard());
+sberService.userPay(1000); // Реальная оплата
+
+const mockService = new PaymentService(new MockBankCard());
+mockService.userPay(1000); // Имитация оплаты для тестирования
+```
+
+Теперь наш код соответствует принципу инверсии зависимостей, так как `PaymentService` зависит от абстракции `IBankCard`, а не от конкретной реализации.
+
+Если нам нужно будет заменить банковскую карту, мы можем просто создать новый класс, реализующий `IBankCard`, без изменений в `PaymentService`.
