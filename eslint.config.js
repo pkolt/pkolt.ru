@@ -2,7 +2,7 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
-import pluginHooks from 'eslint-plugin-react-hooks';
+import * as pluginHooks from 'eslint-plugin-react-hooks';
 import pluginRefresh from 'eslint-plugin-react-refresh';
 import pluginImport from 'eslint-plugin-import';
 import pluginReactCompiler from 'eslint-plugin-react-compiler';
@@ -32,11 +32,9 @@ export default [
   pluginImport.flatConfigs.recommended,
   pluginImport.flatConfigs.typescript,
   ...tseslint.configs.recommended,
+  pluginHooks.configs['recommended-latest'],
+  pluginReactCompiler.configs.recommended,
   {
-    plugins: {
-      'react-hooks': pluginHooks,
-      'react-compiler': pluginReactCompiler,
-    },
     rules: {
       'react-compiler/react-compiler': 'error',
       'react/react-in-jsx-scope': 'off',
